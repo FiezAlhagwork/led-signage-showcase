@@ -5,7 +5,6 @@ import "./App.css";
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
 import Home from "./pages/Home";
-
 import Sign from "./pages/Sign";
 import DigitalPrinting from "./pages/DigitalPrinting";
 import ContactUs from "./pages/References";
@@ -13,7 +12,6 @@ import About from "./pages/About";
 import Communication from "./pages/References";
 import { BoxLettersShowcase } from "./pages/BoxLetters";
 import { LanguageProvider } from "./context/LanguageContext";
-import BoxLettersHeader from "./components/ui/BoxLettersHeader";
 
 function LayoutContent() {
   const location = useLocation();
@@ -30,7 +28,7 @@ function LayoutContent() {
 
   return (
     <>
-      { <Navbar />}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/box-letters" element={<BoxLettersShowcase />} />

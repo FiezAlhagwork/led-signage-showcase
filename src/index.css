@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF6B00;
+  --color-secondary: #4A4A4A;
+  --color-light-gray: #F5F5F5;
+  --color-white: #FFFFFF;
+  --color-text-main: #1A1A1A;
+  --color-text-muted: #757575;
+  --color-dark-bg: #0a0a0a; /* أضفنا لون الخلفية الداكن هنا رسمياً */
+}
+
+:root {
+  --font-main: 'Tajawal', 'Manrope', sans-serif;
+  
+  /* اجعل الخلفية الافتراضية داكنة وليست بيضاء ليتطابق مع تصميمك */
+  background-color: #0a0a0a; 
+  color: #ffffff;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #0a0a0a; /* ضمان تطبيق الخلفية السوداء/الداكنة على كامل الجسم */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

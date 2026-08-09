@@ -1,0 +1,270 @@
+{
+  "nav": {
+    "home": "Home",
+    "boxLetters": "Box Letters",
+    "sign": "Sign",
+    "digitalPrinting": "Digital Printing",
+    "gallery": "Gallery",
+    "aboutUs": "About Us",
+    "communication": "Contact Us",
+    "language": "Language:"
+  },
+  "hero": {
+    "welcome": "Welcome to Noor",
+    "title": "We Bring Your Brand to",
+    "titleHighlight": "Life",
+    "description": "We give your brand tangible dimensions that dazzle the eyes through the latest illuminated signage technologies and luxurious digital printing.",
+    "btnGallery": "Explore Gallery",
+    "btnContact": "Contact Us"
+  },
+  "services": {
+    "tag": "Our Services",
+    "sectionTitle": "With Our Professional Services",
+    "sectionDesc": "We offer comprehensive, professional solutions in signage and digital printing to showcase your brand identity in the best possible light.",
+    "learnMore": "Learn More"
+  },
+  "servicesGrid": {
+    "boxLettersTitle": "Box Letters",
+    "boxLettersDesc": "High-quality custom illuminated 3D channel letters design and manufacturing to grab attention and boost your brand presence.",
+    "signTitle": "Sign",
+    "signDesc": "Innovative exterior and interior signage solutions suitable for all commercial activities to support your brand identity.",
+    "learnMore": "Learn More",
+    "digitalPrintingTitle": "Digital Printing",
+    "digitalPrintingDesc": "Advanced digital printing solutions with superior quality and fast turnaround for all your business needs."
+  },
+  "about": {
+    "tag": "ABOUT US",
+    "title": "Advertising Solutions That Strengthen Your Brand",
+    "description": "We specialize in providing integrated advertising solutions that combine manufacturing precision and high-quality materials. We rely on the latest technologies to ensure your projects are executed in the best possible way, with a full commitment to achieving customer satisfaction and building a strong commercial brand identity that stands out in the market.",
+    "feature1": "Professional Team",
+    "feature2": "High Quality Materials",
+    "feature3": "On-Time Delivery",
+    "feature4": "Modern Manufacturing Equipment",
+    "learnMore": "Learn More About Us"
+  },
+  "featuredProjects": {
+    "tag": "OUR PORTFOLIO",
+    "title": "Projects Brought to Life Through Our Creativity",
+    "description": "Explore a curated selection of our latest and best completed projects.",
+    "viewAll": "View All Projects"
+  },
+  "projectsGrid": {
+    "card1Title": "Restaurant Sign",
+    "card2Title": "Cafe / Restaurant",
+    "card3Title": "Pharmacy Sign",
+    "card4Title": "Clothing Store",
+    "card5Title": "Hotel Entrance",
+    "card6Title": "Company Office",
+    "badgeBoxLetters": "Box Letters",
+    "badgeSigns": "Signs",
+    "badgePrinting": "Digital Printing"
+  },
+  "contact": {
+    "tag": "Contact Us",
+    "title": "We Are Glad to Connect With You",
+    "description": "Our team is ready to answer your inquiries and execute your projects with the best quality.",
+    "formTitle": "Send Us a Message",
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "projectType": "Project Type (Optional)",
+    "message": "Message",
+    "sendBtn": "Send Request",
+    "placeholderName": "Enter your full name",
+    "placeholderPhone": "+963 960 961 620",
+    "placeholderProject": "Advertising Services / Signs",
+    "placeholderMessage": "Write your message here...",
+    "addressLabel": "Company Address",
+    "addressText": "Ma'araba - East Road - Opposite Al-Amani Wedding Hall",
+    "phoneLabel": "Phone Number",
+    "whatsappLabel": "WhatsApp",
+    "whatsappBtn": "Contact us directly via WhatsApp",
+    "hoursLabel": "Working Hours",
+    "hoursText": "Saturday - Thursday: From 8:00 to 9:00",
+    "emailLabel": "Email",
+    "mapBtn": "Open in Google Maps"
+  },
+  "whyChooseUs": {
+    "badge": "WHY CHOOSE US",
+    "title": "Why We Are the Right Partner For Your Brand",
+    "card1": {
+      "title": "Extensive Experience & Professionalism",
+      "description": "We have a professional team with years of experience delivering the latest advertising solutions and innovative designs."
+    },
+    "card2": {
+      "title": "High Quality Execution",
+      "description": "We use the finest materials and digital printing resources to ensure your projects meet the highest standards of quality and precision."
+    },
+    "card3": {
+      "title": "Integrated & Custom Solutions",
+      "description": "We provide comprehensive packages including strategy, design, and on-site execution to meet all your corporate needs."
+    },
+    "card4": {
+      "title": "Strict Deadlines & Ongoing Support",
+      "description": "We understand the value of time in your business, committed to delivering projects on schedule with continuous support.",
+      "subDescription": "Whether you are a startup or a large enterprise, we ensure full flexibility and speed in processing your requests."
+    },
+    "services": {
+      "tag": "Our Services",
+      "sectionTitle": "Featured Services",
+      "sectionDesc": "We provide the best solutions..."
+    }
+  },
+  "footer": {
+    "brandSubtitle": "For Advertising, Publicity, and Digital Printing",
+    "quickLinksTitle": "Quick Links",
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Our Completed Projects",
+    "services": "Our Services",
+    "whyChooseUs": "Why Choose Us",
+    "contact": "Contact Us",
+    "contactInfoTitle": "Contact Information",
+    "address": "Ma'raba - East Road - Opposite Al-Amani Wedding Hall",
+    "phone1": "0960961620",
+    "phone2": "0982237799",
+    "email": "Email.abo.fahed.10@hotmail.com",
+    "rights": "All rights reserved.",
+    "developer": "Website Design & Development"
+  },
+  "signSection": {
+    "hero": {
+      "badge": "Signage & Tabela Solutions",
+      "title": "Innovative Signage & Billboard Systems",
+      "zoomText": "Click to Zoom"
+    },
+    "controls": {
+      "next": "Next",
+      "prev": "Previous",
+      "close": "Close",
+      "zoomTitle": "Click to view full image"
+    },
+    "slides": {
+      "wayfinding": {
+        "title": "Directional & Wayfinding Sign Solutions",
+        "description": "Wayfinding and directional signs, used in numerous settings from hospitals and hotels to universities and financial buildings, are the ideal medium to provide information and guidance to visitors. At Venus Reklam, we plan, design, and manufacture wayfinding signs in standard or custom sizes, utilizing materials such as stainless steel, aluminum, acrylic, and wood. We offer a blend of elegance and functionality with easy installation systems, adding a professional touch to your spaces."
+      },
+      "aluminum": {
+        "title": "Facade Cladding Systems",
+        "description": "You can clad your building facades with durable and aesthetic materials such as Aluminum Composite Material (ACM), compact laminates, wooden panels, and stainless steel, giving them a sleek, modern look. At Venus Reklam, facade cladding is complemented by professional graphics, LED lighting, lamps, displays, sensor-sliding doors, or glass cladding. We handle every project with meticulous precision, adding both functional and aesthetic value to your building designs."
+      },
+      "totem": {
+        "title": "Totem & Pylon Sign Solutions",
+        "description": "Advertising pylons are effective directional and promotional tools, anchored to concrete bases as standalone structures. With versatile applications ranging from parking lots and shopping malls to gas stations and schools, pylon signs help your business capture attention. At Venus Reklam, we offer diverse designs with or without LED lighting, utilizing materials such as aluminum, stainless steel, composite panels (dibond), acrylic, and wood. We also provide customized solutions for gas station pylons, incorporating digital LED displays for temperature, time, and pricing."
+      },
+      "illuminated": {
+        "title": "Illuminated Advertising Signs",
+        "description": "As a leading sign manufacturer, we design and produce illuminated and non-illuminated LED signs using diverse materials such as aluminum, stainless steel, acrylic, and wood. We provide comprehensive solutions for all your signage needs, including facade signs, illuminated signs, dimensional letters, shop signs, engraved signs, and architectural signs. We offer back-lit, side-lit, and front-lit options, producing indoor and outdoor signs from shopping malls to airports, tailored to your standard or custom requirements. Contact us for more details."
+      }
+    }
+  },
+
+  "digitalPrinting": {
+    "slides": {
+      "slide1": {
+        "badge": "UV Printing Solutions",
+        "title": "Innovative printing technology resistant to external factors.",
+        "description": "UV printing provides superior resistance to sunlight, rain, and other external factors. It can be applied to flexible materials like fabrics, banners, meshes, and one-way vision, as well as rigid surfaces such as MDF, glass, ceramics, metals, acrylic, and Dekota. Durability and visual quality can be further enhanced with special varnish layers."
+      },
+      "slide2": {
+        "badge": "Outdoor Film Applications",
+        "title": "High-quality vinyl applications for stunning visuals",
+        "description": "Vinyl facade applications are used to effectively display your brand and large-scale graphics on buildings and advertising spaces."
+      },
+      "slide3": {
+        "badge": "Vinyl - OWV Printing",
+        "title": "Economical and Effective Advertising Solutions",
+        "description": "Self-adhesive vinyl and one-way vision technology are ideal, cost-effective promotional tools for effective brand promotion in stores. Suitable for outdoor use, this printing type offers durability and longevity, allowing for flexible and elegant custom cutting."
+      }
+    }
+  },
+  "aboutru": {
+    "slides": {
+      "slide1": {
+        "badge": "About Us",
+        "title": "Who We Are",
+        "description": "We are pleased to offer our valued clients our extensive experience in the outdoor advertising sector, along with our advanced organizational structure."
+      },
+      "slide2": {
+        "badge": "Our Vision",
+        "title": "Trust and Quality First",
+        "description": "In our modern business approach, trust, quality, on-time delivery, and occupational safety have always been our top priorities."
+      },
+      "slide3": {
+        "badge": "Future Goals",
+        "title": "Expanding Our Services",
+        "description": "Thanks to our advanced machinery, we continue to serve national and international brands through new investments."
+      }
+    },
+    "banner": {
+      "title": "Get the Best Solutions and Services",
+      "button": "Contact Us"
+    },
+    "counters": {
+      "happyClients": "Happy Clients",
+      "completedProjects": "Completed Projects",
+      "starRating": "5 Star Rating",
+      "expertTeam": "Expert Team Members"
+    }
+  },
+
+  "specsTitle": "Specifications",
+  "turnOnLights": "Turn on lights",
+  "turnOffLights": "Turn off lights",
+  "prevSlide": "Previous",
+  "nextSlide": "Next",
+  "requestQuoteForThis": "Request Quote",
+  "simTitle": "Open 3D Studio",
+
+  "boxLetters": {
+    "white-acrylic": {
+      "title": "White Acrylic Box Letters",
+      "description": "The letters are made from 30mm light-emitting white acrylic with an aluminum backing, and LED lighting options are available.",
+      "details": [
+        "30mm high-grade cast opal white acrylic",
+        "Precision CNC thermoformed edges with seamless joints",
+        "Energy-efficient Samsung/Osram IP67 LED modules",
+        "Rust-proof powder coated 1.5mm aluminum rear mounting plate"
+      ]
+    },
+    "aluminum-box": {
+      "title": "Aluminum Box Letters",
+      "description": "Box letters made from painted aluminum are offered with optional LED lighting and various mounting options.",
+      "details": [
+        "Electrostatic oven powder-coated aluminum casing",
+        "Available in all RAL custom architectural paint finishes",
+        "Optional halo backlit glow effect with acrylic diffuser base",
+        "Extreme durability against UV rays, rain, and snow"
+      ]
+    },
+    "illuminated-led-strips": {
+      "title": "Illuminated LED Strips and Custom Designs",
+      "description": "Opal acrylic front panel, paintable aluminum casing, and customizable LED strips for illuminated strips.",
+      "details": [
+        "High-density COB/SMD LED linear illumination",
+        "Seamless curved aluminum extrusions for geometric accents",
+        "Uniform light diffusion without hotspot dots",
+        "Dimmable & RGB / CCT dynamic lighting options"
+      ]
+    },
+    "cutout-box-letters": {
+      "title": "Cutout Box Letters - Metal Options and Surface Treatments",
+      "description": "Cutout box letters in painted aluminum, stainless steel, copper, brass, and Corten steel options.",
+      "details": [
+        "Precision Fiber Laser cutting for micro-detail serif fonts and logos",
+        "Material choices: 316 Marine Stainless, Mirror Gold Brass, Vintage Corten",
+        "PVD Gold, Rose Gold, and Titanium Physical Vapor Deposition coatings",
+        "Rear stencil acrylic backing or direct standoff mount"
+      ]
+    },
+    "illuminated-metal-acrylic": {
+      "title": "Illuminated Box Letters - Metal and Acrylic Options",
+      "description": "Illuminated box letters are produced with opal acrylic and metal embellishments. They can be customized with different metal and color options and can also be produced without LED lighting upon request.",
+      "details": [
+        "Dual-material hybrid construction combining metal rims with cast acrylic",
+        "360° halo perimeter lighting and vibrant front face illumination",
+        "Interchangeable front face acrylic panels for easy maintenance",
+        "Heavy-duty architectural installation hardware included"
+      ]
+    }
+  }
+}

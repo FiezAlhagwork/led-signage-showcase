@@ -1,26 +1,19 @@
-import React from "react";
+import logo from "../../assets/logo.png";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../context/LanguageContext";
 import {
-  FaFacebookF,
-  FaInstagram,
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
   FaChevronRight,
   FaChevronLeft,
-  FaArrowUp,
 } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   const { language, t } = useLanguage();
   const isAr = language === "AR";
   const footerT = t.footer;
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <footer
@@ -34,15 +27,8 @@ const Footer: React.FC = () => {
         {/* القسم العلوي والشعار */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/10 pb-12 mb-12 gap-6">
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#FF6B00] to-[#ff8c37] flex items-center justify-center shadow-lg shadow-[#FF6B00]/30 flex-shrink-0">
-              <span className="text-white font-black text-xl tracking-tighter">
-                NR
-              </span>
-            </div>
             <div>
-              <span className="text-2xl font-black tracking-wider text-[#FF6B00] block leading-none">
-                NR
-              </span>
+              <img src={logo} alt="logo " className="h-6 w-18" />
               <span className="block text-[11px] text-white/50 mt-1">
                 {footerT.brandSubtitle}
               </span>
@@ -50,26 +36,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* السوشيال ميديا */}
-          <div className="flex items-center gap-3 text-white/70">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF6B00] hover:text-white transition-all duration-300 text-sm"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#FF6B00] hover:text-white transition-all duration-300 text-sm"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
-          </div>
+          <div className="flex items-center gap-3 text-white/70"></div>
         </div>
 
         {/* الروابط ومعلومات التواصل */}
@@ -85,12 +52,12 @@ const Footer: React.FC = () => {
                   <HashLink
                     smooth
                     to="/#home"
-                    className="hover:text-[#FF6B00] transition-colors flex items-center gap-2"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
                   >
                     {isAr ? (
-                      <FaChevronLeft className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronLeft className="text-xs text-primary shrink-0" />
                     ) : (
-                      <FaChevronRight className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronRight className="text-xs text-primary shrink-0" />
                     )}
                     <span>{footerT.home}</span>
                   </HashLink>
@@ -171,7 +138,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* معلومات التواصل (تأخذ من ملف الترجمة الآن) */}
           <div className="lg:col-span-5">
             <h3 className="text-lg font-bold mb-6 text-white tracking-wide border-l-4 border-[#FF6B00] pl-3">
               {footerT.contactInfoTitle}
@@ -179,10 +145,8 @@ const Footer: React.FC = () => {
 
             <ul className="space-y-4 text-white/70 text-sm">
               <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-[#FF6B00] mt-1 flex-shrink-0" />
-                <span className="break-words">
-                  {footerT.address}
-                </span>
+                <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
+                <span className="break-words">{footerT.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <FaPhoneAlt className="text-[#FF6B00] flex-shrink-0" />
@@ -201,21 +165,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* الحقوق */}
         <div className="border-t border-white/10 pt-8 flex flex-col items-center justify-center text-xs text-white/50 text-center gap-2">
           <p>© 2026. {footerT.rights}</p>
           <p>{footerT.developer}</p>
         </div>
       </div>
 
-      {/* زر الصعود */}
-      <button
-        onClick={scrollToTop}
-        className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-[#2bb673] hover:bg-[#23965d] text-white p-3 rounded-lg shadow-xl transition-all flex items-center justify-center cursor-pointer z-25"
-        aria-label="Scroll to top"
-      >
-        <FaArrowUp />
-      </button>
     </footer>
   );
 };

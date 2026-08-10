@@ -1,4 +1,4 @@
-import img1 from "../assets/about2.jpg";
+import img1 from "../assets/about3.jpg";
 
 export const aboutData = {
   image: img1, 

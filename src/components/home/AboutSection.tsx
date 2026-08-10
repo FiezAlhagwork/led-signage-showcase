@@ -19,7 +19,7 @@ const AboutSection: React.FC = () => {
     aboutT.feature4,
   ];
 
-  const shouldAnimate = !hasAnimatedAboutSection;
+  const shouldAnimate = !hasAnimatedAboutSection; 
 
   return (
     <section
@@ -108,7 +108,7 @@ const AboutSection: React.FC = () => {
               <img
                 src={aboutData.image}
                 alt="About Us"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="absolute right-1 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 "
               />
             </div>
           </motion.div>

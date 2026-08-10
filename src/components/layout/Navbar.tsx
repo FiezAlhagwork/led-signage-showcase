@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
@@ -73,10 +72,8 @@ const Navbar = () => {
             ? "bg-black/15 backdrop-blur-md py-4 border-b border-white/5 shadow-lg"
             : "bg-transparent py-6 border-transparent"
         }`}
-        dir={isAr ? "rtl" : "ltr"}
       >
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 max-w-full">
-          {/* 1. اللوجو */}
           <div className="shrink-0">
             <NavLink to="/">
               <img
@@ -141,7 +138,6 @@ const Navbar = () => {
               ? "translate-x-full"
               : "-translate-x-full"
         }`}
-        dir={isAr ? "rtl" : "ltr"}
       >
         <button
           onClick={() => setIsOpen(false)}

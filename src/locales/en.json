@@ -52,9 +52,9 @@
     "card1Title": "Mishwar Restaurant Sign",
     "card2Title": "Desk & Podium Flags Printing",
     "card3Title": "Paper Menu Design",
-    "card4Title": "Salah Eddine Lab Sign",
-    "card5Title": "Dukhan Center Sign",
-    "card6Title": "Wayfinding Signs",
+    "card4Title": "Compound Board Sign with Illuminated Plexi Letters",
+    "card5Title": "Compound Sign with Illuminated Metal Letters",
+    "card6Title": "Car Advertising Signage",
     "badgeBoxLetters": "Box Letters",
     "badgeSigns": "Signs",
     "badgePrinting": "Digital Printing"
@@ -140,8 +140,8 @@
     },
     "slides": {
       "wayfinding": {
-        "title": "Directional & Wayfinding Sign Solutions",
-        "description": "Wayfinding and directional signs, used in numerous settings from hospitals and hotels to universities and financial buildings, are the ideal medium to provide information and guidance to visitors. At Venus Reklam, we plan, design, and manufacture wayfinding signs in standard or custom sizes, utilizing materials such as stainless steel, aluminum, acrylic, and wood. We offer a blend of elegance and functionality with easy installation systems, adding a professional touch to your spaces."
+        "title": "Vehicle Advertising Solutions",
+        "description": "Vehicle advertising is an effective, mobile marketing tool that carries your brand message across the widest possible audience on streets and roads. At Venus Reklam, we design, print, and install vehicle graphics using high-quality, weather-resistant vinyl materials suitable for all vehicle types, from private cars to trucks and delivery vans. We provide professional solutions combining printing precision and expert installation, giving your brand a standout presence wherever it goes."
       },
       "aluminum": {
         "title": "Facade Cladding Systems",
@@ -214,7 +214,6 @@
   "nextSlide": "Next",
   "requestQuoteForThis": "Request Quote",
   "simTitle": "Open 3D Studio",
-
 
   "boxLetters": {
     "product-01": {

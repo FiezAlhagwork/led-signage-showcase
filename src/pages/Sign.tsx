@@ -23,7 +23,6 @@ let hasAnimatedSign = false;
 
 const Sign: React.FC = () => {
   const { language, t } = useLanguage();
-  const isAr = language === "AR";
 
   const shouldAnimate = !hasAnimatedSign;
 
@@ -46,10 +45,7 @@ const Sign: React.FC = () => {
   ];
 
   return (
-    <main
-      className="w-full min-h-screen bg-[#161317] py-20 px-2 md:px-6 flex flex-col justify-center overflow-hidden relative"
-      dir={isAr ? "rtl" : "ltr"}
-    >
+    <main className="w-full min-h-screen bg-[#161317] py-20 px-2 md:px-6 flex flex-col justify-center overflow-hidden relative">
       {/* عنوان القسم */}
       <motion.div
         initial={shouldAnimate ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
@@ -115,24 +111,23 @@ const Sign: React.FC = () => {
                 key={item.id}
                 className="flex justify-center cursor-grab active:cursor-grabbing"
               >
-                <div className="relative w-full bg-[#1e1b22] border border-white/5 rounded-3xl p-4 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden min-h-[500px] md:min-h-[580px]">
+                <div className="relative w-full bg-[#1e1b22] border border-white/5 rounded-3xl p-4 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden min-h-125 md:min-h-145">
                   <div className="group w-full lg:w-[46%] bg-[#26222b]/90 backdrop-blur-md p-5 md:p-12 rounded-2xl shadow-xl z-10 text-white space-y-4 md:space-y-5 border border-white/10 transition-all duration-500 hover:scale-[1.02] hover:border-[#FF6600]/40">
                     <h2
-                      className={`text-xl md:text-4xl font-extrabold tracking-tight leading-snug text-white group-hover:text-[#FF6600] ${isAr ? "group-hover:-translate-x-2" : "group-hover:translate-x-2"}`}
+                      className={`text-xl md:text-4xl font-extrabold tracking-tight leading-snug text-white group-hover:text-[#FF6600] `}
                     >
                       {currentSlide?.title}
                     </h2>
                     <p
-                      className={`text-white/85 text-xs md:text-lg leading-relaxed font-normal ${isAr ? "group-hover:-translate-x-2" : "group-hover:translate-x-2"}`}
+                      className={`text-white/85 text-xs md:text-lg leading-relaxed font-normal `}
                     >
                       {currentSlide?.description}
                     </p>
                   </div>
 
-                  {/* تم تصغير الارتفاع في الموبايل من 320px إلى 220px */}
                   <div
                     onClick={() => setActiveImage(item.image)}
-                    className="w-full lg:w-[50%] h-[220px] md:h-[480px] rounded-2xl overflow-hidden shadow-2xl relative cursor-pointer group/img border border-white/5"
+                    className="w-full lg:w-[50%] h-55 md:h-120 rounded-2xl overflow-hidden shadow-2xl relative cursor-pointer group/img border border-white/5"
                     title={t.signSection?.controls?.zoomTitle}
                   >
                     <img
@@ -142,7 +137,7 @@ const Sign: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                       <span className="bg-[#FF6600] text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                        <span>🔍</span> {t.signSection?.hero?.zoomText}
+                        <span></span> {t.signSection?.hero?.zoomText}
                       </span>
                     </div>
                   </div>
@@ -199,7 +194,6 @@ const Sign: React.FC = () => {
         </button>
       </motion.div>
 
-      {/* نافذة تكبير الصورة (Modal) مع أنيميشن ظهور */}
       {activeImage && (
         <motion.div
           initial={{ opacity: 0 }}

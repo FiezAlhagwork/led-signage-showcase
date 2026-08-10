@@ -5,7 +5,7 @@ import img2 from "../assets/pro2.jpg";
 import img3 from "../assets/pro3.jpg";
 import img4 from "../assets/pro4.jpg";
 import img5 from "../assets/about2.jpg";
-import img6 from "../assets/pro7.jpg";
+import img6 from "../assets/car2.jpg";
 
 export type ProjectsGridKey = keyof typeof en.projectsGrid;
 

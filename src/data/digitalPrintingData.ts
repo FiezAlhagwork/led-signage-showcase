@@ -17,9 +17,8 @@ export const digitalPrintingSlides = [
   },
   {
     id: 3,
-    image: img3, // ضع مسار الصورة الثالثة أو استوردها هنا
+    image: img3, 
     secondaryImage: machineImageSrck,
 
-     // أو الصورة الخاصة بالـ slide الثالث
   },
 ];

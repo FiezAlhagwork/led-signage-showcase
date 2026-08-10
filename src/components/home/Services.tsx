@@ -25,8 +25,7 @@ const itemVariants: Variants = {
 };
 
 const Services = () => {
-  const {t} = useLanguage();
-
+  const { t } = useLanguage();
 
   return (
     <section
@@ -85,7 +84,7 @@ const Services = () => {
                   </div>
 
                   <Link
-                    to={service.path}
+                    to={service.path || ""}
                     className="inline-flex items-center gap-2 text-primary font-semibold text-sm pt-2 group-hover:translate-x-1 transition-transform"
                   >
                     <span>{learnMoreText}</span>

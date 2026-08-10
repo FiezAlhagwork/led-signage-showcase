@@ -1,52 +1,42 @@
-import React from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { servicesData } from "../../data/Services";
 import SectionHeader from "../ui/SectionHeader";
 import { Link } from "react-router-dom";
 import { motion, type Variants } from "framer-motion";
 
-let hasAnimatedServices = false;
-
-const Services: React.FC = () => {
-  const { t, language } = useLanguage();
-  const isAr = language === "AR";
-  const shouldAnimate = !hasAnimatedServices;
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.4,
-      },
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.4,
     },
-  };
+  },
+};
 
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const Services = () => {
+  const { t} = useLanguage();
+
 
   return (
     <section
       id="services"
       className="relative w-full py-24 text-white overflow-hidden bg-dark-bg"
-      dir={isAr ? "rtl" : "ltr"}
     >
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={
-            shouldAnimate ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }
-          }
-          whileInView={shouldAnimate ? { opacity: 1, x: 0 } : {}}
-          onViewportEnter={() => {
-            if (shouldAnimate) hasAnimatedServices = true;
-          }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
@@ -60,8 +50,8 @@ const Services: React.FC = () => {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={shouldAnimate ? containerVariants : undefined}
-          initial={shouldAnimate ? "hidden" : "visible"}
+          variants={containerVariants}
+          initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
@@ -73,7 +63,7 @@ const Services: React.FC = () => {
             return (
               <motion.div
                 key={service.id}
-                variants={shouldAnimate ? itemVariants : undefined}
+                variants={itemVariants}
                 className="group relative bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary flex flex-col"
               >
                 <div className="relative h-80 w-full overflow-hidden bg-zinc-900">

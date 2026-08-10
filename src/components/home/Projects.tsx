@@ -4,34 +4,30 @@ import { featuredProjectsData } from "../../data/featuredProjects";
 import SectionHeader from "../ui/SectionHeader";
 import { motion, type Variants } from "framer-motion";
 
-let hasAnimatedProjects = false;
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const Projects: React.FC = () => {
   const { t, language } = useLanguage();
   const isArabic = language === "AR";
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const shouldAnimate = !hasAnimatedProjects;
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
 
   return (
     <section
@@ -40,11 +36,8 @@ const Projects: React.FC = () => {
     >
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={shouldAnimate ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 }}
-          whileInView={shouldAnimate ? { opacity: 1, y: 0 } : {}}
-          onViewportEnter={() => {
-            if (shouldAnimate) hasAnimatedProjects = true;
-          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
         >
@@ -58,8 +51,8 @@ const Projects: React.FC = () => {
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
-          variants={shouldAnimate ? containerVariants : undefined}
-          initial={shouldAnimate ? "hidden" : "visible"}
+          variants={containerVariants}
+          initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
@@ -70,7 +63,7 @@ const Projects: React.FC = () => {
             return (
               <motion.div
                 key={project.id}
-                variants={shouldAnimate ? itemVariants : undefined}
+                variants={itemVariants}
                 onClick={() => setSelectedImage(project.image)}
                 className="group relative bg-black/40 rounded-2xl overflow-hidden border border-white/10 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:shadow-2xl hover:shadow-primary/15 flex flex-col cursor-pointer"
               >

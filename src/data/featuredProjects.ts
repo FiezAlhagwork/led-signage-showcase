@@ -14,7 +14,6 @@ export interface Project {
   titleKey: ProjectsGridKey;
   categoryKey: ProjectsGridKey;
   image: string;
-  path: string;
 }
 
 export const featuredProjectsData: Project[] = [
@@ -23,41 +22,35 @@ export const featuredProjectsData: Project[] = [
     titleKey: "card1Title",
     categoryKey: "badgeBoxLetters",
     image: img1,
-    path: "/projects/mishwar-restaurant",
   },
   {
     id: "2",
     titleKey: "card2Title",
     categoryKey: "badgePrinting",
     image: img2,
-    path: "/projects/table-tent-displays",
   },
   {
     id: "3",
     titleKey: "card3Title",
     categoryKey: "badgePrinting",
     image: img3,
-    path: "/projects/paper-menu",
   },
   {
     id: "4",
     titleKey: "card4Title",
     categoryKey: "badgeSigns",
     image: img4,
-    path: "/projects/salah-eddine-lab",
   },
   {
     id: "5",
     titleKey: "card5Title",
     categoryKey: "badgeSigns",
     image: img5,
-    path: "/projects/dukhan-center",
   },
   {
     id: "6",
     titleKey: "card6Title",
     categoryKey: "badgePrinting",
     image: img6,
-    path: "/projects/food-truck-letters",
   },
 ];

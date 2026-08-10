@@ -115,7 +115,7 @@ const Navbar = () => {
           {/* زر قائمة الموبايل */}
           <button
             onClick={() => setIsOpen(true)}
-            className="lg:hidden text-white p-2 focus:outline-none flex-shrink-0"
+            className="lg:hidden text-white p-2 focus:outline-none shrink-0"
             aria-label="Open Menu"
           >
             <svg
@@ -137,7 +137,7 @@ const Navbar = () => {
 
       {/* قائمة الموبايل الجانبية (تم تعديل الاتجاه لتفتح من اليمين في العربي ومن اليسار في الإنجليزي) */}
       <div
-        className={`lg:hidden fixed top-0 ${isAr ? "right-0 border-l" : "left-0 border-r"} h-full w-[75%] sm:w-[300px] max-w-full bg-[#0a0a0a] z-[60] flex flex-col p-6 sm:p-8 border-white/10 shadow-2xl transition-transform duration-500 ease-in-out overflow-y-hidden ${
+        className={`lg:hidden fixed top-0 ${isAr ? "right-0 border-l" : "left-0 border-r"} h-full w-[75%] sm:w-75 max-w-full bg-dark-bg z-60 flex flex-col p-6 sm:p-8 border-white/10 shadow-2xl transition-transform duration-500 ease-in-out overflow-y-hidden ${
           isOpen
             ? "translate-x-0"
             : isAr
@@ -161,7 +161,7 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="text-base sm:text-lg font-bold text-white hover:text-[#FF6B00] transition-colors"
+              className="text-base sm:text-lg font-bold text-white hover:text-primary transition-colors"
             >
               {link.name}
             </NavLink>

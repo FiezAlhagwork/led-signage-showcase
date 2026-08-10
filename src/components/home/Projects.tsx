@@ -80,7 +80,6 @@ const Projects: React.FC = () => {
                     alt={title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:opacity-10" />
 
                   <span
                     className={`absolute top-4 ${

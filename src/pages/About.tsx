@@ -21,6 +21,7 @@ const CounterItem: React.FC<{
 
   useEffect(() => {
     if (!shouldAnimate || hasAnimatedCounters) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCount(item.end);
       return;
     }

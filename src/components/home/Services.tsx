@@ -82,7 +82,6 @@ const Services: React.FC = () => {
                     alt={title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/30 transition-opacity duration-500 group-hover:opacity-10" />
                 </div>
 
                 <div className="p-8 flex flex-col grow justify-between space-y-4">

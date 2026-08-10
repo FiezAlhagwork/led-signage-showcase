@@ -25,7 +25,7 @@ const itemVariants: Variants = {
 };
 
 const Services = () => {
-  const { t} = useLanguage();
+  const {t} = useLanguage();
 
 
   return (

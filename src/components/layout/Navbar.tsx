@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import Button from "../ui/Button";
 import { useLanguage } from "../../context/LanguageContext";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +87,6 @@ const Navbar = () => {
             </NavLink>
           </div>
 
-          {/* 2. الروابط في المنتصف */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-white">
             {links.map((link) => (
               <NavLink
@@ -101,7 +101,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* 3. زر تغيير اللغة */}
           <div className="hidden lg:block shrink-0">
             <Button
               size="md"
@@ -112,7 +111,6 @@ const Navbar = () => {
             </Button>
           </div>
 
-          {/* زر قائمة الموبايل */}
           <button
             onClick={() => setIsOpen(true)}
             className="lg:hidden text-white p-2 focus:outline-none shrink-0"
@@ -135,7 +133,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* قائمة الموبايل الجانبية (تم تعديل الاتجاه لتفتح من اليمين في العربي ومن اليسار في الإنجليزي) */}
       <div
         className={`lg:hidden fixed top-0 ${isAr ? "right-0 border-l" : "left-0 border-r"} h-full w-[75%] sm:w-75 max-w-full bg-dark-bg z-60 flex flex-col p-6 sm:p-8 border-white/10 shadow-2xl transition-transform duration-500 ease-in-out overflow-y-hidden ${
           isOpen
@@ -168,17 +165,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="mt-auto pt-6 border-t border-white/10">
-          <Button
-            size="lg"
-            variant="secondary"
-            className="w-full"
-            onClick={() => {
-              setLanguage(language === "EN" ? "AR" : "EN");
-              setIsOpen(false);
-            }}
-          >
-            {language === "EN" ? "العربية" : "English"}
-          </Button>
+          <LanguageSwitcher />
         </div>
       </div>
 

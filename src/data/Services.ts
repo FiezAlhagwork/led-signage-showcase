@@ -10,7 +10,7 @@ export interface ServiceItem {
   titleKey: ServicesGridKey;
   descKey: ServicesGridKey;
   image: string;
-  path: string;
+  path?: string;
 }
 
 export const servicesData: ServiceItem[] = [
@@ -33,6 +33,6 @@ export const servicesData: ServiceItem[] = [
     titleKey: "digitalPrintingTitle",
     descKey: "digitalPrintingDesc",
     image: img3,
-    path: "/digital-printing",
+    // path: "/digital-printing",
   },
 ];

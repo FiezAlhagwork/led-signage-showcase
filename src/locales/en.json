@@ -49,12 +49,12 @@
     "viewAll": "View All Projects"
   },
   "projectsGrid": {
-    "card1Title": "Restaurant Sign",
-    "card2Title": "Cafe / Restaurant",
-    "card3Title": "Pharmacy Sign",
-    "card4Title": "Clothing Store",
-    "card5Title": "Hotel Entrance",
-    "card6Title": "Company Office",
+    "card1Title": "Mishwar Restaurant Sign",
+    "card2Title": "Desk & Podium Flags Printing",
+    "card3Title": "Paper Menu Design",
+    "card4Title": "Salah Eddine Lab Sign",
+    "card5Title": "Dukhan Center Sign",
+    "card6Title": "Wayfinding Signs",
     "badgeBoxLetters": "Box Letters",
     "badgeSigns": "Signs",
     "badgePrinting": "Digital Printing"
@@ -119,7 +119,7 @@
     "whyChooseUs": "Why Choose Us",
     "contact": "Contact Us",
     "contactInfoTitle": "Contact Information",
-    "address": "Ma'raba - East Road - Opposite Al-Amani Wedding Hall",
+    "address": "Damascus, Syria",
     "phone1": "0960961620",
     "phone2": "0982237799",
     "email": "Email.abo.fahed.10@hotmail.com",
@@ -215,55 +215,206 @@
   "requestQuoteForThis": "Request Quote",
   "simTitle": "Open 3D Studio",
 
+
   "boxLetters": {
-    "white-acrylic": {
-      "title": "White Acrylic Box Letters",
-      "description": "The letters are made from 30mm light-emitting white acrylic with an aluminum backing, and LED lighting options are available.",
+    "product-01": {
+      "title": "Opal Acrylic Illuminated Letters",
+      "description": "Premium white acrylic channel letters offering a soft, uniform glow ideal for storefronts and modern facades.",
       "details": [
-        "30mm high-grade cast opal white acrylic",
-        "Precision CNC thermoformed edges with seamless joints",
-        "Energy-efficient Samsung/Osram IP67 LED modules",
-        "Rust-proof powder coated 1.5mm aluminum rear mounting plate"
+        "Uniform edge-to-edge light diffusion",
+        "Weather-resistant outdoor construction",
+        "Low power consumption LED system",
+        "Clean, minimal aesthetic finish"
       ]
     },
-    "aluminum-box": {
-      "title": "Aluminum Box Letters",
-      "description": "Box letters made from painted aluminum are offered with optional LED lighting and various mounting options.",
+    "product-02": {
+      "title": "Painted Aluminum Signage Letters",
+      "description": "Durable aluminum letters finished with custom paint colors, suitable for both illuminated and non-illuminated setups.",
       "details": [
-        "Electrostatic oven powder-coated aluminum casing",
-        "Available in all RAL custom architectural paint finishes",
-        "Optional halo backlit glow effect with acrylic diffuser base",
-        "Extreme durability against UV rays, rain, and snow"
+        "Custom RAL color matching available",
+        "Rust and corrosion resistant coating",
+        "Suitable for indoor and outdoor use",
+        "Lightweight yet structurally rigid"
       ]
     },
-    "illuminated-led-strips": {
-      "title": "Illuminated LED Strips and Custom Designs",
-      "description": "Opal acrylic front panel, paintable aluminum casing, and customizable LED strips for illuminated strips.",
+    "product-03": {
+      "title": "Dynamic LED Strip Letters",
+      "description": "Eye-catching letters featuring programmable RGB lighting for businesses that want a bold, dynamic storefront presence.",
       "details": [
-        "High-density COB/SMD LED linear illumination",
-        "Seamless curved aluminum extrusions for geometric accents",
-        "Uniform light diffusion without hotspot dots",
-        "Dimmable & RGB / CCT dynamic lighting options"
+        "Fully programmable color sequences",
+        "Smooth curved aluminum housing",
+        "Remote or app-based control options",
+        "High visibility day and night"
       ]
     },
-    "cutout-box-letters": {
-      "title": "Cutout Box Letters - Metal Options and Surface Treatments",
-      "description": "Cutout box letters in painted aluminum, stainless steel, copper, brass, and Corten steel options.",
+    "product-04": {
+      "title": "Laser-Cut Metal Letters",
+      "description": "Precision laser-cut letters available in stainless steel, brass, and Corten finishes for a refined architectural look.",
       "details": [
-        "Precision Fiber Laser cutting for micro-detail serif fonts and logos",
-        "Material choices: 316 Marine Stainless, Mirror Gold Brass, Vintage Corten",
-        "PVD Gold, Rose Gold, and Titanium Physical Vapor Deposition coatings",
-        "Rear stencil acrylic backing or direct standoff mount"
+        "Micro-precision laser cutting",
+        "Multiple premium metal finishes",
+        "Ideal for logos and detailed typography",
+        "Long-lasting structural durability"
       ]
     },
-    "illuminated-metal-acrylic": {
-      "title": "Illuminated Box Letters - Metal and Acrylic Options",
-      "description": "Illuminated box letters are produced with opal acrylic and metal embellishments. They can be customized with different metal and color options and can also be produced without LED lighting upon request.",
+    "product-05": {
+      "title": "Hybrid Metal & Acrylic Letters",
+      "description": "A sophisticated combination of metal edging and glowing acrylic faces, designed for high-end commercial branding.",
       "details": [
-        "Dual-material hybrid construction combining metal rims with cast acrylic",
-        "360° halo perimeter lighting and vibrant front face illumination",
-        "Interchangeable front face acrylic panels for easy maintenance",
-        "Heavy-duty architectural installation hardware included"
+        "360° perimeter halo lighting",
+        "Interchangeable acrylic face panels",
+        "Premium architectural mounting hardware",
+        "Striking day and night visibility"
+      ]
+    },
+    "product-06": {
+      "title": "Brushed Steel Front-Lit Letters",
+      "description": "Elegant brushed stainless steel letters with a soft front-lit glow, perfect for upscale retail and hospitality spaces.",
+      "details": [
+        "Brushed finish resists fingerprints and scratches",
+        "Even front-face illumination",
+        "Recessed mounting for a flush look",
+        "Ideal for lobbies and reception areas"
+      ]
+    },
+    "product-07": {
+      "title": "Matte Black Non-Illuminated Letters",
+      "description": "A bold, modern statement piece using matte black steel letters without lighting, favored for minimalist branding.",
+      "details": [
+        "Sleek matte black powder coating",
+        "Simple, direct wall installation",
+        "Low maintenance and highly durable",
+        "Works well in both day and interior lighting"
+      ]
+    },
+    "product-08": {
+      "title": "Bronze-Trimmed Acrylic Letters",
+      "description": "Clear acrylic letters accented with bronze trim and edge-lit LED technology for a refined, glowing outline effect.",
+      "details": [
+        "Elegant edge-lit LED glow",
+        "Bronze trim adds a luxury touch",
+        "Transparent acrylic core construction",
+        "Great for boutique and hospitality signage"
+      ]
+    },
+    "product-09": {
+      "title": "Copper-Plated Halo Letters",
+      "description": "Warm-toned copper-plated letters with halo backlighting, creating a rich glow that stands out after dark.",
+      "details": [
+        "Rich warm copper plating finish",
+        "Soft ambient halo backlight effect",
+        "Rear standoff mounting system",
+        "Distinctive, memorable brand presence"
+      ]
+    },
+    "product-10": {
+      "title": "Gold-Finish Dual Lit Letters",
+      "description": "Luxurious gold PVD-coated steel letters combining front and halo lighting for maximum visual impact.",
+      "details": [
+        "PVD gold coating for lasting shine",
+        "Dual front and halo LED lighting",
+        "Weatherproof architectural-grade build",
+        "Perfect for flagship storefronts"
+      ]
+    },
+    "product-11": {
+      "title": "Frosted Acrylic Wall Letters",
+      "description": "Softly frosted acrylic letters with internal LED diffusion, offering a gentle and welcoming glow.",
+      "details": [
+        "Frosted finish reduces glare",
+        "Flush wall-mounted installation",
+        "Even internal light diffusion",
+        "Outdoor rated for year-round use"
+      ]
+    },
+    "product-12": {
+      "title": "Anodized Aluminum Dimensional Letters",
+      "description": "Robust anodized aluminum letters designed for non-illuminated architectural signage with a premium finish.",
+      "details": [
+        "Anodized finish resists weathering",
+        "Structurally rigid for large formats",
+        "Spacer rail mounting for depth effect",
+        "Ideal for corporate building signage"
+      ]
+    },
+    "product-13": {
+      "title": "RGB Dynamic Acrylic Letters",
+      "description": "Vibrant acrylic letters with full RGB control, letting businesses match lighting to branding or promotions.",
+      "details": [
+        "Full RGB color customization",
+        "DMX controllable lighting system",
+        "Seamless aluminum extrusion housing",
+        "Great for entertainment and retail venues"
+      ]
+    },
+    "product-14": {
+      "title": "Corten Steel Cutout Letters",
+      "description": "Rustic weathered Corten steel letters with a distinctive aged patina, popular for artisanal and industrial branding.",
+      "details": [
+        "Natural weathered steel patina",
+        "Front cutout design with acrylic glow option",
+        "Extremely durable outdoor material",
+        "Distinct rustic-industrial aesthetic"
+      ]
+    },
+    "product-15": {
+      "title": "Rose Gold Halo Letters",
+      "description": "Elegant rose gold PVD-finished letters with halo backlighting, designed for boutique and lifestyle brands.",
+      "details": [
+        "Rose gold PVD coated finish",
+        "Soft halo backlight glow",
+        "Architectural substructure mounting",
+        "Premium boutique-style aesthetic"
+      ]
+    },
+    "product-16": {
+      "title": "Classic White Acrylic Letters",
+      "description": "A timeless white acrylic letter set with side-diffused lighting, suitable for a wide range of storefronts.",
+      "details": [
+        "Clean, classic white acrylic face",
+        "Even side-diffused illumination",
+        "Flush wall mount installation",
+        "Versatile for most business types"
+      ]
+    },
+    "product-17": {
+      "title": "Titanium-Coated Aluminum Letters",
+      "description": "Aluminum letters with a titanium-tone coating and optional halo lighting for a modern industrial look.",
+      "details": [
+        "Titanium-tone protective coating",
+        "Optional halo backlit configuration",
+        "Standoff pin mounting system",
+        "Weather resistant for outdoor use"
+      ]
+    },
+    "product-18": {
+      "title": "Linear COB Dynamic Letters",
+      "description": "High-density COB LED letters delivering smooth, uniform linear illumination for contemporary signage designs.",
+      "details": [
+        "High-density COB LED strips",
+        "Seamless curved aluminum rail",
+        "Uniform light without hotspots",
+        "Dimmable dynamic lighting control"
+      ]
+    },
+    "product-19": {
+      "title": "Marine-Grade Steel Letters",
+      "description": "Heavy-duty marine-grade stainless steel letters built to withstand harsh coastal and outdoor environments.",
+      "details": [
+        "AISI 316 marine-grade steel",
+        "Superior corrosion resistance",
+        "Threaded rear pin mounting",
+        "Built for long-term outdoor exposure"
+      ]
+    },
+    "product-20": {
+      "title": "Premium Hybrid Architectural Letters",
+      "description": "The flagship hybrid design combining steel rims and glowing acrylic faces for maximum brand presence.",
+      "details": [
+        "Combined steel and acrylic construction",
+        "Dual front and backlit LED system",
+        "Premium architectural rail mounting",
+        "Designed for flagship brand locations"
       ]
     }
   }

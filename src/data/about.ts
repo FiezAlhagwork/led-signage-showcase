@@ -1,4 +1,4 @@
-import img1 from "../assets/pexels-iefproductions-31498409.jpg";
+import img1 from "../assets/about2.jpg";
 
 export const aboutData = {
   image: img1, 

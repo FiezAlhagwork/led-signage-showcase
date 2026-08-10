@@ -1,4 +1,4 @@
-import aboutMainImage from "../assets/pexels-karola-g2-6224.jpg";
+import aboutMainImage from "../assets/pro5.jpg";
 
 export interface CounterItemData {
   id: string;

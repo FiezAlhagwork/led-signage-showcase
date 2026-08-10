@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
   return (
     <footer
       className="relative bg-[#252525] text-white pt-24 pb-12 overflow-hidden border-t border-white/5 w-full max-w-full"
-      dir={isAr ? "rtl" : "ltr"}
     >
       {/* الخط المائل العلوي */}
       <div className="absolute top-0 left-0 w-full h-16 bg-[#f7f7f7] transform -skew-y-2 origin-top-left pointer-events-none" />
@@ -42,7 +41,7 @@ const Footer: React.FC = () => {
         {/* الروابط ومعلومات التواصل */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-7">
-            <h3 className="text-lg font-bold mb-6 text-white tracking-wide border-l-4 border-[#FF6B00] pl-3">
+            <h3 className="text-lg font-bold mb-6 text-white tracking-wide border-l-4 border-primary pl-3">
               {footerT.quickLinksTitle}
             </h3>
 
@@ -66,12 +65,12 @@ const Footer: React.FC = () => {
                   <HashLink
                     smooth
                     to="/#about"
-                    className="hover:text-[#FF6B00] transition-colors flex items-center gap-2"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
                   >
                     {isAr ? (
-                      <FaChevronLeft className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronLeft className="text-xs text-primary shrink-0" />
                     ) : (
-                      <FaChevronRight className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronRight className="text-xs text-primary shrink-0" />
                     )}
                     <span>{footerT.about}</span>
                   </HashLink>
@@ -80,12 +79,12 @@ const Footer: React.FC = () => {
                   <HashLink
                     smooth
                     to="/#projects"
-                    className="hover:text-[#FF6B00] transition-colors flex items-center gap-2"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
                   >
                     {isAr ? (
-                      <FaChevronLeft className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronLeft className="text-xs text-primary shrink-0" />
                     ) : (
-                      <FaChevronRight className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronRight className="text-xs text-primary shrink-0" />
                     )}
                     <span>{footerT.projects}</span>
                   </HashLink>
@@ -97,12 +96,12 @@ const Footer: React.FC = () => {
                   <HashLink
                     smooth
                     to="/#services"
-                    className="hover:text-[#FF6B00] transition-colors flex items-center gap-2"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
                   >
                     {isAr ? (
-                      <FaChevronLeft className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronLeft className="text-xs text-primary shrink-0" />
                     ) : (
-                      <FaChevronRight className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronRight className="text-xs text-primary shrink-0" />
                     )}
                     <span>{footerT.services}</span>
                   </HashLink>
@@ -111,12 +110,12 @@ const Footer: React.FC = () => {
                   <HashLink
                     smooth
                     to="/#features"
-                    className="hover:text-[#FF6B00] transition-colors flex items-center gap-2"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
                   >
                     {isAr ? (
-                      <FaChevronLeft className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronLeft className="text-xs text-primary shrink-0" />
                     ) : (
-                      <FaChevronRight className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronRight className="text-xs text-primary shrink-0" />
                     )}
                     <span>{footerT.whyChooseUs}</span>
                   </HashLink>
@@ -124,12 +123,12 @@ const Footer: React.FC = () => {
                 <li>
                   <Link
                     to="/contact"
-                    className="hover:text-[#FF6B00] transition-colors flex items-center gap-2"
+                    className="hover:text-primary transition-colors flex items-center gap-2"
                   >
                     {isAr ? (
-                      <FaChevronLeft className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronLeft className="text-xs text-primary shrink-0" />
                     ) : (
-                      <FaChevronRight className="text-xs text-[#FF6B00] flex-shrink-0" />
+                      <FaChevronRight className="text-xs text-primary shrink-0" />
                     )}
                     <span>{footerT.contact}</span>
                   </Link>
@@ -139,24 +138,24 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="lg:col-span-5">
-            <h3 className="text-lg font-bold mb-6 text-white tracking-wide border-l-4 border-[#FF6B00] pl-3">
+            <h3 className="text-lg font-bold mb-6 text-white tracking-wide border-l-4 border-primary pl-3">
               {footerT.contactInfoTitle}
             </h3>
 
             <ul className="space-y-4 text-white/70 text-sm">
               <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
-                <span className="break-words">{footerT.address}</span>
+                <FaMapMarkerAlt className="text-primary mt-1 shrink-0" />
+                <span className="wrap-break-word">{footerT.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhoneAlt className="text-[#FF6B00] flex-shrink-0" />
+                <FaPhoneAlt className="text-primary shrink-0" />
                 <div className="flex flex-col" dir="ltr">
                   <span>{footerT.phone1}</span>
                   <span>{footerT.phone2}</span>
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <FaEnvelope className="text-[#FF6B00] flex-shrink-0" />
+                <FaEnvelope className="text-primary shrink-0" />
                 <span className="break-all" dir="ltr">
                   {footerT.email}
                 </span>

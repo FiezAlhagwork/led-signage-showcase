@@ -39,7 +39,6 @@ const Services: React.FC = () => {
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="container mx-auto px-6 relative z-10">
-        {/* رأس القسم: يأتي من اليسار */}
         <motion.div
           initial={
             shouldAnimate ? { opacity: 0, x: -50 } : { opacity: 1, x: 0 }
@@ -59,7 +58,6 @@ const Services: React.FC = () => {
           />
         </motion.div>
 
-        {/* شبكة الخدمات: تصعد من الأسفل للأعلى بتتابع */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={shouldAnimate ? containerVariants : undefined}
@@ -78,7 +76,7 @@ const Services: React.FC = () => {
                 variants={shouldAnimate ? itemVariants : undefined}
                 className="group relative bg-black/40 rounded-3xl overflow-hidden border border-white/10 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary flex flex-col"
               >
-                <div className="relative h-64 w-full overflow-hidden bg-zinc-900">
+                <div className="relative h-80 w-full overflow-hidden bg-zinc-900">
                   <img
                     src={service.image}
                     alt={title}

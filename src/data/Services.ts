@@ -1,6 +1,6 @@
-import img1 from "../assets/pexels-wendywei-13260086.jpg";
-import img2 from "../assets/pexels-arts-1685109.jpg";
-import img3 from "../assets/pexels-jakubzerdzicki-31357903.jpg";
+import img1 from "../assets/photo_2026-08-10_12-23-39.jpg";
+import img2 from "../assets/pro.jpg";
+import img3 from "../assets/pro2.jpg";
 import type en from "../locales/en.json";
 
 export type ServicesGridKey = keyof typeof en.servicesGrid;

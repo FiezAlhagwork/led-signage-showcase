@@ -32,7 +32,6 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col items-start">
-            {/* الأنيميشن يعمل عند الوصول للقسم مرة واحدة فقط */}
             <motion.div
               initial={
                 shouldAnimate ? { opacity: 0, y: 50 } : { opacity: 1, y: 0 }
@@ -65,12 +64,12 @@ const AboutSection: React.FC = () => {
               {aboutData.highlights.map((item, idx) => (
                 <div
                   key={item.id}
-                  className="flex items-center justify-between p-4 rounded-xl bg-[#18181b] border border-white/15 transition-all duration-300 hover:-translate-y-1.5 hover:border-[#FF6B00] hover:bg-[#222222] hover:shadow-xl hover:shadow-[#FF6B00]/15 group cursor-pointer"
+                  className="flex items-center justify-between p-4 rounded-xl bg-[#18181b] border border-white/15 transition-all duration-300 hover:-translate-y-1.5 hover:border-primary hover:bg-[#222222] hover:shadow-xl hover:shadow-primary/15 group cursor-pointer"
                 >
                   <span className="text-sm font-medium text-white/90 transition-colors duration-300 group-hover:text-white">
                     {highlightsList[idx]}
                   </span>
-                  <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-primary transition-transform duration-300 group-hover:scale-125 group-hover:bg-[#FF6B00] group-hover:text-white">
+                  <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-primary transition-transform duration-300 group-hover:scale-125 group-hover:bg-primary group-hover:text-white">
                     ✓
                   </div>
                 </div>

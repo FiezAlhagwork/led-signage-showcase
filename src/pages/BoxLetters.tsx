@@ -17,22 +17,26 @@ export const BoxLettersShowcase = () => {
   );
   const [imageFailed, setImageFailed] = useState(false);
 
-  // لمنع تسارع التنقل عند تدوير العجلة بسرعة
   const isScrollingRef = useRef(false);
 
   const currentProduct: BoxLetterProduct = boxLetterProducts[currentIndex];
-  const productText =
-    t.boxLetters[currentProduct.id as keyof typeof t.boxLetters];
+
+  const productText = t.boxLetters[
+    currentProduct.id as keyof typeof t.boxLetters
+  ] ?? {
+    title: currentProduct.id,
+    description: "",
+    details: [],
+  };
 
   useEffect(() => {
     setIsIlluminated(boxLetterProducts[currentIndex].defaultIlluminated);
     setImageFailed(false);
   }, [currentIndex]);
 
-  // التحكم بالتنقل بواسطة عجلة الماوس دون سكرول المتصفح
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      e.preventDefault(); // إيقاف السكرول الطبيعي للشاشة
+      e.preventDefault();
 
       if (isScrollingRef.current) return;
 
@@ -91,9 +95,7 @@ export const BoxLettersShowcase = () => {
                   type="button"
                   onClick={() => setIsIlluminated(!isIlluminated)}
                   className="relative group cursor-pointer bg-transparent border-0 p-0 focus:outline-none"
-                  aria-label={
-                    isIlluminated ? t.turnOffLights : t.turnOnLights
-                  }
+                  aria-label={isIlluminated ? t.turnOffLights : t.turnOnLights}
                   title={isIlluminated ? t.turnOffLights : t.turnOnLights}
                 >
                   {imageFailed ? (
@@ -127,9 +129,7 @@ export const BoxLettersShowcase = () => {
                   type="button"
                   onClick={() => setIsIlluminated(!isIlluminated)}
                   className="absolute -bottom-2 -right-2 sm:bottom-0 sm:right-0 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-white text-slate-900 shadow-lg border border-slate-200 hover:scale-105 transition-transform"
-                  aria-label={
-                    isIlluminated ? t.turnOffLights : t.turnOnLights
-                  }
+                  aria-label={isIlluminated ? t.turnOffLights : t.turnOnLights}
                   title={isIlluminated ? t.turnOffLights : t.turnOnLights}
                 >
                   {isIlluminated ? (

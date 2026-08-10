@@ -1,10 +1,11 @@
-import img3 from "../assets/pexels-theshuttervision-9660933.jpg";
-import img2 from "../assets/pexels-thngocbich-2362392.jpg";
-import img1 from "../assets/pexels-leander-239926047-14282834.jpg";
-import img6 from "../assets/pexels-sevenstormphotography-946312.jpg";
-import img5 from "../assets/pexels-introspectivedsgn-9538611.jpg";
-import img4 from "../assets/pexels-tima-miroshnichenko-5560196.jpg";
 import type en from "../locales/en.json";
+
+import img1 from "../assets/pro5.jpg";
+import img2 from "../assets/pro2.jpg";
+import img3 from "../assets/pro3.jpg";
+import img4 from "../assets/pro4.jpg";
+import img5 from "../assets/about2.jpg";
+import img6 from "../assets/pro7.jpg";
 
 export type ProjectsGridKey = keyof typeof en.projectsGrid;
 
@@ -21,42 +22,42 @@ export const featuredProjectsData: Project[] = [
     id: "1",
     titleKey: "card1Title",
     categoryKey: "badgeBoxLetters",
-    image: img1 ,
-    path: "/projects/restaurant-sign",
+    image: img1,
+    path: "/projects/mishwar-restaurant",
   },
   {
     id: "2",
     titleKey: "card2Title",
-    categoryKey: "badgeSigns",
+    categoryKey: "badgePrinting",
     image: img2,
-    path: "/projects/coffee-shop",
+    path: "/projects/table-tent-displays",
   },
   {
     id: "3",
     titleKey: "card3Title",
-    categoryKey: "badgeBoxLetters",
+    categoryKey: "badgePrinting",
     image: img3,
-    path: "/projects/pharmacy-sign",
+    path: "/projects/paper-menu",
   },
   {
     id: "4",
     titleKey: "card4Title",
-    categoryKey: "badgePrinting",
+    categoryKey: "badgeSigns",
     image: img4,
-    path: "/projects/clothing-store",
+    path: "/projects/salah-eddine-lab",
   },
   {
     id: "5",
     titleKey: "card5Title",
     categoryKey: "badgeSigns",
     image: img5,
-    path: "/projects/hotel-entrance",
+    path: "/projects/dukhan-center",
   },
   {
     id: "6",
     titleKey: "card6Title",
-    categoryKey: "badgeBoxLetters",
+    categoryKey: "badgePrinting",
     image: img6,
-    path: "/projects/corporate-office",
+    path: "/projects/food-truck-letters",
   },
 ];

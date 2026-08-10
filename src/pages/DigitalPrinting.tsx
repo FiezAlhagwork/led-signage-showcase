@@ -1,8 +1,13 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
 import { digitalPrintingSlides } from "../data/digitalPrintingData";
-import { ChevronUp, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ChevronUp,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 let hasAnimatedDigitalPrinting = false;
 
@@ -187,9 +192,7 @@ const DigitalPrinting: React.FC = () => {
                     ? "lg:col-span-4 h-47.5 md:h-87.5 p-0"
                     : "lg:col-span-4 h-37.5 md:h-72.5 p-3 flex items-center justify-center"
                 }`}
-                onClick={() =>
-                  setActiveImage(currentSlideData.secondaryImage)
-                }
+                onClick={() => setActiveImage(currentSlideData.secondaryImage)}
               >
                 <img
                   src={currentSlideData.secondaryImage}
@@ -240,7 +243,11 @@ const DigitalPrinting: React.FC = () => {
             disabled={currentIndex === 0}
             className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            {isAr ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
+            {isAr ? (
+              <ChevronRight className="w-4 h-4" />
+            ) : (
+              <ChevronLeft className="w-4 h-4" />
+            )}
           </button>
 
           <div className="flex gap-1.5">
@@ -248,7 +255,9 @@ const DigitalPrinting: React.FC = () => {
               <div
                 key={idx}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  currentIndex === idx ? "w-5 bg-[#FF6600]" : "w-1.5 bg-white/20"
+                  currentIndex === idx
+                    ? "w-5 bg-[#FF6600]"
+                    : "w-1.5 bg-white/20"
                 }`}
               />
             ))}
@@ -259,7 +268,11 @@ const DigitalPrinting: React.FC = () => {
             disabled={currentIndex === digitalPrintingSlides.length - 1}
             className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            {isAr ? <ChevronLeft className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+            {isAr ? (
+              <ChevronLeft className="w-4 h-4" />
+            ) : (
+              <ChevronRight className="w-4 h-4" />
+            )}
           </button>
         </div>
       </div>

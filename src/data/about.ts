@@ -1,7 +1,7 @@
-import img1 from "../assets/about3.jpg";
+import img1 from "../assets/about5.jpg";
 
 export const aboutData = {
-  image: img1, 
+  image: img1,
   ctaPath: "/about-us",
   highlights: [
     { id: "1", icon: "shield" },

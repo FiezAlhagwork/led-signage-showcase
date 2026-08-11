@@ -104,11 +104,11 @@ const AboutSection: React.FC = () => {
             className="lg:col-span-5 relative group"
           >
             <div className="absolute -inset-2 bg-linear-to-r from-primary/40 to-transparent rounded-2xl blur-2xl opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <div className="relative w-full h-100 lg:h-120 rounded-2xl overflow-hidden bg-[#18181b] border border-white/15 shadow-2xl transition-all duration-500 group-hover:border-primary">
+            <div className="relative w-full h-70 lg:h-120 rounded-2xl overflow-hidden bg-[#18181b] border border-white/15 shadow-2xl transition-all duration-500 group-hover:border-primary">
               <img
                 src={aboutData.image}
                 alt="About Us"
-                className="absolute right-1 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 "
+                className="absolute right-1 w-full h-full object-cover transition-transform duration-700 ease-out  "
               />
             </div>
           </motion.div>

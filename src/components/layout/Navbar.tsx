@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import Button from "../ui/Button";
 import { useLanguage } from "../../context/LanguageContext";
-import LanguageSwitcher from "../ui/LanguageSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -160,8 +159,15 @@ const Navbar = () => {
             </NavLink>
           ))}
         </div>
-        <div className="mt-auto pt-6 border-t border-white/10">
-          <LanguageSwitcher />
+        <div className="mt-auto pt-6 border-t border-white/10 w-full">
+          <Button
+          className="w-full"
+            size="md"
+            variant="secondary"
+            onClick={() => setLanguage(language === "EN" ? "AR" : "EN")}
+          >
+            {language === "AR" ? "English" : "العربية"}
+          </Button>{" "}
         </div>
       </div>
 

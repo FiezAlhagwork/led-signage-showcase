@@ -12,8 +12,8 @@ import image5Off from "../assets/image5-dark.png";
 import image5On from "../assets/image5-light.png";
 import image6Off from "../assets/image6-dark.png";
 import image6On from "../assets/image6-light.png";
-import image7Off from "../assets/image7-dark.png";
-import image7On from "../assets/image7-light.png";
+// import image7Off from "../assets/image7-dark.png";
+// import image7On from "../assets/image7-light.png";
 import image8Off from "../assets/image8-dark.png";
 import image8On from "../assets/image8-light.png";
 import image9Off from "../assets/image9-dark.png";
@@ -129,21 +129,21 @@ export const boxLetterProducts: BoxLetterProduct[] = [
       warranty: "4 Years Warranty",
     },
   },
-  {
-    id: "product-07",
-    material: "Matte Black Powder-Coated Steel",
-    lightingType: "Non-Illuminated",
-    mountingType: "Direct Wall Screw Mount",
-    thickness: "25mm",
-    images: { off: image7Off, on: image7On },
-    defaultIlluminated: false,
-    specs: {
-      materialGrade: "Mild Steel Grade A36",
-      ledType: "N/A",
-      ipRating: "IP54 Rated",
-      warranty: "2 Years Warranty",
-    },
-  },
+  // {
+  //   id: "product-07",
+  //   material: "Matte Black Powder-Coated Steel",
+  //   lightingType: "Non-Illuminated",
+  //   mountingType: "Direct Wall Screw Mount",
+  //   thickness: "25mm",
+  //   images: { off: image7Off, on: image7On },
+  //   defaultIlluminated: false,
+  //   specs: {
+  //     materialGrade: "Mild Steel Grade A36",
+  //     ledType: "N/A",
+  //     ipRating: "IP54 Rated",
+  //     warranty: "2 Years Warranty",
+  //   },
+  // },
   {
     id: "product-08",
     material: "Clear Acrylic + Bronze Trim",

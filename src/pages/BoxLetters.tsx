@@ -3,9 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp, ChevronDown, Sun, Moon, ImageOff } from "lucide-react";
 
-import { boxLetterProducts } from "../data/BoxLetters";
-import { useLanguage } from "../context/LanguageContext";
-import type { BoxLetterProduct } from "../types";
+import { boxLetterProducts } from "@/data/boxLettersData";
+import { useLanguage } from "@/context/LanguageContext";
+import type { BoxLetterProduct } from "@/types";
 
 export const BoxLettersShowcase = () => {
   const { t } = useLanguage();
@@ -21,13 +21,7 @@ export const BoxLettersShowcase = () => {
 
   const currentProduct: BoxLetterProduct = boxLetterProducts[currentIndex];
 
-  const productText = t.boxLetters[
-    currentProduct.id as keyof typeof t.boxLetters
-  ] ?? {
-    title: currentProduct.id,
-    description: "",
-    details: [],
-  };
+  const productText = t.boxLetters[currentProduct.id];
 
   useEffect(() => {
     setIsIlluminated(boxLetterProducts[currentIndex].defaultIlluminated);
@@ -108,20 +102,28 @@ export const BoxLettersShowcase = () => {
                       </span>
                     </div>
                   ) : (
-                    <img
-                      src={
-                        isIlluminated
-                          ? currentProduct.images.on
-                          : currentProduct.images.off
-                      }
-                      alt={productText.title}
-                      onError={() => setImageFailed(true)}
-                      className={`relative z-10 w-64 h-64 sm:w-96 sm:h-96 object-contain transition-all duration-300 ${
-                        isIlluminated
-                          ? "drop-shadow-[0_0_35px_rgba(251,146,60,0.4)] brightness-110"
-                          : "drop-shadow-xl brightness-95"
-                      }`}
-                    />
+                    /*
+                     * الصورتان (مطفي/مضيء) محمَّلتان معاً ودايماً بالـDOM، والتبديل بينهن
+                     * مجرد تلاشٍ بالـopacity — فما في أي تحميل صورة لحظة الضغط على الزر.
+                     */
+                    <div className="relative z-10 w-64 h-64 sm:w-96 sm:h-96">
+                      <img
+                        src={currentProduct.images.off}
+                        alt={productText.title}
+                        onError={() => setImageFailed(true)}
+                        className={`absolute inset-0 w-full h-full object-contain drop-shadow-xl brightness-95 transition-opacity duration-500 ease-in-out ${
+                          isIlluminated ? "opacity-0" : "opacity-100"
+                        }`}
+                      />
+                      <img
+                        src={currentProduct.images.on}
+                        alt=""
+                        onError={() => setImageFailed(true)}
+                        className={`absolute inset-0 w-full h-full object-contain drop-shadow-[0_0_35px_rgba(251,146,60,0.4)] brightness-110 transition-opacity duration-500 ease-in-out ${
+                          isIlluminated ? "opacity-100" : "opacity-0"
+                        }`}
+                      />
+                    </div>
                   )}
                 </button>
 
@@ -146,8 +148,8 @@ export const BoxLettersShowcase = () => {
             <button
               onClick={handlePrev}
               className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors"
-              aria-label={t.prevSlide || "Previous"}
-              title="Previous"
+              aria-label={t.prevSlide}
+              title={t.prevSlide}
             >
               <ChevronUp className="w-6 h-6" />
             </button>
@@ -159,8 +161,8 @@ export const BoxLettersShowcase = () => {
             <button
               onClick={handleNext}
               className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors"
-              aria-label={t.nextSlide || "Next"}
-              title="Next"
+              aria-label={t.nextSlide}
+              title={t.nextSlide}
             >
               <ChevronDown className="w-6 h-6" />
             </button>

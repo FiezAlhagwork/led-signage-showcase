@@ -1,9 +1,9 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function ScrollTop() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function ScrollTop() {
   return (
     <button
       onClick={scrollToTop}
-      aria-label="Scroll to top"
+      aria-label={t.a11y.scrollTop}
       className={`
         fixed bottom-6 right-6 z-50
         flex h-12 w-12 items-center justify-center

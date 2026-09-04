@@ -2,12 +2,15 @@
 
 @theme {
   --color-primary: #FF6B00;
+  --color-primary-hover: #E05A00; /* توحيد درجات الـ hover المتفرقة (e05e00 / e05b00 / d04a00) بلون واحد */
   --color-secondary: #4A4A4A;
   --color-light-gray: #F5F5F5;
   --color-white: #FFFFFF;
   --color-text-main: #1A1A1A;
   --color-text-muted: #757575;
   --color-dark-bg: #0a0a0a; /* أضفنا لون الخلفية الداكن هنا رسمياً */
+  --color-surface-dark: #161317; /* خلفية الصفحات الداكنة المتكررة (About/DigitalPrinting/Sign) */
+  --color-surface: #18181b; /* خلفية البطاقات/الأقسام الداكنة المتكررة (AboutSection/WhyChooseUs) */
 }
 
 :root {

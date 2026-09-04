@@ -1,30 +1,25 @@
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import type {
+  Language,
+  LanguageContextType,
+  LanguageProviderProps,
+} from "@/types";
 
 // استيراد ملفات الترجمة مرّة واحدة فقط هنا
-import enTranslations from "../locales/en.json";
-import erTranslations from "../locales/er.json"; // أو er.json حسب اسم الملف عندك
+import enTranslations from "@/locales/en.json";
+import erTranslations from "@/locales/er.json";
 
 const translations = {
   EN: enTranslations,
   AR: erTranslations,
 };
 
-// 1. تعريف الأنواع
-type Language = "EN" | "AR";
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  isRtl: boolean;
-  t: typeof enTranslations; // إضافة كائن الترجمة ليكون متاحاً في كل الموقع
-}
-
 // 2. إنشاء الـ Context
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 // 3. إنشاء الـ Provider
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguageState] = useState<Language>(() => {
     const savedLang = localStorage.getItem("lang");
     return (savedLang as Language) || "EN";

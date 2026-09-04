@@ -1,188 +1,71 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "../context/LanguageContext";
-import { aboutData, type CounterItemData } from "../data/aboutData";
+import { useLanguage } from "@/context/LanguageContext";
+import { aboutPageData } from "@/data/aboutPageData";
+import FadeIn from "@/components/animation/FadeIn";
+import CounterItem from "@/components/ui/CounterItem";
 
-let hasAnimatedCounters = false;
-let hasAnimatedAboutMain = false;
-let hasAnimatedBanner = false;
-
-const CounterItem: React.FC<{
-  item: CounterItemData;
-  title: string;
-  shouldAnimate: boolean;
-}> = ({ item, title, shouldAnimate }) => {
-  const [count, setCount] = useState(hasAnimatedCounters ? item.end : 0);
-  const ref = useRef<HTMLDivElement>(null);
-  const [hasStarted, setHasStarted] = useState(!shouldAnimate);
-  const [hasRun, setHasRun] = useState(false);
-
-  useEffect(() => {
-    if (!shouldAnimate || hasAnimatedCounters) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setCount(item.end);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasRun) {
-          setHasStarted(true);
-          setHasRun(true);
-          hasAnimatedCounters = true;
-        }
-      },
-      { threshold: 0.3 },
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasRun, shouldAnimate, item.end]);
-
-  useEffect(() => {
-    if (!hasStarted || (hasAnimatedCounters && count === item.end)) return;
-
-    let start = 0;
-    const duration = 2000;
-    const increment = item.end / (duration / 16);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= item.end) {
-        setCount(item.end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [hasStarted, item.end]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={shouldAnimate ? { opacity: 0, y: 40 } : { opacity: 1, y: 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-[#1e1a20]/80 border border-white/10 rounded-2xl p-6 text-center shadow-xl flex flex-col items-center justify-center transition-transform hover:scale-105 duration-300"
-    >
-      <div className="text-3xl md:text-4xl font-extrabold text-[#FF6600] mb-2">
-        {count}
-        {item.suffix}
-      </div>
-      <div className="text-white/80 text-xs md:text-sm font-medium">
-        {title}
-      </div>
-    </motion.div>
-  );
-};
-
-const About: React.FC = () => {
-  const { language, t } = useLanguage();
+const About = () => {
+  const { t, isRtl: isAr } = useLanguage();
   const navigate = useNavigate();
-  const isAr = language === "AR";
-
-  const shouldAnimateCounters = !hasAnimatedCounters;
-  const shouldAnimateAbout = !hasAnimatedAboutMain;
-  const shouldAnimateBanner = !hasAnimatedBanner;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const aboutText = t?.aboutru || {};
-  const counterTitles = aboutText.counters || {};
+  const aboutT = t.aboutru;
+  const counterTitles = aboutT.counters;
 
-  const badgeText = aboutText.slides?.slide1?.badge || "";
-  const titleText = aboutText.slides?.slide1?.title || "";
-  const desc1Text = aboutText.slides?.slide1?.description || "";
-  const desc2Text = aboutText.slides?.slide3?.description || "";
+  const badgeText = aboutT.slides.slide1.badge;
+  const titleText = aboutT.slides.slide1.title;
+  const desc1Text = aboutT.slides.slide1.description;
+  const desc2Text = aboutT.slides.slide3.description;
 
-  const bannerTitle = aboutText.banner?.title || "";
-  const bannerBtn = aboutText.banner?.button || "";
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  };
+  const bannerTitle = aboutT.banner.title;
+  const bannerBtn = aboutT.banner.button;
 
   return (
     <main
-      className="w-full min-h-screen bg-[#161317] pt-24 pb-16 px-4 md:px-12 flex flex-col justify-between select-none"
+      className="w-full min-h-screen bg-surface-dark pt-24 pb-16 px-4 md:px-12 flex flex-col justify-between select-none"
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="w-full max-w-337.5 mx-auto space-y-16">
-        <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-          variants={shouldAnimateCounters ? containerVariants : {}}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          onViewportEnter={() => {
-            hasAnimatedCounters = true;
-          }}
-        >
-          {aboutData.counters.map((counter) => (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {aboutPageData.counters.map((counter) => (
             <CounterItem
               key={counter.id}
               item={counter}
-              title={
-                counterTitles[counter.titleKey as keyof typeof counterTitles] ||
-                ""
-              }
-              shouldAnimate={shouldAnimateCounters}
+              title={counterTitles[counter.titleKey]}
             />
           ))}
-        </motion.div>
+        </div>
 
         <div
           className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#1c181d]/50 border border-white/10 p-6 md:p-10 rounded-3xl shadow-2xl`}
         >
-          <motion.div
-            initial={
-              shouldAnimateAbout
-                ? { opacity: 0, x: isAr ? -30 : 30 }
-                : { opacity: 1, x: 0 }
-            }
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            onViewportEnter={() => {
-              hasAnimatedAboutMain = true;
-            }}
-            transition={{ duration: 0.6 }}
+          <FadeIn
+            direction={isAr ? "left" : "right"}
+            distance={30}
+            duration={0.6}
+            viewportAmount={0}
             className={`lg:col-span-7 h-70 md:h-105 rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative group ${isAr ? "lg:order-2" : "lg:order-1"}`}
           >
             <img
-              src={aboutData.mainImage}
-              alt="Venus Reklam About Us"
+              src={aboutPageData.mainImage}
+              alt={t.a11y.aboutImage}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
-          </motion.div>
+          </FadeIn>
 
-          <motion.div
-            initial={
-              shouldAnimateAbout ? { opacity: 0, x: 50 } : { opacity: 1, x: 0 }
-            }
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+          <FadeIn
+            direction="right"
+            distance={50}
+            duration={0.7}
+            viewportAmount={0}
             className={`lg:col-span-5 space-y-4 ${isAr ? "lg:order-1 text-right" : "lg:order-2 text-left"}`}
           >
-            <span className="text-[#FF6600] font-semibold text-xs md:text-sm tracking-wide uppercase block">
+            <span className="text-primary font-semibold text-xs md:text-sm tracking-wide uppercase block">
               {badgeText}
             </span>
             <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
@@ -194,20 +77,15 @@ const About: React.FC = () => {
             <p className="text-white/70 text-xs md:text-sm leading-relaxed">
               {desc2Text}
             </p>
-          </motion.div>
+          </FadeIn>
         </div>
 
-        <motion.div
-          initial={
-            shouldAnimateBanner ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }
-          }
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          onViewportEnter={() => {
-            hasAnimatedBanner = true;
-          }}
-          transition={{ duration: 0.6 }}
-          className={`w-full bg-[#FF6600] rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden ${isAr ? "md:flex-row-reverse" : ""}`}
+        <FadeIn
+          direction="up"
+          distance={30}
+          duration={0.6}
+          viewportAmount={0}
+          className={`w-full bg-primary rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden ${isAr ? "md:flex-row-reverse" : ""}`}
         >
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[16px_16px] pointer-events-none"></div>
           <h3
@@ -217,11 +95,11 @@ const About: React.FC = () => {
           </h3>
           <button
             onClick={() => navigate("/communication")}
-            className="bg-[#161317] hover:bg-black text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl shadow-lg border border-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer z-10 whitespace-nowrap"
+            className="bg-surface-dark hover:bg-black text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl shadow-lg border border-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer z-10 whitespace-nowrap"
           >
             {bannerBtn}
           </button>
-        </motion.div>
+        </FadeIn>
       </div>
     </main>
   );

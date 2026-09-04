@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo.png";
-import Button from "../ui/Button";
-import { useLanguage } from "../../context/LanguageContext";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.webp";
+import Button from "@/components/ui/Button";
+import { useLanguage } from "@/context/LanguageContext";
+import { navLinks } from "@/data/navbarData";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +12,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const { language, setLanguage } = useLanguage();
-  const isAr = language === "AR";
+  const { language, setLanguage, t, isRtl: isAr } = useLanguage();
 
-  /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-  const navT = (useLanguage() as any).t?.nav || {};
+  const visibleLinks = navLinks.filter((link) => !link.hidden);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
@@ -46,21 +46,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const links = [
-    { name: navT.home || (isAr ? "الرئيسية" : "Home"), path: "/" },
-    {
-      name: navT.boxLetters || (isAr ? "حروف بارزة" : "Box Letters"),
-      path: "/box-letters",
-    },
-    { name: navT.sign || (isAr ? "لوحات" : "Sign"), path: "/sign" },
-    // { name: navT.digitalPrinting || (isAr ? "طباعة رقمية" : "Digital Printing"), path: "/digital-printing" },
-    { name: navT.aboutUs || (isAr ? "من نحن" : "About Us"), path: "/about-us" },
-    {
-      name: navT.communication || (isAr ? "تواصل معنا" : "Contact"),
-      path: "/communication",
-    },
-  ];
-
   return (
     <>
       <nav
@@ -77,14 +62,14 @@ const Navbar = () => {
             <NavLink to="/">
               <img
                 src={logo}
-                alt="Noor Logo"
+                alt={t.a11y.logo}
                 className="h-5 md:h-8  w-auto object-contain"
               />
             </NavLink>
           </div>
 
           <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-white">
-            {links.map((link) => (
+            {visibleLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
@@ -92,7 +77,7 @@ const Navbar = () => {
                   `text-[13px] xl:text-[14px] font-semibold transition-all whitespace-nowrap ${isActive ? "text-primary" : "text-white/80 hover:text-primary"}`
                 }
               >
-                {link.name}
+                {t.nav[link.labelKey]}
               </NavLink>
             ))}
           </div>
@@ -103,28 +88,16 @@ const Navbar = () => {
               variant="secondary"
               onClick={() => setLanguage(language === "EN" ? "AR" : "EN")}
             >
-              {language === "AR" ? "English" : "العربية"}
+              {t.nav.switchTo}
             </Button>
           </div>
 
           <button
             onClick={() => setIsOpen(true)}
             className="lg:hidden text-white p-2 focus:outline-none shrink-0"
-            aria-label="Open Menu"
+            aria-label={t.a11y.openMenu}
           >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            <Menu className="w-8 h-8" />
           </button>
         </div>
       </nav>
@@ -141,21 +114,21 @@ const Navbar = () => {
         <button
           onClick={() => setIsOpen(false)}
           className="self-end text-white bg-white/10 p-2 rounded-full mb-8 hover:bg-white/20 transition-colors"
-          aria-label="Close Menu"
+          aria-label={t.a11y.closeMenu}
         >
-          ✕
+          <X className="w-5 h-5" />
         </button>
         <div
           className={`flex flex-col gap-5 ${isAr ? "text-right" : "text-left"}`}
         >
-          {links.map((link) => (
+          {visibleLinks.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
               className="text-base sm:text-lg font-bold text-white hover:text-primary transition-colors"
             >
-              {link.name}
+              {t.nav[link.labelKey]}
             </NavLink>
           ))}
         </div>
@@ -166,7 +139,7 @@ const Navbar = () => {
             variant="secondary"
             onClick={() => setLanguage(language === "EN" ? "AR" : "EN")}
           >
-            {language === "AR" ? "English" : "العربية"}
+            {t.nav.switchTo}
           </Button>{" "}
         </div>
       </div>

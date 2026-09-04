@@ -1,18 +1,12 @@
-import React from "react";
+import type { ButtonProps } from "@/types";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
-  children: React.ReactNode;
-}
-
-const Button: React.FC<ButtonProps> = ({
+const Button = ({
   variant = "primary",
   size = "md",
   children,
   className = "",
   ...props
-}) => {
+}: ButtonProps) => {
   const baseStyles =
     "inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap select-none";
   const variants = {

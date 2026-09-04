@@ -1,20 +1,6 @@
-import React from "react";
+import type { SectionHeaderProps } from "@/types";
 
-interface SectionHeaderProps {
-  badge?: string;
-  title: string;
-  description?: string;
-  centered?: boolean;
-
-  // ألوان اختيارية
-  titleColor?: string;
-  descriptionColor?: string;
-  badgeColor?: string;
-  badgeBorderColor?: string;
-  badgeBgColor?: string;
-}
-
-const SectionHeader: React.FC<SectionHeaderProps> = ({
+const SectionHeader = ({
   badge,
   title,
   description,
@@ -22,15 +8,15 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 
   titleColor = "text-white",
   descriptionColor = "text-white/70",
-  badgeColor = "text-[#FF6B00]",
-  badgeBorderColor = "border-[#FF6B00]/40",
-  badgeBgColor = "bg-[#FF6B00]/10",
-}) => {
+  badgeColor = "text-primary",
+  badgeBorderColor = "border-primary/40",
+  badgeBgColor = "bg-primary/10",
+}: SectionHeaderProps) => {
   return (
     <div className={centered ? "text-center mb-16" : "text-right mb-16"}>
       {badge && (
         <span
-          className={`inline-block px-5 py-2 rounded-full border ${badgeBorderColor} ${badgeColor} text-xs font-semibold tracking-wider mb-4 ${badgeBgColor} shadow-sm transition-all duration-300 hover:scale-105 hover:border-[#FF6B00] hover:bg-[#FF6B00]/20 hover:shadow-lg hover:shadow-[#FF6B00]/20 cursor-pointer`}
+          className={`inline-block px-5 py-2 rounded-full border ${badgeBorderColor} ${badgeColor} text-xs font-semibold tracking-wider mb-4 ${badgeBgColor} shadow-sm transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-primary/20 hover:shadow-lg hover:shadow-primary/20 cursor-pointer`}
         >
           {badge}
         </span>

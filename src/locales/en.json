@@ -4,17 +4,14 @@
     "boxLetters": "Box Letters",
     "sign": "Sign",
     "digitalPrinting": "Digital Printing",
-    "gallery": "Gallery",
     "aboutUs": "About Us",
     "communication": "Contact Us",
-    "language": "Language:"
+    "switchTo": "العربية"
   },
   "hero": {
-    "welcome": "Welcome to Noor",
     "title": "We Bring Your Brand to",
     "titleHighlight": "Life",
     "description": "We give your brand tangible dimensions that dazzle the eyes through the latest illuminated signage technologies and luxurious digital printing.",
-    "btnGallery": "Explore Gallery",
     "btnContact": "Contact Us"
   },
   "services": {
@@ -81,11 +78,13 @@
     "hoursLabel": "Working Hours",
     "hoursText": "Saturday - Thursday: From 8:00 to 9:00",
     "emailLabel": "Email",
-    "mapBtn": "Open in Google Maps"
+    "mapBtn": "Open in Google Maps",
+    "whatsappTemplate": "Name: {name}\nPhone: {phone}\nProject: {project}\nMessage: {message}"
   },
   "whyChooseUs": {
     "badge": "WHY CHOOSE US",
     "title": "Why We Are the Right Partner For Your Brand",
+    "sectionDescription": "We have a professional team with years of experience delivering the latest advertising solutions and innovative designs.",
     "card1": {
       "title": "Extensive Experience & Professionalism",
       "description": "We have a professional team with years of experience delivering the latest advertising solutions and innovative designs."
@@ -102,11 +101,6 @@
       "title": "Strict Deadlines & Ongoing Support",
       "description": "We understand the value of time in your business, committed to delivering projects on schedule with continuous support.",
       "subDescription": "Whether you are a startup or a large enterprise, we ensure full flexibility and speed in processing your requests."
-    },
-    "services": {
-      "tag": "Our Services",
-      "sectionTitle": "Featured Services",
-      "sectionDesc": "We provide the best solutions..."
     }
   },
   "footer": {
@@ -120,9 +114,6 @@
     "contact": "Contact Us",
     "contactInfoTitle": "Contact Information",
     "address": "Damascus, Syria",
-    "phone1": "0960961620",
-    "phone2": "0982237799",
-    "email": "Email.abo.fahed.10@hotmail.com",
     "rights": "All rights reserved.",
     "developer": "Website Design & Development"
   },
@@ -205,6 +196,26 @@
       "starRating": "5 Star Rating",
       "expertTeam": "Expert Team Members"
     }
+  },
+
+  "a11y": {
+    "logo": "Noor Advertising logo",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "close": "Close",
+    "scrollTop": "Back to top",
+    "mapTitle": "Company location map",
+    "heroSlide": "Showcase slide {n}",
+    "aboutImage": "A view of our advertising work",
+    "signImage": "Signage project sample",
+    "printImage": "Digital printing project sample",
+    "printDetailImage": "Close-up detail of the printed work",
+    "zoomedImage": "Enlarged project image"
+  },
+
+  "notFound": {
+    "title": "Page not found",
+    "backHome": "Back to home"
   },
 
   "specsTitle": "Specifications",

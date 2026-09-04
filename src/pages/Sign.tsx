@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCreative,
@@ -8,23 +7,21 @@ import {
   Navigation,
 } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { useLanguage } from "../context/LanguageContext";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-import { signSlidesData } from "../data/signData";
-import SectionHeader from "../components/ui/SectionHeader";
+import { signSlidesData } from "@/data/signData";
+import SectionHeader from "@/components/ui/SectionHeader";
+import FadeIn from "@/components/animation/FadeIn";
+import ImageLightbox from "@/components/ui/ImageLightbox";
 
 import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// متغير عالمي لضمان عمل الأنيميشن مرة واحدة فقط في الجلسة للصفحة
-let hasAnimatedSign = false;
-
-const Sign: React.FC = () => {
+const Sign = () => {
   const { language, t } = useLanguage();
-
-  const shouldAnimate = !hasAnimatedSign;
 
   // حل المشكلة: إجبار الصفحة على البدء من الأعلى عند تحميل المكون
   useEffect(() => {
@@ -37,39 +34,25 @@ const Sign: React.FC = () => {
   const [rightBtnEl, setRightBtnEl] = useState<HTMLButtonElement | null>(null);
   const swiperRef = useRef<SwiperType | null>(null);
 
-  const slidesContent = [
-    t.signSection?.slides?.wayfinding,
-    t.signSection?.slides?.aluminum,
-    t.signSection?.slides?.totem,
-    t.signSection?.slides?.illuminated,
-  ];
 
   return (
-    <main className="w-full min-h-screen bg-[#161317] py-20 px-2 md:px-6 flex flex-col justify-center overflow-hidden relative">
+    <main className="w-full min-h-screen bg-surface-dark py-20 px-2 md:px-6 flex flex-col justify-center overflow-hidden relative">
       {/* عنوان القسم */}
-      <motion.div
-        initial={shouldAnimate ? { opacity: 0, y: -20 } : { opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        onAnimationComplete={() => {
-          hasAnimatedSign = true;
-        }}
-      >
+      <FadeIn trigger="mount" direction="down" distance={20} duration={0.6}>
         <SectionHeader
-          badge={t.signSection?.hero?.badge}
-          title={t.signSection?.hero?.title}
-          description={t.services?.sectionDesc}
+          badge={t.signSection.hero.badge}
+          title={t.signSection.hero.title}
+          description={t.services.sectionDesc}
           centered={true}
         />
-      </motion.div>
+      </FadeIn>
 
       {/* حاوية السلايدر مع أنيميشن تدريجي */}
-      <motion.div
-        initial={
-          shouldAnimate ? { opacity: 0, scale: 0.95 } : { opacity: 1, scale: 1 }
-        }
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+      <FadeIn
+        trigger="mount"
+        scale={0.95}
+        duration={0.7}
+        delay={0.2}
         className="w-full max-w-[1700px] mx-auto px-2 relative"
       >
         <Swiper
@@ -95,16 +78,16 @@ const Sign: React.FC = () => {
           autoplay={{ delay: 6000, disableOnInteraction: true }}
           pagination={{ clickable: true }}
           navigation={{
-            prevEl: rightBtnEl,
-            nextEl: leftBtnEl,
+            prevEl: leftBtnEl,
+            nextEl: rightBtnEl,
           }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
           className="w-full py-4"
         >
-          {signSlidesData.map((item, index) => {
-            const currentSlide = slidesContent[index];
+          {signSlidesData.map((item) => {
+            const currentSlide = t.signSection.slides[item.contentKey];
 
             return (
               <SwiperSlide
@@ -112,9 +95,9 @@ const Sign: React.FC = () => {
                 className="flex justify-center cursor-grab active:cursor-grabbing"
               >
                 <div className="relative w-full bg-[#1e1b22] border border-white/5 rounded-3xl p-4 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden min-h-125 md:min-h-145">
-                  <div className="group w-full lg:w-[46%] bg-[#26222b]/90 backdrop-blur-md p-5 md:p-12 rounded-2xl shadow-xl z-10 text-white space-y-4 md:space-y-5 border border-white/10 transition-all duration-500 hover:scale-[1.02] hover:border-[#FF6600]/40">
+                  <div className="group w-full lg:w-[46%] bg-[#26222b]/90 backdrop-blur-md p-5 md:p-12 rounded-2xl shadow-xl z-10 text-white space-y-4 md:space-y-5 border border-white/10 transition-all duration-500 hover:scale-[1.02] hover:border-primary/40">
                     <h2
-                      className={`text-xl md:text-4xl font-extrabold tracking-tight leading-snug text-white group-hover:text-[#FF6600] `}
+                      className={`text-xl md:text-4xl font-extrabold tracking-tight leading-snug text-white group-hover:text-primary `}
                     >
                       {currentSlide?.title}
                     </h2>
@@ -127,17 +110,25 @@ const Sign: React.FC = () => {
 
                   <div
                     onClick={() => setActiveImage(item.image)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setActiveImage(item.image);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
                     className="w-full lg:w-[50%] h-55 md:h-120 rounded-2xl overflow-hidden shadow-2xl relative cursor-pointer group/img border border-white/5"
-                    title={t.signSection?.controls?.zoomTitle}
+                    title={t.signSection.controls.zoomTitle}
                   >
                     <img
                       src={item.image}
-                      alt="Tabela visual"
+                      alt={t.a11y.signImage}
                       className="w-full h-full object-cover transform group-hover/img:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                      <span className="bg-[#FF6600] text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                        <span></span> {t.signSection?.hero?.zoomText}
+                      <span className="bg-primary text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                        <span></span> {t.signSection.hero.zoomText}
                       </span>
                     </div>
                   </div>
@@ -150,73 +141,36 @@ const Sign: React.FC = () => {
         {/* زر اليسار */}
         <button
           ref={(node) => setLeftBtnEl(node)}
-          aria-label={t.signSection?.controls?.next}
-          className="absolute top-[60%] lg:top-1/2 -translate-y-1/2 left-2 md:left-4 z-20 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#161317]/85 border border-[#FF6600]/40 backdrop-blur-md flex items-center justify-center hover:bg-[#FF6600] hover:scale-110 transition-all duration-300 group shadow-lg cursor-pointer"
+          aria-label={t.signSection.controls.prev}
+          className="absolute top-[60%] lg:top-1/2 -translate-y-1/2 left-2 md:left-4 z-20 w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface-dark/85 border border-primary/40 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300 group shadow-lg cursor-pointer"
         >
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-[#FF6600] group-hover:text-white transition-colors"
-          >
-            <path
-              d="M15 18l-6-6 6-6"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <ChevronLeft
+            size={15}
+            strokeWidth={2.5}
+            className="text-primary group-hover:text-white transition-colors"
+          />
         </button>
 
         {/* زر اليمين */}
         <button
           ref={(node) => setRightBtnEl(node)}
-          aria-label={t.signSection?.controls?.prev}
-          className="absolute top-[60%] lg:top-1/2 -translate-y-1/2 right-2 md:right-4 z-20 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#161317]/85 border border-[#FF6600]/40 backdrop-blur-md flex items-center justify-center hover:bg-[#FF6600] hover:scale-110 transition-all duration-300 group shadow-lg cursor-pointer"
+          aria-label={t.signSection.controls.next}
+          className="absolute top-[60%] lg:top-1/2 -translate-y-1/2 right-2 md:right-4 z-20 w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface-dark/85 border border-primary/40 backdrop-blur-md flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300 group shadow-lg cursor-pointer"
         >
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            className="text-[#FF6600] group-hover:text-white transition-colors"
-          >
-            <path
-              d="M9 18l6-6-6-6"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <ChevronRight
+            size={15}
+            strokeWidth={2.5}
+            className="text-primary group-hover:text-white transition-colors"
+          />
         </button>
-      </motion.div>
+      </FadeIn>
 
-      {activeImage && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
-        >
-          <div className="relative max-w-6xl w-full max-h-[90vh] flex items-center justify-center">
-            <button
-              onClick={() => setActiveImage(null)}
-              className="absolute -top-12 right-0 md:-right-4 bg-[#FF6600] text-white hover:bg-[#e05b00] w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shadow-lg transition-colors z-50 cursor-pointer"
-              title={t.signSection?.controls?.close}
-            >
-              ✕
-            </button>
-            <img
-              src={activeImage}
-              alt="Enlarged view"
-              className="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl border border-white/10"
-            />
-          </div>
-        </motion.div>
-      )}
+      <ImageLightbox
+        image={activeImage}
+        onClose={() => setActiveImage(null)}
+        alt={t.a11y.zoomedImage}
+        closeLabel={t.signSection.controls.close}
+      />
     </main>
   );
 };

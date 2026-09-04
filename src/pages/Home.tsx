@@ -1,10 +1,10 @@
-import AboutSection from "../components/home/AboutSection";
-import Hero from "../components/home/Hero";
-import Projects from "../components/home/Projects";
+import AboutSection from "@/components/home/AboutSection";
+import Hero from "@/components/home/Hero";
+import Projects from "@/components/home/Projects";
 
-import Services from "../components/home/Services";
-import WhyChooseUs from "../components/home/WhyChooseUs";
-import ScrollTop from "../components/ui/ScrollTop";
+import Services from "@/components/home/Services";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import ScrollTop from "@/components/ui/ScrollTop";
 
 const Home = () => {
   return (

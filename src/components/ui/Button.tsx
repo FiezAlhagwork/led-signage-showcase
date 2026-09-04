@@ -7,6 +7,7 @@ const Button = ({
   children,
   className = "",
   to,
+  href,
   ...props
 }: ButtonProps) => {
   const baseStyles =
@@ -26,6 +27,20 @@ const Button = ({
   };
 
   const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+
+  if (href) {
+    const isExternal = href.startsWith("http");
+    return (
+      <a
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className={classes}
+      >
+        {children}
+      </a>
+    );
+  }
 
   if (to) {
     return (

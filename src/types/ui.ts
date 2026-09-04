@@ -11,6 +11,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * ضروري لأن زر جوا رابط (<a><button>) HTML غير صالح وبيربك قارئات الشاشة.
    */
   to?: string;
+  /**
+   * رابط خارجي (واتساب، خرائط، سوشال) — بيرندر <a> بنفس الستايل.
+   * الفرق عن `to`: هاد بيطلع برّا الموقع فبينفتح بتبويب جديد.
+   */
+  href?: string;
 }
 
 export interface CardProps {

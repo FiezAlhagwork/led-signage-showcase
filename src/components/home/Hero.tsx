@@ -1,4 +1,5 @@
-import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
+import { useLanguage } from "@/context/useLanguage";
+import { contactData } from "@/data/contactData";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/animation/FadeIn";
 
@@ -12,7 +13,6 @@ import { heroSlides } from "@/data/heroData";
 
 const Hero = () => {
   const { language, t } = useLanguage();
-  const localizedPath = useLocalizedPath();
 
   return (
     <section
@@ -97,8 +97,9 @@ const Hero = () => {
           delay={0.8}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-40"
         >
+          {/* الزر بيفتح محادثة واتساب مباشرة بدل صفحة التواصل */}
           <Button
-            to={localizedPath("/communication")}
+            href={`https://wa.me/${contactData.whatsappNumber}`}
             size="lg"
             variant="primary"
             className="w-full sm:w-auto"

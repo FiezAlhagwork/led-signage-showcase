@@ -1,6 +1,6 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import Card from "@/components/ui/Card";
+import { useLocalizedPath } from "@/context/useLanguage";
 import type { ServiceCardProps } from "@/types";
 
 /** بطاقة خدمة واحدة بشبكة "خدماتنا" — صورة + عنوان + وصف + رابط "اقرأ المزيد". */
@@ -12,12 +12,23 @@ const ServiceCard = ({
   path,
   isAr,
 }: ServiceCardProps) => {
+  const localizedPath = useLocalizedPath();
+
+  /*
+   * البطاقة كلها هي الرابط، مو بس سطر "اقرأ المزيد" — هيك تأثير المرور صادق
+   * وهدف الضغط أكبر. خدمة بلا مسار (مخفية عن قصد) بتنعرض ساكنة بلا رابط.
+   */
   return (
-    <Card className="bg-black/40 rounded-3xl">
+    <Card
+      to={path ? localizedPath(path) : undefined}
+      className="bg-black/40 rounded-3xl"
+    >
       <div className="relative h-80 w-full overflow-hidden bg-zinc-900">
         <img
           src={image}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
       </div>
@@ -30,17 +41,21 @@ const ServiceCard = ({
           <p className="text-white/70 text-sm leading-relaxed">{description}</p>
         </div>
 
-        <Link
-          to={path || ""}
-          className="inline-flex items-center gap-2 text-primary font-semibold text-sm pt-2 group-hover:translate-x-1 transition-transform"
+        <span
+          className={`inline-flex items-center gap-2 font-semibold text-sm pt-2 ${
+            path
+              ? "text-primary transition-transform duration-300 group-hover:translate-x-1"
+              : "text-primary/50"
+          }`}
         >
-          <span>{learnMoreText}</span>
-          {isAr ? (
-            <ArrowLeft className="w-4 h-4" />
-          ) : (
-            <ArrowRight className="w-4 h-4" />
-          )}
-        </Link>
+          {learnMoreText}
+          {path &&
+            (isAr ? (
+              <ArrowLeft className="w-4 h-4" />
+            ) : (
+              <ArrowRight className="w-4 h-4" />
+            ))}
+        </span>
       </div>
     </Card>
   );

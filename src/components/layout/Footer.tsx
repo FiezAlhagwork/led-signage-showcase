@@ -1,7 +1,7 @@
 import logo from "@/assets/logo.webp";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/context/useLanguage";
+import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import { footerQuickLinks } from "@/data/footerData";
 import { contactData } from "@/data/contactData";
 import type { FooterLinkItem } from "@/types";
@@ -15,6 +15,7 @@ import {
 
 const Footer = () => {
   const { t, isRtl: isAr } = useLanguage();
+  const localizedPath = useLocalizedPath();
   const footerT = t.footer;
 
   const Chevron = isAr ? ChevronLeft : ChevronRight;
@@ -29,14 +30,19 @@ const Footer = () => {
       </>
     );
 
+    /* "/#about" بيصير "/ar/#about" — البادئة بتنضاف قبل علامة الـhash */
+    const [path, hash] = item.to.split("#");
+    const localized = localizedPath(path === "/" ? "/" : path.replace(/\/$/, ""));
+    const to = hash ? `${localized}#${hash}` : localized;
+
     return (
       <li key={item.to}>
         {item.kind === "hash" ? (
-          <HashLink smooth to={item.to} className={className}>
+          <HashLink smooth to={to} className={className}>
             {content}
           </HashLink>
         ) : (
-          <Link to={item.to} className={className}>
+          <Link to={to} className={className}>
             {content}
           </Link>
         )}

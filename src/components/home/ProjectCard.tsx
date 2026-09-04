@@ -13,12 +13,14 @@ const ProjectCard = ({
   return (
     <Card
       onClick={onClick}
-      className="bg-black/40 rounded-2xl hover:shadow-2xl hover:shadow-primary/15 cursor-pointer"
+      className="bg-black/40 rounded-2xl hover:shadow-2xl hover:shadow-primary/15"
     >
       <div className="relative h-64 w-full overflow-hidden bg-zinc-900">
         <img
           src={image}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
 

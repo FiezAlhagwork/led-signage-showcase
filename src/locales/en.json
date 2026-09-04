@@ -4,6 +4,7 @@
     "boxLetters": "Box Letters",
     "sign": "Sign",
     "digitalPrinting": "Digital Printing",
+    "gallery": "Our Work",
     "aboutUs": "About Us",
     "communication": "Contact Us",
     "switchTo": "العربية"
@@ -38,6 +39,11 @@
     "feature3": "On-Time Delivery",
     "feature4": "Modern Manufacturing Equipment",
     "learnMore": "Learn More About Us"
+  },
+  "gallery": {
+    "badge": "OUR WORK",
+    "title": "Projects We Brought to Life",
+    "description": "A selection of signage, box letters and printing projects we designed, manufactured and installed. Click any photo to view it full size."
   },
   "featuredProjects": {
     "tag": "OUR PORTFOLIO",
@@ -132,15 +138,15 @@
     "slides": {
       "wayfinding": {
         "title": "Vehicle Advertising Solutions",
-        "description": "Vehicle advertising is an effective, mobile marketing tool that carries your brand message across the widest possible audience on streets and roads. At Venus Reklam, we design, print, and install vehicle graphics using high-quality, weather-resistant vinyl materials suitable for all vehicle types, from private cars to trucks and delivery vans. We provide professional solutions combining printing precision and expert installation, giving your brand a standout presence wherever it goes."
+        "description": "Vehicle advertising is an effective, mobile marketing tool that carries your brand message across the widest possible audience on streets and roads. At Alnoor, we design, print, and install vehicle graphics using high-quality, weather-resistant vinyl materials suitable for all vehicle types, from private cars to trucks and delivery vans. We provide professional solutions combining printing precision and expert installation, giving your brand a standout presence wherever it goes."
       },
       "aluminum": {
         "title": "ACM Cladding Facades with Illuminated Metal Letters",
-        "description": "We provide the finest ACM cladding for your store's facade, combined with illuminated metal letters, giving your storefront a sleek and modern look that catches the eye. At Venus Reklam, we design, manufacture, and install high-quality ACM facades, precisely integrating illuminated metal letters to give your brand a striking presence day and night."
+        "description": "We provide the finest ACM cladding for your store's facade, combined with illuminated metal letters, giving your storefront a sleek and modern look that catches the eye. At Alnoor, we design, manufacture, and install high-quality ACM facades, precisely integrating illuminated metal letters to give your brand a striking presence day and night."
       },
       "totem": {
         "title": "Sign with Illuminated Plexi Letters",
-        "description": "We provide the finest illuminated plexi letters for your store's signage, giving your storefront a distinctive and eye-catching look day and night. At Venus Reklam, we design, manufacture, and install illuminated plexi letters with high precision and durable craftsmanship, giving your brand a striking and lasting presence."
+        "description": "We provide the finest illuminated plexi letters for your store's signage, giving your storefront a distinctive and eye-catching look day and night. At Alnoor, we design, manufacture, and install illuminated plexi letters with high precision and durable craftsmanship, giving your brand a striking and lasting presence."
       },
       "illuminated": {
         "title": "Illuminated Advertising Signs",
@@ -199,7 +205,7 @@
   },
 
   "a11y": {
-    "logo": "Noor Advertising logo",
+    "logo": "Alnoor Advertising logo",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "close": "Close",
@@ -216,6 +222,44 @@
   "notFound": {
     "title": "Page not found",
     "backHome": "Back to home"
+  },
+
+  "seo": {
+    "siteName": "Alnoor Advertising",
+    "pages": {
+      "home": {
+        "title": "Illuminated Box Letters & Signs, Damascus",
+        "description": "We design, manufacture and install illuminated box letters, outdoor signage and digital printing in Damascus, Syria. Quality materials, on-time delivery."
+      },
+      "boxLetters": {
+        "title": "Box Letters — Design & Installation",
+        "description": "Custom illuminated 3D box letters in acrylic, aluminum and stainless steel with LED lighting. See all 18 finishes lit and unlit before you order."
+      },
+      "sign": {
+        "title": "Outdoor & Indoor Advertising Signs",
+        "description": "Storefront signage, ACM cladding facades, illuminated plexi and metal letters, and vehicle advertising. Designed, manufactured and installed across Syria."
+      },
+      "digitalPrinting": {
+        "title": "Digital Printing — UV & Vinyl",
+        "description": "UV printing resistant to sun and rain, vinyl facade applications and one-way vision, on flexible and rigid surfaces alike, with fast turnaround."
+      },
+      "gallery": {
+        "title": "Our Work — Project Gallery",
+        "description": "A photo gallery of completed signage, box letters and printing projects. Browse the work and click any photo to view it full size."
+      },
+      "about": {
+        "title": "About Us",
+        "description": "Years of experience in outdoor advertising, modern manufacturing equipment and a professional team committed to quality, safety and delivering on schedule."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "Get in touch for a quote on signage, box letters or digital printing. Call, message us on WhatsApp, or send your project details through the form."
+      },
+      "notFound": {
+        "title": "Page not found",
+        "description": "This page does not exist. Head back to the home page to explore our signage and printing services."
+      }
+    }
   },
 
   "specsTitle": "Specifications",

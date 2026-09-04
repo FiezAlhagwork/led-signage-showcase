@@ -7,13 +7,13 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <Hero />
       <AboutSection />
       <Projects />
       <Services />
       <WhyChooseUs />
-    </div>
+    </main>
   );
 };
 

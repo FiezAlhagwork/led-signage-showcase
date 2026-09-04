@@ -38,7 +38,7 @@ const CounterItem = ({ item, title }: CounterItemProps) => {
     <FadeIn direction="up" distance={40} duration={0.6} viewportAmount={0}>
       <div
         ref={ref}
-        className="bg-surface-elevated/80 border border-white/10 rounded-2xl p-6 text-center shadow-xl flex flex-col items-center justify-center transition-transform hover:scale-105 duration-300"
+        className="bg-surface-elevated/80 border border-white/10 rounded-2xl p-6 text-center shadow-xl flex flex-col items-center justify-center"
       >
         <div className="text-3xl md:text-4xl font-extrabold text-primary mb-2">
           {count}

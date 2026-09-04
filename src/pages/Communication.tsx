@@ -43,9 +43,9 @@ const Communication = () => {
   };
 
   return (
-    <section
+    <main
       id="contact"
-      className="relative w-full py-24 text-white overflow-hidden bg-dark-bg font-[family-name:var(--font-main)]"
+      className="relative w-full py-24 text-white overflow-hidden bg-dark-bg font-(family-name:--font-main)"
       dir="ltr"
     >
       <div className="container mx-auto px-6 relative z-10">
@@ -57,6 +57,7 @@ const Communication = () => {
           dir={isAr ? "rtl" : "ltr"}
         >
           <SectionHeader
+            as="h1"
             badge={t.contact.tag}
             title={t.contact.title}
             description={t.contact.description}
@@ -191,7 +192,7 @@ const Communication = () => {
           </FadeIn>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

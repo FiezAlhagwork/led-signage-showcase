@@ -1,14 +1,16 @@
 {
-  "name": "noor",
+  "name": "alnoor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run seo:files && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "images:webp": "node scripts/to-webp.mjs"
+    "images:webp": "node scripts/to-webp.mjs",
+    "seo:files": "node --experimental-strip-types --no-warnings scripts/gen-seo-files.mjs",
+    "seo:og": "node scripts/gen-og-image.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",

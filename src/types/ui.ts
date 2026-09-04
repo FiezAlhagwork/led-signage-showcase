@@ -18,6 +18,12 @@ export interface CardProps {
   /** خلفية البطاقة والزوايا وأي فروقات خاصة بالصفحة (مثلاً: "bg-black/40 rounded-3xl") */
   className?: string;
   onClick?: MouseEventHandler<HTMLDivElement>;
+  /** لما ينمرّر، البطاقة كلها بتصير رابط */
+  to?: string;
+  /**
+   * تأثيرات المرور بتشتغل بس لما تكون البطاقة قابلة للضغط فعلاً (`to` أو `onClick`).
+   * بطاقة ساكنة بتضل ساكنة — حتى ما يوهم التأثير المستخدم إنها بتفتح شي.
+   */
 }
 
 export interface SectionHeaderProps {
@@ -25,6 +31,11 @@ export interface SectionHeaderProps {
   title: string;
   description?: string;
   centered?: boolean;
+  /**
+   * وسم العنوان. الافتراضي h2 لأن أغلب الاستعمالات أقسام داخل الصفحة الرئيسية.
+   * الصفحات اللي هالعنوان هو عنوانها الرئيسي بتمرّر "h1" — لازم واحد بكل صفحة.
+   */
+  as?: "h1" | "h2";
 
   // ألوان اختيارية
   titleColor?: string;
@@ -41,6 +52,19 @@ export interface ImageLightboxProps {
   /** إلزاميان حتى ما ينحبس نص إنجليزي كقيمة افتراضية جوا المكوّن */
   alt: string;
   closeLabel: string;
+
+  /*
+   * التنقّل بين الصور — اختياري بالكامل.
+   * بدونه المودال بيشتغل متل قبل تماماً (صفحات المشاريع وSign والطباعة الرقمية).
+   */
+  onNext?: () => void;
+  onPrev?: () => void;
+  nextLabel?: string;
+  prevLabel?: string;
+  /** نص العدّاد تحت الصورة، مثلاً "3 / 12" */
+  counter?: string;
+  /** بالعربي السهم اليسار بصرياً = الصورة التالية */
+  isRtl?: boolean;
 }
 
 export interface PaginationDotsProps {

@@ -1,0 +1,23 @@
+{
+  "name": "نور للدعاية والإعلان",
+  "short_name": "نور",
+  "description": "تصميم وتصنيع وتركيب الحروف البارزة المضيئة واللوحات الإعلانية والطباعة الرقمية في دمشق وسوريا.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

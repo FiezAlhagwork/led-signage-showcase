@@ -2,6 +2,7 @@ import type { NavLinkItem } from "@/types";
 
 export const navLinks: NavLinkItem[] = [
   { path: "/", labelKey: "home" },
+  { path: "/gallery", labelKey: "gallery" },
   { path: "/box-letters", labelKey: "boxLetters" },
   { path: "/sign", labelKey: "sign" },
   { path: "/digital-printing", labelKey: "digitalPrinting", hidden: true },

@@ -22,3 +22,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/*
+ * نقاط تنقّل Swiper بلون الهوية بدل الأزرق الافتراضي (#007aff).
+ * الموضع تحت الشرائح مو فوقها — بينضبط بـ padding-bottom على عنصر الـSwiper
+ * مع تصفير --swiper-pagination-bottom، فالنقاط بتقع بمساحة الحشو الفاضية.
+ */
+.swiper-dots-primary {
+  --swiper-pagination-color: var(--color-primary);
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.35;
+  --swiper-pagination-bullet-size: 9px;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+  --swiper-pagination-bottom: 0px;
+}

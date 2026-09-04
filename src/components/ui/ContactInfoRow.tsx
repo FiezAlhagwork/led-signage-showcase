@@ -34,7 +34,10 @@ const ContactInfoRow = ({
     );
   }
 
-  return <div className="flex items-center justify-between py-2 group">{content}</div>;
+  /* بلا رابط = صف عادي، فبلا `group` حتى ما تشتغل تأثيرات المرور على شي مو قابل للضغط */
+  return (
+    <div className="flex items-center justify-between py-2">{content}</div>
+  );
 };
 
 export default ContactInfoRow;

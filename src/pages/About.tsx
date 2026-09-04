@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "@/context/useLanguage";
+import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import { aboutPageData } from "@/data/aboutPageData";
 import FadeIn from "@/components/animation/FadeIn";
 import CounterItem from "@/components/ui/CounterItem";
@@ -7,6 +7,7 @@ import CounterItem from "@/components/ui/CounterItem";
 const About = () => {
   const { t, isRtl: isAr } = useLanguage();
   const navigate = useNavigate();
+  const localizedPath = useLocalizedPath();
 
   const aboutT = t.aboutru;
   const counterTitles = aboutT.counters;
@@ -43,12 +44,14 @@ const About = () => {
             distance={30}
             duration={0.6}
             viewportAmount={0}
-            className={`lg:col-span-7 h-70 md:h-105 rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative group ${isAr ? "lg:order-2" : "lg:order-1"}`}
+            className={`lg:col-span-7 h-70 md:h-105 rounded-2xl overflow-hidden shadow-2xl border border-white/10 relative ${isAr ? "lg:order-2" : "lg:order-1"}`}
           >
             <img
               src={aboutPageData.mainImage}
               alt={t.a11y.aboutImage}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
           </FadeIn>
@@ -63,9 +66,9 @@ const About = () => {
             <span className="text-primary font-semibold text-xs md:text-sm tracking-wide uppercase block">
               {badgeText}
             </span>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight">
               {titleText}
-            </h2>
+            </h1>
             <p className="text-white/80 text-xs md:text-sm leading-relaxed">
               {desc1Text}
             </p>
@@ -89,7 +92,7 @@ const About = () => {
             {bannerTitle}
           </h3>
           <button
-            onClick={() => navigate("/communication")}
+            onClick={() => navigate(localizedPath("/communication"))}
             className="bg-surface-dark hover:bg-black text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl shadow-lg border border-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer z-10 whitespace-nowrap"
           >
             {bannerBtn}

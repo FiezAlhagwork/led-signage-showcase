@@ -1,4 +1,4 @@
-import { useLanguage } from "@/context/useLanguage";
+import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/animation/FadeIn";
 
@@ -12,6 +12,7 @@ import { heroSlides } from "@/data/heroData";
 
 const Hero = () => {
   const { language, t } = useLanguage();
+  const localizedPath = useLocalizedPath();
 
   return (
     <section
@@ -40,9 +41,13 @@ const Hero = () => {
               key={index}
               className="w-full h-full flex items-center justify-center bg-black"
             >
+              {/* أول شريحة هي عنصر LCP: تُحمَّل فوراً بأولوية عالية، وباقيهن كسالى */}
               <img
                 src={image}
                 alt={t.a11y.heroSlide.replace("{n}", String(index + 1))}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </SwiperSlide>
@@ -93,7 +98,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-40"
         >
           <Button
-            to="/communication"
+            to={localizedPath("/communication")}
             size="lg"
             variant="primary"
             className="w-full sm:w-auto"

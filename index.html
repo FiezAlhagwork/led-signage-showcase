@@ -2,19 +2,68 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/webp" href="/src/assets/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title> نور  / - لللوحات الإعلانية وأحرف الصندوق</title>
+    <!--
+      الوسوم هون ثابتة عن قصد: واتساب وفيسبوك وتويتر ما بتشغّل JavaScript،
+      فهي النسخة الوحيدة اللي بتشوفها وقت مشاركة أي رابط من الموقع.
+      المكوّن src/components/seo/Seo.tsx بيحدّثها لكل صفحة للمتصفّح ولجوجل.
+      الدومين المكرّر تحت لازم يطابق SITE_URL بـsrc/data/seoData.ts.
+    -->
+
+    <title>حروف بارزة مضيئة ولوحات إعلانية بدمشق | النور للدعاية والإعلان</title>
     <meta
       name="description"
-      content="متخصصون في تصميم وتصنيع أحرف الصندوق (Box Letters) واللوحات الإعلانية المضاءة بأعلى جودة وأفضل الأسعار."
+      content="النور للدعاية والإعلان — تصميم وتصنيع وتركيب الحروف البارزة المضيئة واللوحات الإعلانية والطباعة الرقمية في دمشق وسوريا. خامات عالية الجودة والتزام بالمواعيد."
+    />
+    <meta name="author" content="النور للدعاية والإعلان" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href="https://example.com/" />
+
+    <!--
+      ما في وسوم hreflang عن قصد: الموقع بيبدّل اللغة بدون ما يتغيّر الرابط،
+      فالعربي والإنجليزي بيشتركوا بنفس الـURL. hreflang بيتطلّب رابط مستقل لكل
+      لغة (مثلاً /ar/sign و /en/sign) — تفاصيلها بالتقرير.
+    -->
+
+    <!-- معاينة المشاركة -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="النور للدعاية والإعلان" />
+    <meta property="og:locale" content="ar_SY" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta
+      property="og:title"
+      content="حروف بارزة مضيئة ولوحات إعلانية بدمشق | النور للدعاية والإعلان"
     />
     <meta
-      name="keywords"
-      content="أحرف صندوق, لوحات مضاءة, Box Letters, لوحات إعلانية, دعاية وإعلان"
+      property="og:description"
+      content="تصميم وتصنيع وتركيب الحروف البارزة المضيئة واللوحات الإعلانية والطباعة الرقمية في دمشق وسوريا."
     />
-    <meta name="author" content="Noor" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="نموذج من أعمال النور للدعاية والإعلان — لوحة إعلانية بحروف بارزة مضيئة"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="حروف بارزة مضيئة ولوحات إعلانية بدمشق | النور للدعاية والإعلان"
+    />
+    <meta
+      name="twitter:description"
+      content="تصميم وتصنيع وتركيب الحروف البارزة المضيئة واللوحات الإعلانية والطباعة الرقمية في دمشق وسوريا."
+    />
+    <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+
+    <!-- الأيقونات -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +72,77 @@
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+
+    <!--
+      بيانات منظّمة LocalBusiness: بتخلّي جوجل يعرض العنوان والهاتف وأوقات
+      الدوام مباشرة بنتيجة البحث وبالخرائط. القيم مطابقة لـsrc/data/contactData.ts.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://example.com/#business",
+        "name": "النور للدعاية والإعلان",
+        "alternateName": "Alnoor Advertising",
+        "description": "تصميم وتصنيع وتركيب الحروف البارزة المضيئة واللوحات الإعلانية والطباعة الرقمية في دمشق وسوريا.",
+        "url": "https://example.com/",
+        "image": "https://example.com/og-image.jpg",
+        "logo": "https://example.com/apple-touch-icon.png",
+        "priceRange": "$$",
+        "sameAs": [],
+        "telephone": ["+963960961620", "+963982237799"],
+        "email": "abo.fahed.10@hotmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "معربا - طريق الشرق - مقابل صالة الأماني للأفراح",
+          "addressLocality": "معربا",
+          "addressRegion": "ريف دمشق",
+          "addressCountry": "SY"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Syria"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Saturday",
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "08:00",
+            "closes": "21:00"
+          }
+        ],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "حروف بارزة مضيئة"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "لوحات إعلانية"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "طباعة رقمية"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

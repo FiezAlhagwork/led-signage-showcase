@@ -5,6 +5,7 @@ const SectionHeader = ({
   title,
   description,
   centered,
+  as: Heading = "h2",
 
   titleColor = "text-white",
   descriptionColor = "text-white/70",
@@ -16,17 +17,17 @@ const SectionHeader = ({
     <div className={centered ? "text-center mb-16" : "text-right mb-16"}>
       {badge && (
         <span
-          className={`inline-block px-5 py-2 rounded-full border ${badgeBorderColor} ${badgeColor} text-xs font-semibold tracking-wider mb-4 ${badgeBgColor} shadow-sm transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-primary/20 hover:shadow-lg hover:shadow-primary/20 cursor-pointer`}
+          className={`inline-block px-5 py-2 rounded-full border ${badgeBorderColor} ${badgeColor} text-xs font-semibold tracking-wider mb-4 ${badgeBgColor} shadow-sm`}
         >
           {badge}
         </span>
       )}
 
-      <h2
+      <Heading
         className={`text-2xl md:text-3xl font-extrabold tracking-tight mb-4 ${titleColor}`}
       >
         {title}
-      </h2>
+      </Heading>
 
       {description && (
         <p

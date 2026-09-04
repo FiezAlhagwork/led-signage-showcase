@@ -14,3 +14,5 @@ export * from "./contact";
 export * from "./boxLetters";
 export * from "./sign";
 export * from "./digitalPrinting";
+export * from "./gallery";
+export * from "./seo";

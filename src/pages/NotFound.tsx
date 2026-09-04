@@ -1,8 +1,9 @@
-import { useLanguage } from "@/context/useLanguage";
+import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import Button from "@/components/ui/Button";
 
 const NotFound = () => {
   const { t, isRtl: isAr } = useLanguage();
+  const localizedPath = useLocalizedPath();
 
   return (
     <main
@@ -17,7 +18,7 @@ const NotFound = () => {
         {t.notFound.title}
       </h1>
 
-      <Button to="/" size="lg" variant="primary">
+      <Button to={localizedPath("/")} size="lg" variant="primary">
         {t.notFound.backHome}
       </Button>
     </main>

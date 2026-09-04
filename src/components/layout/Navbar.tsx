@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import Button from "@/components/ui/Button";
-import { useLanguage } from "@/context/useLanguage";
+import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import { navLinks } from "@/data/navbarData";
 
 const Navbar = () => {
@@ -14,6 +14,7 @@ const Navbar = () => {
   const lastScrollY = useRef(0);
 
   const { language, setLanguage, t, isRtl: isAr } = useLanguage();
+  const localizedPath = useLocalizedPath();
 
   const visibleLinks = navLinks.filter((link) => !link.hidden);
 
@@ -60,7 +61,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 max-w-full">
           <div className="shrink-0">
-            <NavLink to="/">
+            <NavLink to={localizedPath("/")}>
               <img
                 src={logo}
                 alt={t.a11y.logo}
@@ -73,7 +74,8 @@ const Navbar = () => {
             {visibleLinks.map((link) => (
               <NavLink
                 key={link.path}
-                to={link.path}
+                to={localizedPath(link.path)}
+                end={link.path === "/"}
                 className={({ isActive }) =>
                   `text-[13px] xl:text-[14px] font-semibold transition-all whitespace-nowrap ${isActive ? "text-primary" : "text-white/80 hover:text-primary"}`
                 }
@@ -125,7 +127,7 @@ const Navbar = () => {
           {visibleLinks.map((link) => (
             <NavLink
               key={link.path}
-              to={link.path}
+              to={localizedPath(link.path)}
               onClick={() => setIsOpen(false)}
               className="text-base sm:text-lg font-bold text-white hover:text-primary transition-colors"
             >

@@ -1,5 +1,6 @@
 import { useState, useRef, type WheelEvent, type TouchEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.webp";
 import { useLanguage } from "@/context/useLanguage";
 import { digitalPrintingSlides } from "@/data/digitalPrintingData";
 import ImageLightbox from "@/components/ui/ImageLightbox";
@@ -107,9 +108,9 @@ const DigitalPrinting = () => {
               <span className="text-primary font-semibold text-[11px] md:text-sm block tracking-wide">
                 {currentContent?.badge}
               </span>
-              <h2 className="text-lg md:text-3xl font-extrabold tracking-tight text-white leading-snug md:leading-tight">
+              <h1 className="text-lg md:text-3xl font-extrabold tracking-tight text-white leading-snug md:leading-tight">
                 {currentContent?.title}
-              </h2>
+              </h1>
               <p className="text-white/85 text-[11px] md:text-sm leading-relaxed max-w-3xl">
                 {currentContent?.description}
               </p>
@@ -129,13 +130,8 @@ const DigitalPrinting = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
-                <div className="absolute bottom-3 right-3 bg-surface-dark/90 backdrop-blur-md border border-primary/40 px-3 py-1 rounded-xl shadow-xl flex items-center gap-2 z-10">
-                  <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white font-bold text-[9px]">
-                    VR
-                  </div>
-                  <span className="text-white text-xs font-semibold tracking-wider">
-                    Venus Reklam
-                  </span>
+                <div className="absolute bottom-3 right-3 bg-surface-dark/90 backdrop-blur-md border border-primary/40 px-2.5 py-1.5 rounded-xl shadow-xl flex items-center z-10">
+                  <img src={logo} alt={t.a11y.logo} className="h-4 w-auto" />
                 </div>
               </motion.div>
 

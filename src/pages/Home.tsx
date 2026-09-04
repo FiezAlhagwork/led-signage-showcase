@@ -4,7 +4,6 @@ import Projects from "@/components/home/Projects";
 
 import Services from "@/components/home/Services";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
-import ScrollTop from "@/components/ui/ScrollTop";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <Projects />
       <Services />
       <WhyChooseUs />
-      <ScrollTop />
     </div>
   );
 };

@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import { aboutPageData } from "@/data/aboutPageData";
 import FadeIn from "@/components/animation/FadeIn";
 import CounterItem from "@/components/ui/CounterItem";
@@ -8,10 +7,6 @@ import CounterItem from "@/components/ui/CounterItem";
 const About = () => {
   const { t, isRtl: isAr } = useLanguage();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   const aboutT = t.aboutru;
   const counterTitles = aboutT.counters;

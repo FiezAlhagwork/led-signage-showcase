@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import Button from "@/components/ui/Button";
 
 const NotFound = () => {
@@ -18,11 +17,9 @@ const NotFound = () => {
         {t.notFound.title}
       </h1>
 
-      <Link to="/">
-        <Button size="lg" variant="primary">
-          {t.notFound.backHome}
-        </Button>
-      </Link>
+      <Button to="/" size="lg" variant="primary">
+        {t.notFound.backHome}
+      </Button>
     </main>
   );
 };

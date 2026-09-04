@@ -1,30 +1,30 @@
 import logo from "@/assets/logo.webp";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import { footerQuickLinks } from "@/data/footerData";
 import { contactData } from "@/data/contactData";
 import type { FooterLinkItem } from "@/types";
 import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaChevronRight,
-  FaChevronLeft,
-} from "react-icons/fa";
+  MapPin,
+  Phone,
+  Mail,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 
 const Footer = () => {
   const { t, isRtl: isAr } = useLanguage();
   const footerT = t.footer;
 
-  const Chevron = isAr ? FaChevronLeft : FaChevronRight;
+  const Chevron = isAr ? ChevronLeft : ChevronRight;
 
   const renderLink = (item: FooterLinkItem) => {
     const className =
       "hover:text-primary transition-colors flex items-center gap-2";
     const content = (
       <>
-        <Chevron className="text-xs text-primary shrink-0" />
+        <Chevron className="w-3 h-3 text-primary shrink-0" />
         <span>{footerT[item.labelKey]}</span>
       </>
     );
@@ -86,18 +86,18 @@ const Footer = () => {
 
             <ul className="space-y-4 text-white/70 text-sm">
               <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-primary mt-1 shrink-0" />
+                <MapPin className="w-4 h-4 text-primary mt-1 shrink-0" />
                 <span className="wrap-break-word">{footerT.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <FaPhoneAlt className="text-primary shrink-0" />
+                <Phone className="w-4 h-4 text-primary shrink-0" />
                 <div className="flex flex-col" dir="ltr">
                   <span>{contactData.phone}</span>
                   <span>{contactData.phoneSecondary}</span>
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <FaEnvelope className="text-primary shrink-0" />
+                <Mail className="w-4 h-4 text-primary shrink-0" />
                 <span className="break-all" dir="ltr">
                   {contactData.email}
                 </span>

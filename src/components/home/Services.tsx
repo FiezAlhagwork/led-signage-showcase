@@ -1,4 +1,4 @@
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import { servicesData } from "@/data/servicesData";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ServiceCard from "./ServiceCard";
@@ -31,7 +31,6 @@ const Services = () => {
           {servicesData.map((service) => {
             const title = t.servicesGrid[service.titleKey];
             const description = t.servicesGrid[service.descKey];
-            const learnMoreText = t.servicesGrid.learnMore;
 
             return (
               <StaggerItem key={service.id}>
@@ -39,7 +38,7 @@ const Services = () => {
                   image={service.image}
                   title={title}
                   description={description}
-                  learnMoreText={learnMoreText}
+                  learnMoreText={t.servicesGrid.learnMore}
                   path={service.path}
                   isAr={isAr}
                 />

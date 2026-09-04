@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import { featuredProjectsData } from "@/data/featuredProjectsData";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ProjectCard from "./ProjectCard";

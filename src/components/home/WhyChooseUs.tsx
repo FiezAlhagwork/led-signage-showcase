@@ -1,4 +1,4 @@
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import SectionHeader from "@/components/ui/SectionHeader";
 import WhyChooseUsCard from "./WhyChooseUsCard";
 import FadeIn from "@/components/animation/FadeIn";

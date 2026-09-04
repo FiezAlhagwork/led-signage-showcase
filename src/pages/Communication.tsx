@@ -1,5 +1,5 @@
-import { useState, useEffect, type FormEvent } from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useState, type FormEvent } from "react";
+import { useLanguage } from "@/context/useLanguage";
 import Button from "@/components/ui/Button";
 import type { FieldChangeEvent } from "@/types";
 import { contactData } from "@/data/contactData";
@@ -12,10 +12,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const Communication = () => {
   const { t, isRtl: isAr } = useLanguage();
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   const [formData, setFormData] = useState({
     fullName: "",

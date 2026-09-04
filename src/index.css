@@ -3,38 +3,22 @@
 @theme {
   --color-primary: #FF6B00;
   --color-primary-hover: #E05A00; /* توحيد درجات الـ hover المتفرقة (e05e00 / e05b00 / d04a00) بلون واحد */
-  --color-secondary: #4A4A4A;
-  --color-light-gray: #F5F5F5;
-  --color-white: #FFFFFF;
-  --color-text-main: #1A1A1A;
-  --color-text-muted: #757575;
-  --color-dark-bg: #0a0a0a; /* أضفنا لون الخلفية الداكن هنا رسمياً */
+  --color-dark-bg: #0a0a0a; /* خلفية الموقع الأساسية */
   --color-surface-dark: #161317; /* خلفية الصفحات الداكنة المتكررة (About/DigitalPrinting/Sign) */
   --color-surface: #18181b; /* خلفية البطاقات/الأقسام الداكنة المتكررة (AboutSection/WhyChooseUs) */
+  --color-surface-elevated: #1e1a20; /* بطاقات فوق خلفية داكنة (عدّادات About / بطاقة DigitalPrinting) */
 }
 
 :root {
   --font-main: 'Tajawal', 'Manrope', sans-serif;
-  
-  /* اجعل الخلفية الافتراضية داكنة وليست بيضاء ليتطابق مع تصميمك */
-  background-color: #0a0a0a; 
+
+  background-color: var(--color-dark-bg);
   color: #ffffff;
 }
 
 body {
   font-family: var(--font-main);
-  background-color: #0a0a0a; /* ضمان تطبيق الخلفية السوداء/الداكنة على كامل الجسم */
+  background-color: var(--color-dark-bg);
   margin: 0;
   padding: 0;
-}
-
-
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }

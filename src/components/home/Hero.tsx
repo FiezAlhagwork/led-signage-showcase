@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/animation/FadeIn";
 
@@ -93,11 +92,14 @@ const Hero = () => {
           delay={0.8}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-40"
         >
-          <Link to="/communication" className="w-full sm:w-auto">
-            <Button size="lg" variant="primary" className="w-full">
-              {t.hero.btnContact}
-            </Button>
-          </Link>
+          <Button
+            to="/communication"
+            size="lg"
+            variant="primary"
+            className="w-full sm:w-auto"
+          >
+            {t.hero.btnContact}
+          </Button>
         </FadeIn>
       </div>
     </section>

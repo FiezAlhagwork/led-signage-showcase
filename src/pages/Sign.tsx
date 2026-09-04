@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCreative,
@@ -8,7 +8,7 @@ import {
 } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 
 import { signSlidesData } from "@/data/signData";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -22,11 +22,6 @@ import "swiper/css/navigation";
 
 const Sign = () => {
   const { language, t } = useLanguage();
-
-  // حل المشكلة: إجبار الصفحة على البدء من الأعلى عند تحميل المكون
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
 
   const [activeImage, setActiveImage] = useState<string | null>(null);
 

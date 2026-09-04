@@ -1,6 +1,6 @@
 import { useState, useRef, type WheelEvent, type TouchEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import { digitalPrintingSlides } from "@/data/digitalPrintingData";
 import ImageLightbox from "@/components/ui/ImageLightbox";
 import PaginationDots from "@/components/ui/PaginationDots";
@@ -36,7 +36,6 @@ const DigitalPrinting = () => {
   };
 
   const handleWheel = (e: WheelEvent) => {
-    e.preventDefault();
     if (isScrolling.current) return;
 
     if (e.deltaY > 0) {
@@ -154,7 +153,7 @@ const DigitalPrinting = () => {
                     ease: "easeInOut",
                   },
                 }}
-                className={`relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#1e1a20]/60 backdrop-blur-sm group cursor-pointer ${
+                className={`relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-surface-elevated/60 backdrop-blur-sm group cursor-pointer ${
                   currentIndex === 2
                     ? "lg:col-span-4 h-47.5 md:h-87.5 p-0"
                     : "lg:col-span-4 h-37.5 md:h-72.5 p-3 flex items-center justify-center"

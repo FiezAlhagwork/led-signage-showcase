@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { aboutSectionData } from "@/data/aboutSectionData";
 import FadeIn from "@/components/animation/FadeIn";
@@ -52,10 +52,11 @@ const AboutSection = () => {
             </FadeIn>
 
             <FadeIn direction="up" distance={50} viewportAmount={0.3} duration={0.6} delay={0.4}>
-              <Link to={aboutSectionData.ctaPath}>
-                <button className="px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/60 flex items-center gap-2">
-                  <span>{aboutT.learnMore}</span>
-                </button>
+              <Link
+                to={aboutSectionData.ctaPath}
+                className="px-8 py-4 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/60 inline-flex items-center gap-2"
+              >
+                {aboutT.learnMore}
               </Link>
             </FadeIn>
           </div>

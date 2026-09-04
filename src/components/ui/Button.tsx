@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { ButtonProps } from "@/types";
 
 const Button = ({
@@ -5,6 +6,7 @@ const Button = ({
   size = "md",
   children,
   className = "",
+  to,
   ...props
 }: ButtonProps) => {
   const baseStyles =
@@ -23,11 +25,18 @@ const Button = ({
     lg: "text-lg px-8 py-4",
   };
 
+  const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+
+  if (to) {
+    return (
+      <Link to={to} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-      {...props}
-    >
+    <button className={classes} {...props}>
       {children}
     </button>
   );

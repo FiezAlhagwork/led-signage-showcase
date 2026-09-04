@@ -1,16 +1,23 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import "./App.css";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
-import Home from "@/pages/Home";
-import Sign from "@/pages/Sign";
-import DigitalPrinting from "@/pages/DigitalPrinting";
-import About from "@/pages/About";
-import Communication from "@/pages/Communication";
-import { BoxLettersShowcase } from "@/pages/BoxLetters";
-import NotFound from "@/pages/NotFound";
+import ScrollTop from "@/components/ui/ScrollTop";
 import { LanguageProvider } from "@/context/LanguageContext";
+
+/* كل صفحة بحزمة مستقلة — زائر الرئيسية ما بيحمّل كود باقي الصفحات */
+const Home = lazy(() => import("@/pages/Home"));
+const Sign = lazy(() => import("@/pages/Sign"));
+const DigitalPrinting = lazy(() => import("@/pages/DigitalPrinting"));
+const About = lazy(() => import("@/pages/About"));
+const Communication = lazy(() => import("@/pages/Communication"));
+const BoxLettersShowcase = lazy(() => import("@/pages/BoxLetters"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
+
+/** شاشة انتظار بخلفية الموقع الداكنة — بلا نص حتى ما نحتاج مفاتيح ترجمة لوميض عابر */
+const RouteFallback = () => (
+  <div className="min-h-screen w-full bg-dark-bg" aria-hidden="true" />
+);
 
 function LayoutContent() {
   const location = useLocation();
@@ -25,20 +32,25 @@ function LayoutContent() {
     });
   }, [location.pathname]);
 
+  const isFullScreenPage = isDigitalPrinting || isBoxLetters;
+
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/box-letters" element={<BoxLettersShowcase />} />
-        <Route path="/sign" element={<Sign />} />
-        <Route path="/digital-printing" element={<DigitalPrinting />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/communication" element={<Communication />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/box-letters" element={<BoxLettersShowcase />} />
+          <Route path="/sign" element={<Sign />} />
+          <Route path="/digital-printing" element={<DigitalPrinting />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/communication" element={<Communication />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
 
-      {!isDigitalPrinting && !isBoxLetters && <Footer />}
+      {!isFullScreenPage && <ScrollTop />}
+      {!isFullScreenPage && <Footer />}
     </>
   );
 }

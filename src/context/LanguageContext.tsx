@@ -1,10 +1,6 @@
-/* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState, useEffect } from "react";
-import type {
-  Language,
-  LanguageContextType,
-  LanguageProviderProps,
-} from "@/types";
+import { useState, useEffect } from "react";
+import type { Language, LanguageProviderProps } from "@/types";
+import { LanguageContext } from "./useLanguage";
 
 // استيراد ملفات الترجمة مرّة واحدة فقط هنا
 import enTranslations from "@/locales/en.json";
@@ -15,14 +11,10 @@ const translations = {
   AR: erTranslations,
 };
 
-// 2. إنشاء الـ Context
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-// 3. إنشاء الـ Provider
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [language, setLanguageState] = useState<Language>(() => {
     const savedLang = localStorage.getItem("lang");
-    return (savedLang as Language) || "EN";
+    return savedLang === "AR" || savedLang === "EN" ? savedLang : "EN";
   });
 
   const setLanguage = (lang: Language) => {
@@ -46,13 +38,4 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
       {children}
     </LanguageContext.Provider>
   );
-};
-
-// 4. الـ Custom Hook
-export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
-  return context;
 };

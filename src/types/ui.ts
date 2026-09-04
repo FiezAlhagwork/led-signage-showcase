@@ -6,6 +6,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
   children: ReactNode;
+  /**
+   * لما ينمرّر، المكوّن بيرندر <Link> بنفس الستايل بدل <button>.
+   * ضروري لأن زر جوا رابط (<a><button>) HTML غير صالح وبيربك قارئات الشاشة.
+   */
+  to?: string;
 }
 
 export interface CardProps {

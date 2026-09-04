@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp, ChevronDown, Sun, Moon, ImageOff } from "lucide-react";
 
 import { boxLetterProducts } from "@/data/boxLettersData";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import type { BoxLetterProduct } from "@/types";
 
-export const BoxLettersShowcase = () => {
+const BoxLettersShowcase = () => {
   const { t } = useLanguage();
   const total = boxLetterProducts.length;
 
@@ -194,3 +194,5 @@ export const BoxLettersShowcase = () => {
     </section>
   );
 };
+
+export default BoxLettersShowcase;

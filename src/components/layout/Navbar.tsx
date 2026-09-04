@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import Button from "@/components/ui/Button";
-import { useLanguage } from "@/context/LanguageContext";
+import { useLanguage } from "@/context/useLanguage";
 import { navLinks } from "@/data/navbarData";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  /** ref مو state: القيمة ما بتنعرض بالواجهة، وكـstate كانت تعيد تركيب مستمع السكرول مع كل حركة */
+  const lastScrollY = useRef(0);
 
   const { language, setLanguage, t, isRtl: isAr } = useLanguage();
 
@@ -32,19 +33,19 @@ const Navbar = () => {
 
       if (currentScrollY < 50 || isAtBottom) {
         setShowNavbar(true);
-      } else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY.current) {
         setShowNavbar(false);
       } else {
         setShowNavbar(true);
       }
 
       setIsScrolled(currentScrollY > 20);
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <>

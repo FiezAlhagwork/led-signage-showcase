@@ -14,7 +14,6 @@ const ImageLightbox = ({
   nextLabel,
   prevLabel,
   counter,
-  isRtl = false,
 }: ImageLightboxProps) => {
   const isOpen = image !== null;
 
@@ -28,25 +27,19 @@ const ImageLightbox = ({
         return;
       }
 
-      /* بالـRTL اتجاه الأسهم بينعكس حتى يوافق ترتيب الصور على الشاشة */
+      /* ترتيب الصور واحد باللغتين: اليسار = السابق واليمين = التالي */
       if (e.key === "ArrowLeft") {
-        (isRtl ? onNext : onPrev)?.();
+        onPrev?.();
       } else if (e.key === "ArrowRight") {
-        (isRtl ? onPrev : onNext)?.();
+        onNext?.();
       }
     };
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [isOpen, onClose, onNext, onPrev, isRtl]);
+  }, [isOpen, onClose, onNext, onPrev]);
 
   const hasNavigation = Boolean(onNext && onPrev);
-
-  /* الزر على يسار الشاشة ينقّل للصورة التالية بالعربي وللسابقة بالإنجليزي */
-  const onLeftClick = isRtl ? onNext : onPrev;
-  const onRightClick = isRtl ? onPrev : onNext;
-  const leftLabel = isRtl ? nextLabel : prevLabel;
-  const rightLabel = isRtl ? prevLabel : nextLabel;
 
   const arrowClass =
     "absolute top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full bg-black/60 hover:bg-primary text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-colors cursor-pointer";
@@ -77,17 +70,17 @@ const ImageLightbox = ({
             {hasNavigation && (
               <>
                 <button
-                  onClick={onLeftClick}
-                  aria-label={leftLabel}
-                  title={leftLabel}
+                  onClick={onPrev}
+                  aria-label={prevLabel}
+                  title={prevLabel}
                   className={`${arrowClass} left-1 md:-left-14`}
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={onRightClick}
-                  aria-label={rightLabel}
-                  title={rightLabel}
+                  onClick={onNext}
+                  aria-label={nextLabel}
+                  title={nextLabel}
                   className={`${arrowClass} right-1 md:-right-14`}
                 >
                   <ChevronRight className="w-6 h-6" />

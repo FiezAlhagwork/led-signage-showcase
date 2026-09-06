@@ -1,4 +1,4 @@
-import type { ChangeEvent, ReactNode } from "react";
+import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import type en from "@/locales/en.json";
 
@@ -32,31 +32,4 @@ export interface ContactInfoRowProps {
   value: ReactNode;
   /** رابط اختياري (tel:, https://...) — بدون href بترندر كصف عادي بدون رابط */
   href?: string;
-  isAr?: boolean;
 }
-
-export type FieldChangeEvent = ChangeEvent<
-  HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
->;
-
-export interface BaseFieldProps {
-  label: string;
-  name: string;
-  value: string;
-  onChange: (e: FieldChangeEvent) => void;
-  required?: boolean;
-  placeholder?: string;
-  isAr?: boolean;
-}
-
-export interface InputFieldProps extends BaseFieldProps {
-  as?: "input";
-  type?: string;
-}
-
-export interface TextareaFieldProps extends BaseFieldProps {
-  as: "textarea";
-  rows?: number;
-}
-
-export type FormFieldProps = InputFieldProps | TextareaFieldProps;

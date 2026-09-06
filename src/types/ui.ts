@@ -68,8 +68,6 @@ export interface ImageLightboxProps {
   prevLabel?: string;
   /** نص العدّاد تحت الصورة، مثلاً "3 / 12" */
   counter?: string;
-  /** بالعربي السهم اليسار بصرياً = الصورة التالية */
-  isRtl?: boolean;
 }
 
 export interface PaginationDotsProps {

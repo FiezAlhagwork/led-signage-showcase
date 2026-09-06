@@ -7,7 +7,7 @@ import StaggerContainer from "@/components/animation/StaggerContainer";
 import StaggerItem from "@/components/animation/StaggerItem";
 
 const Services = () => {
-  const { t, isRtl: isAr } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -40,7 +40,6 @@ const Services = () => {
                   description={description}
                   learnMoreText={t.servicesGrid.learnMore}
                   path={service.path}
-                  isAr={isAr}
                 />
               </StaggerItem>
             );

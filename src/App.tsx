@@ -61,14 +61,26 @@ function LayoutContent() {
   const isDigitalPrinting = location.pathname.endsWith("/digital-printing");
   const isBoxLetters = location.pathname.endsWith("/box-letters");
 
-  /** المسؤول الوحيد عن إرجاع الصفحة لأعلى عند التنقّل — الصفحات ما بتعيد هالمنطق */
+  /*
+   * المسار بلا بادئة اللغة: /ar/sign و /en/sign الاثنين بيعطوا "/sign".
+   * منعتمد عليه بدل pathname حتى تبديل اللغة ما ينحسب "تنقّل".
+   */
+  const pathSegment = location.pathname.split("/")[1] ?? "";
+  const basePath = isLanguageSegment(pathSegment)
+    ? location.pathname.slice(pathSegment.length + 1) || "/"
+    : location.pathname;
+
+  /**
+   * المسؤول الوحيد عن إرجاع الصفحة لأعلى عند التنقّل — الصفحات ما بتعيد هالمنطق.
+   * تبديل اللغة مو تنقّل: الزائر بيضل واقف بنفس القسم ونفس موضع السكرول.
+   */
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "instant",
     });
-  }, [location.pathname]);
+  }, [basePath]);
 
   /** الصفحتان بتملآ الشاشة بلا سكرول، فما إلهن فوتر ولا زر عودة للأعلى */
   const isFullScreenPage = isDigitalPrinting || isBoxLetters;

@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const DigitalPrinting = () => {
-  const { t, isRtl: isAr } = useLanguage();
+  const { t } = useLanguage();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeImage, setActiveImage] = useState<string | null>(null);
@@ -85,7 +85,6 @@ const DigitalPrinting = () => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       className="w-full h-screen bg-surface-dark pt-16 md:pt-20 pb-4 px-4 md:px-12 flex flex-col justify-center overflow-hidden relative select-none"
-      dir={isAr ? "rtl" : "ltr"}
     >
       <div className="w-full max-w-337.5 mx-auto relative flex flex-col justify-center h-full my-auto">
         <AnimatePresence mode="wait">
@@ -200,11 +199,7 @@ const DigitalPrinting = () => {
             disabled={currentIndex === 0}
             className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            {isAr ? (
-              <ChevronRight className="w-4 h-4" />
-            ) : (
-              <ChevronLeft className="w-4 h-4" />
-            )}
+            <ChevronLeft className="w-4 h-4" />
           </button>
 
           <PaginationDots
@@ -218,11 +213,7 @@ const DigitalPrinting = () => {
             disabled={currentIndex === digitalPrintingSlides.length - 1}
             className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-semibold disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            {isAr ? (
-              <ChevronLeft className="w-4 h-4" />
-            ) : (
-              <ChevronRight className="w-4 h-4" />
-            )}
+            <ChevronRight className="w-4 h-4" />
           </button>
         </div>
       </div>

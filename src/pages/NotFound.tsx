@@ -2,13 +2,12 @@ import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import Button from "@/components/ui/Button";
 
 const NotFound = () => {
-  const { t, isRtl: isAr } = useLanguage();
+  const { t } = useLanguage();
   const localizedPath = useLocalizedPath();
 
   return (
     <main
       className="w-full min-h-screen bg-dark-bg text-white flex flex-col items-center justify-center gap-6 px-6 text-center font-(family-name:--font-main)"
-      dir={isAr ? "rtl" : "ltr"}
     >
       <span className="text-7xl md:text-9xl font-extrabold text-primary/30 tracking-tight">
         404

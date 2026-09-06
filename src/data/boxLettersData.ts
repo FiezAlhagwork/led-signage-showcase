@@ -16,14 +16,6 @@ import image8Off from "@/assets/image8-dark.webp";
 import image8On from "@/assets/image8-light.webp";
 import image9Off from "@/assets/image9-dark.webp";
 import image9On from "@/assets/image9-light.webp";
-import image10Off from "@/assets/image10-dark.webp";
-import image10On from "@/assets/image10-light.webp";
-import image11Off from "@/assets/image11-dark.webp";
-import image11On from "@/assets/image11-light.webp";
-import image12Off from "@/assets/image12-dark.webp";
-import image12On from "@/assets/image12-light.webp";
-import image13Off from "@/assets/image13-dark.webp";
-import image13On from "@/assets/image13-light.webp";
 import image14Off from "@/assets/image14-dark.webp";
 import image14On from "@/assets/image14-light.webp";
 import image15Off from "@/assets/image15-dark.webp";
@@ -32,9 +24,6 @@ import image16Off from "@/assets/image16-dark.webp";
 import image16On from "@/assets/image16-light.webp";
 import image17Off from "@/assets/image17-dark.webp";
 import image17On from "@/assets/image17-light.webp";
-
-import image20Off from "@/assets/image20-dark.webp";
-import image20On from "@/assets/image20-light.webp";
 
 export const boxLetterProducts: BoxLetterProduct[] = [
   {
@@ -127,21 +116,6 @@ export const boxLetterProducts: BoxLetterProduct[] = [
       warranty: "4 Years Warranty",
     },
   },
-  // {
-  //   id: "product-07",
-  //   material: "Matte Black Powder-Coated Steel",
-  //   lightingType: "Non-Illuminated",
-  //   mountingType: "Direct Wall Screw Mount",
-  //   thickness: "25mm",
-  //   images: { off: image7Off, on: image7On },
-  //   defaultIlluminated: false,
-  //   specs: {
-  //     materialGrade: "Mild Steel Grade A36",
-  //     ledType: "N/A",
-  //     ipRating: "IP54 Rated",
-  //     warranty: "2 Years Warranty",
-  //   },
-  // },
   {
     id: "product-08",
     material: "Clear Acrylic + Bronze Trim",
@@ -170,66 +144,6 @@ export const boxLetterProducts: BoxLetterProduct[] = [
       ledType: "Warm White 3000K",
       ipRating: "IP67 Sealed",
       warranty: "6 Years Warranty",
-    },
-  },
-  {
-    id: "product-10",
-    material: "Gold-Finish Stainless Steel",
-    lightingType: "Dual Front & Halo LED",
-    mountingType: "Architectural Rail Mount",
-    thickness: "55mm",
-    images: { off: image10Off, on: image10On },
-    defaultIlluminated: true,
-    specs: {
-      materialGrade: "PVD Gold Coated Steel",
-      ledType: "High Output Korean LED",
-      ipRating: "IP68 Weatherproof",
-      warranty: "7 Years Warranty",
-    },
-  },
-  {
-    id: "product-11",
-    material: "Frosted Acrylic (20mm) + Aluminum Frame",
-    lightingType: "Internal Diffusion LED",
-    mountingType: "Flush Wall Mount",
-    thickness: "20mm",
-    images: { off: image11Off, on: image11On },
-    defaultIlluminated: true,
-    specs: {
-      materialGrade: "PMMA Frosted Grade B",
-      ledType: "Cool White IP67",
-      ipRating: "IP67 Outdoor Rated",
-      warranty: "5 Years Warranty",
-    },
-  },
-  {
-    id: "product-12",
-    material: "Anodized Aluminum 3.0mm",
-    lightingType: "Non-Illuminated",
-    mountingType: "Spacer Rail Mount",
-    thickness: "60mm - 100mm",
-    images: { off: image12Off, on: image12On },
-    defaultIlluminated: false,
-    specs: {
-      materialGrade: "Alloy 6061 T6",
-      ledType: "N/A",
-      ipRating: "IP68 Certified",
-      warranty: "5 Years Warranty",
-    },
-  },
-  {
-    id: "product-13",
-    material: "RGB Acrylic + Aluminum Extrusion",
-    lightingType: "Dynamic RGB / DMX Controlled",
-    mountingType: "Integrated Channel Mount",
-    thickness: "42mm",
-    images: { off: image13Off, on: image13On },
-    defaultIlluminated: true,
-    specs: {
-      materialGrade: "High Impact PMMA",
-      ledType: "COB RGB Dynamic",
-      ipRating: "IP67 Sealed",
-      warranty: "3 Years Warranty",
     },
   },
   {
@@ -289,22 +203,6 @@ export const boxLetterProducts: BoxLetterProduct[] = [
       materialGrade: "Alloy 6063 T5",
       ledType: "Warm/Cool White",
       ipRating: "IP68 Certified",
-      warranty: "5 Years Warranty",
-    },
-  },
-
-  {
-    id: "product-20",
-    material: "Hybrid Steel Rim + Cast Opal Acrylic",
-    lightingType: "Dual Front & Backlit LED",
-    mountingType: "Architectural Rail",
-    thickness: "62mm",
-    images: { off: image20Off, on: image20On },
-    defaultIlluminated: true,
-    specs: {
-      materialGrade: "Industrial Hybrid Composite",
-      ledType: "Korean Chip 12V High Output",
-      ipRating: "IP67 Sealed",
       warranty: "5 Years Warranty",
     },
   },

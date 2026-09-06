@@ -17,5 +17,4 @@ export interface ServiceCardProps {
   description: string;
   learnMoreText: string;
   path?: string;
-  isAr: boolean;
 }

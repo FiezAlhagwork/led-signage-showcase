@@ -14,6 +14,5 @@ export interface ProjectCardProps {
   image: string;
   title: string;
   category: string;
-  isAr: boolean;
   onClick: () => void;
 }

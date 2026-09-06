@@ -10,7 +10,6 @@ export interface LanguageContextType {
   language: Language;
   /** بيبدّل اللغة عبر تغيير بادئة الرابط مع الحفاظ على الصفحة الحالية */
   setLanguage: (lang: Language) => void;
-  isRtl: boolean;
   t: typeof enTranslations;
 }
 

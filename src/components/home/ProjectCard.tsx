@@ -7,7 +7,6 @@ const ProjectCard = ({
   image,
   title,
   category,
-  isAr,
   onClick,
 }: ProjectCardProps) => {
   return (
@@ -25,9 +24,7 @@ const ProjectCard = ({
         />
 
         <span
-          className={`absolute top-4 ${
-            isAr ? "right-4" : "left-4"
-          } px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-medium text-primary`}
+          className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-medium text-primary"
         >
           {category}
         </span>

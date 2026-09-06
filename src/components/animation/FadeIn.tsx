@@ -12,7 +12,6 @@ const FadeIn = ({
   trigger = "inView",
   viewportAmount = 0.2,
   className,
-  dir,
 }: FadeInProps) => {
   const hidden = {
     opacity: 0,
@@ -36,7 +35,6 @@ const FadeIn = ({
         animate={visible}
         transition={transition}
         className={className}
-        dir={dir}
       >
         {children}
       </motion.div>
@@ -50,7 +48,6 @@ const FadeIn = ({
       viewport={{ once: true, amount: viewportAmount }}
       transition={transition}
       className={className}
-      dir={dir}
     >
       {children}
     </motion.div>

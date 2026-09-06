@@ -17,7 +17,6 @@ export interface FadeInProps {
   /** نسبة ظهور العنصر المطلوبة لتشغيل الأنيميشن (فقط مع trigger="inView") */
   viewportAmount?: number;
   className?: string;
-  dir?: "ltr" | "rtl";
 }
 
 export interface StaggerContainerProps {

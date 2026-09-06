@@ -13,7 +13,7 @@ const Navbar = () => {
   /** ref مو state: القيمة ما بتنعرض بالواجهة، وكـstate كانت تعيد تركيب مستمع السكرول مع كل حركة */
   const lastScrollY = useRef(0);
 
-  const { language, setLanguage, t, isRtl: isAr } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const localizedPath = useLocalizedPath();
 
   const visibleLinks = navLinks.filter((link) => !link.hidden);
@@ -106,12 +106,8 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`lg:hidden fixed top-0 ${isAr ? "right-0 border-l" : "left-0 border-r"} h-full w-[75%] sm:w-75 max-w-full bg-dark-bg z-60 flex flex-col p-6 sm:p-8 border-white/10 shadow-2xl transition-transform duration-500 ease-in-out overflow-y-hidden ${
-          isOpen
-            ? "translate-x-0"
-            : isAr
-              ? "translate-x-full"
-              : "-translate-x-full"
+        className={`lg:hidden fixed top-0 left-0 border-r h-full w-[75%] sm:w-75 max-w-full bg-dark-bg z-60 flex flex-col p-6 sm:p-8 border-white/10 shadow-2xl transition-transform duration-500 ease-in-out overflow-y-hidden ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <button
@@ -122,7 +118,7 @@ const Navbar = () => {
           <X className="w-5 h-5" />
         </button>
         <div
-          className={`flex flex-col gap-5 ${isAr ? "text-right" : "text-left"}`}
+          className="flex flex-col gap-5 text-natural"
         >
           {visibleLinks.map((link) => (
             <NavLink

@@ -43,17 +43,21 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     navigate(`/${languageToSegment(lang)}${rest === "/" ? "" : rest}`);
   };
 
-  const isRtl = language === "AR";
   const t = translations[language];
 
+  /*
+   * الاتجاه مثبّت على ltr بالقصد: تبديل اللغة بيبدّل النص بس، وترتيب الأقسام
+   * ومواضعها بتضل هي هي بالاتجاهين. عرض النص العربي بينضبط باتجاه الفقرة
+   * (unicode-bidi: plaintext بـindex.css) مو باتجاه الصفحة.
+   */
   useEffect(() => {
     const htmlElement = document.documentElement;
-    htmlElement.dir = isRtl ? "rtl" : "ltr";
+    htmlElement.dir = "ltr";
     htmlElement.lang = languageToSegment(language);
-  }, [language, isRtl]);
+  }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, isRtl, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

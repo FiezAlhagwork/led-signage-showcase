@@ -66,16 +66,6 @@
     "tag": "Contact Us",
     "title": "We Are Glad to Connect With You",
     "description": "Our team is ready to answer your inquiries and execute your projects with the best quality.",
-    "formTitle": "Send Us a Message",
-    "fullName": "Full Name",
-    "phone": "Phone Number",
-    "projectType": "Project Type (Optional)",
-    "message": "Message",
-    "sendBtn": "Send Request",
-    "placeholderName": "Enter your full name",
-    "placeholderPhone": "+963 960 961 620",
-    "placeholderProject": "Advertising Services / Signs",
-    "placeholderMessage": "Write your message here...",
     "addressLabel": "Company Address",
     "addressText": "Ma'araba - East Road - Opposite Al-Amani Wedding Hall",
     "phoneLabel": "Phone Number",
@@ -85,7 +75,8 @@
     "hoursText": "Saturday - Thursday: From 8:00 to 9:00",
     "emailLabel": "Email",
     "mapBtn": "Open in Google Maps",
-    "whatsappTemplate": "Name: {name}\nPhone: {phone}\nProject: {project}\nMessage: {message}"
+    "whatsappTitle": "Talk to us directly on WhatsApp",
+    "whatsappCta": "Message us on WhatsApp"
   },
   "whyChooseUs": {
     "badge": "WHY CHOOSE US",
@@ -154,7 +145,6 @@
       }
     }
   },
-
   "digitalPrinting": {
     "slides": {
       "slide1": {
@@ -203,7 +193,6 @@
       "expertTeam": "Expert Team Members"
     }
   },
-
   "a11y": {
     "logo": "Alnoor Advertising logo",
     "openMenu": "Open menu",
@@ -218,12 +207,10 @@
     "printDetailImage": "Close-up detail of the printed work",
     "zoomedImage": "Enlarged project image"
   },
-
   "notFound": {
     "title": "Page not found",
     "backHome": "Back to home"
   },
-
   "seo": {
     "siteName": "Alnoor Advertising",
     "pages": {
@@ -261,7 +248,6 @@
       }
     }
   },
-
   "specsTitle": "Specifications",
   "turnOnLights": "Turn on lights",
   "turnOffLights": "Turn off lights",
@@ -269,7 +255,6 @@
   "nextSlide": "Next",
   "requestQuoteForThis": "Request Quote",
   "simTitle": "Open 3D Studio",
-
   "boxLetters": {
     "product-01": {
       "title": "Opal Acrylic Illuminated Letters",
@@ -312,33 +297,23 @@
       ]
     },
     "product-05": {
-      "title": "Hybrid Metal & Acrylic Letters",
-      "description": "A sophisticated combination of metal edging and glowing acrylic faces, designed for high-end commercial branding.",
+      "title": "Plexi Letters with Metal Frame",
+      "description": "A sophisticated combination of a metal frame and glowing plexi faces, designed for high-end commercial branding.",
       "details": [
         "360° perimeter halo lighting",
-        "Interchangeable acrylic face panels",
+        "Interchangeable plexi face panels",
         "Premium architectural mounting hardware",
         "Striking day and night visibility"
       ]
     },
     "product-06": {
-      "title": "Brushed Steel Front-Lit Letters",
-      "description": "Elegant brushed stainless steel letters with a soft front-lit glow, perfect for upscale retail and hospitality spaces.",
+      "title": "Plexi Letters",
+      "description": "Elegant plexi letters with a soft front-lit glow, perfect for upscale retail and hospitality spaces.",
       "details": [
-        "Brushed finish resists fingerprints and scratches",
+        "Clean plexi face, easy to maintain",
         "Even front-face illumination",
         "Recessed mounting for a flush look",
         "Ideal for lobbies and reception areas"
-      ]
-    },
-    "product-07": {
-      "title": "Matte Black Non-Illuminated Letters",
-      "description": "A bold, modern statement piece using matte black steel letters without lighting, favored for minimalist branding.",
-      "details": [
-        "Sleek matte black powder coating",
-        "Simple, direct wall installation",
-        "Low maintenance and highly durable",
-        "Works well in both day and interior lighting"
       ]
     },
     "product-08": {
@@ -361,52 +336,12 @@
         "Distinctive, memorable brand presence"
       ]
     },
-    "product-10": {
-      "title": "Gold-Finish Dual Lit Letters",
-      "description": "Luxurious gold PVD-coated steel letters combining front and halo lighting for maximum visual impact.",
-      "details": [
-        "PVD gold coating for lasting shine",
-        "Dual front and halo LED lighting",
-        "Weatherproof architectural-grade build",
-        "Perfect for flagship storefronts"
-      ]
-    },
-    "product-11": {
-      "title": "Frosted Acrylic Wall Letters",
-      "description": "Softly frosted acrylic letters with internal LED diffusion, offering a gentle and welcoming glow.",
-      "details": [
-        "Frosted finish reduces glare",
-        "Flush wall-mounted installation",
-        "Even internal light diffusion",
-        "Outdoor rated for year-round use"
-      ]
-    },
-    "product-12": {
-      "title": "Anodized Aluminum Dimensional Letters",
-      "description": "Robust anodized aluminum letters designed for non-illuminated architectural signage with a premium finish.",
-      "details": [
-        "Anodized finish resists weathering",
-        "Structurally rigid for large formats",
-        "Spacer rail mounting for depth effect",
-        "Ideal for corporate building signage"
-      ]
-    },
-    "product-13": {
-      "title": "RGB Dynamic Acrylic Letters",
-      "description": "Vibrant acrylic letters with full RGB control, letting businesses match lighting to branding or promotions.",
-      "details": [
-        "Full RGB color customization",
-        "DMX controllable lighting system",
-        "Seamless aluminum extrusion housing",
-        "Great for entertainment and retail venues"
-      ]
-    },
     "product-14": {
-      "title": "Corten Steel Cutout Letters",
-      "description": "Rustic weathered Corten steel letters with a distinctive aged patina, popular for artisanal and industrial branding.",
+      "title": "Metal Cutout Letters",
+      "description": "Metal cutout letters with a distinctive finish, popular for artisanal and industrial branding.",
       "details": [
-        "Natural weathered steel patina",
-        "Front cutout design with acrylic glow option",
+        "Durable, distinctive metal finish",
+        "Front cutout design with plexi glow option",
         "Extremely durable outdoor material",
         "Distinct rustic-industrial aesthetic"
       ]
@@ -422,10 +357,10 @@
       ]
     },
     "product-16": {
-      "title": "Classic White Acrylic Letters",
-      "description": "A timeless white acrylic letter set with side-diffused lighting, suitable for a wide range of storefronts.",
+      "title": "Plexi Cutouts",
+      "description": "A timeless white plexi cutout set with side-diffused lighting, suitable for a wide range of storefronts.",
       "details": [
-        "Clean, classic white acrylic face",
+        "Clean, classic white plexi face",
         "Even side-diffused illumination",
         "Flush wall mount installation",
         "Versatile for most business types"
@@ -439,36 +374,6 @@
         "Optional halo backlit configuration",
         "Standoff pin mounting system",
         "Weather resistant for outdoor use"
-      ]
-    },
-    "product-18": {
-      "title": "Linear COB Dynamic Letters",
-      "description": "High-density COB LED letters delivering smooth, uniform linear illumination for contemporary signage designs.",
-      "details": [
-        "High-density COB LED strips",
-        "Seamless curved aluminum rail",
-        "Uniform light without hotspots",
-        "Dimmable dynamic lighting control"
-      ]
-    },
-    "product-19": {
-      "title": "Marine-Grade Steel Letters",
-      "description": "Heavy-duty marine-grade stainless steel letters built to withstand harsh coastal and outdoor environments.",
-      "details": [
-        "AISI 316 marine-grade steel",
-        "Superior corrosion resistance",
-        "Threaded rear pin mounting",
-        "Built for long-term outdoor exposure"
-      ]
-    },
-    "product-20": {
-      "title": "Premium Hybrid Architectural Letters",
-      "description": "The flagship hybrid design combining steel rims and glowing acrylic faces for maximum brand presence.",
-      "details": [
-        "Combined steel and acrylic construction",
-        "Dual front and backlit LED system",
-        "Premium architectural rail mounting",
-        "Designed for flagship brand locations"
       ]
     }
   }

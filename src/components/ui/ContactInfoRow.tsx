@@ -5,7 +5,6 @@ const ContactInfoRow = ({
   label,
   value,
   href,
-  isAr,
 }: ContactInfoRowProps) => {
   const content = (
     <>
@@ -13,7 +12,7 @@ const ContactInfoRow = ({
         <Icon className="w-5 h-5" />
       </div>
 
-      <div className={`grow mx-4 ${isAr ? "text-right" : "text-left"}`}>
+      <div className="grow mx-4 text-natural">
         <h4 className="text-sm font-bold text-primary mb-0.5">{label}</h4>
         <p className="text-white/80 text-xs">{value}</p>
       </div>

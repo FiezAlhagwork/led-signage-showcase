@@ -21,7 +21,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const Sign = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
@@ -52,7 +52,6 @@ const Sign = () => {
         className="w-full max-w-[1700px] mx-auto px-2 relative"
       >
         <Swiper
-          key={language}
           modules={[EffectCreative, Autoplay, Pagination, Navigation]}
           grabCursor={true}
           allowTouchMove={true}

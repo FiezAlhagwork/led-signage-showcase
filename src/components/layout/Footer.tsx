@@ -5,27 +5,19 @@ import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import { footerQuickLinks } from "@/data/footerData";
 import { contactData } from "@/data/contactData";
 import type { FooterLinkItem } from "@/types";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  ChevronRight,
-  ChevronLeft,
-} from "lucide-react";
+import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
 
 const Footer = () => {
-  const { t, isRtl: isAr } = useLanguage();
+  const { t } = useLanguage();
   const localizedPath = useLocalizedPath();
   const footerT = t.footer;
-
-  const Chevron = isAr ? ChevronLeft : ChevronRight;
 
   const renderLink = (item: FooterLinkItem) => {
     const className =
       "hover:text-primary transition-colors flex items-center gap-2";
     const content = (
       <>
-        <Chevron className="w-3 h-3 text-primary shrink-0" />
+        <ChevronRight className="w-3 h-3 text-primary shrink-0" />
         <span>{footerT[item.labelKey]}</span>
       </>
     );

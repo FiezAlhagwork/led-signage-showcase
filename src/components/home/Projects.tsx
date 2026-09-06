@@ -9,7 +9,7 @@ import StaggerContainer from "@/components/animation/StaggerContainer";
 import StaggerItem from "@/components/animation/StaggerItem";
 
 const Projects = () => {
-  const { t, isRtl: isAr } = useLanguage();
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -38,7 +38,6 @@ const Projects = () => {
                   image={project.image}
                   title={title}
                   category={category}
-                  isAr={isAr}
                   onClick={() => setSelectedImage(project.image)}
                 />
               </StaggerItem>

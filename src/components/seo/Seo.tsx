@@ -14,7 +14,7 @@ import { setMeta, setLink, setAlternateLinks } from "./documentMeta";
  */
 const Seo = () => {
   const { pathname } = useLocation();
-  const { t, language, isRtl } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const segment = pathname.split("/")[1] ?? "";
@@ -60,13 +60,13 @@ const Seo = () => {
     setMeta("property", "og:url", canonicalUrl);
     setMeta("property", "og:site_name", siteName);
     setMeta("property", "og:image", `${SITE_URL}${OG_IMAGE_PATH}`);
-    setMeta("property", "og:locale", isRtl ? "ar_SY" : "en_US");
+    setMeta("property", "og:locale", language === "AR" ? "ar_SY" : "en_US");
     setMeta("property", "og:type", basePath === "/" ? "website" : "article");
 
     setMeta("name", "twitter:title", fullTitle);
     setMeta("name", "twitter:description", page.description);
     setMeta("name", "twitter:image", `${SITE_URL}${OG_IMAGE_PATH}`);
-  }, [pathname, t, language, isRtl]);
+  }, [pathname, t, language]);
 
   return null;
 };

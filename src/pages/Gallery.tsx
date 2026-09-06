@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Gallery = () => {
-  const { t, language, isRtl } = useLanguage();
+  const { t } = useLanguage();
 
   /** رقم الصورة المفتوحة بالمودال — null يعني مسكّر */
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -49,7 +49,6 @@ const Gallery = () => {
 
       <div className="relative w-full max-w-[1700px] mx-auto px-6 md:px-16 lg:px-24">
         <Swiper
-          key={language}
           modules={[FreeMode, Mousewheel, Navigation, Pagination]}
           slidesPerView="auto"
           spaceBetween={24}
@@ -118,7 +117,6 @@ const Gallery = () => {
         nextLabel={t.nextSlide}
         prevLabel={t.prevSlide}
         counter={activeIndex === null ? undefined : `${activeIndex + 1} / ${total}`}
-        isRtl={isRtl}
       />
     </main>
   );

@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Card from "@/components/ui/Card";
 import { useLocalizedPath } from "@/context/useLanguage";
 import type { ServiceCardProps } from "@/types";
@@ -10,7 +10,6 @@ const ServiceCard = ({
   description,
   learnMoreText,
   path,
-  isAr,
 }: ServiceCardProps) => {
   const localizedPath = useLocalizedPath();
 
@@ -49,12 +48,7 @@ const ServiceCard = ({
           }`}
         >
           {learnMoreText}
-          {path &&
-            (isAr ? (
-              <ArrowLeft className="w-4 h-4" />
-            ) : (
-              <ArrowRight className="w-4 h-4" />
-            ))}
+          {path && <ArrowRight className="w-4 h-4" />}
         </span>
       </div>
     </Card>

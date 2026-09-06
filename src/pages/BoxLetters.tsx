@@ -155,7 +155,7 @@ const BoxLettersShowcase = () => {
             </button>
 
             <span className="text-xs font-mono text-orange-400 font-semibold my-0.5 px-1">
-              0{currentIndex + 1}/0{total}
+              {`${String(currentIndex + 1).padStart(2, "0")}/${String(total).padStart(2, "0")}`}
             </span>
 
             <button

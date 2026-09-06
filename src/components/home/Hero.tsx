@@ -12,7 +12,7 @@ import "swiper/css/effect-fade";
 import { heroSlides } from "@/data/heroData";
 
 const Hero = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section
@@ -25,7 +25,6 @@ const Hero = () => {
         className="absolute inset-0 w-full h-full z-0"
       >
         <Swiper
-          key={language}
           modules={[Autoplay, EffectFade]}
           effect={"fade"}
           speed={1000}

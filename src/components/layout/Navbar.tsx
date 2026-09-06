@@ -26,26 +26,48 @@ const Navbar = () => {
   }, [isOpen]);
 
   useEffect(() => {
-    const handleScroll = () => {
+    /*
+     * ارتفاع الصفحة محفوظ هون وبينحدّث بس لما يتغيّر فعلاً. قراءة scrollHeight
+     * بكل حدث سكرول كانت تفرض إعادة تخطيط متزامنة (forced reflow) وتبطّل صلاحية
+     * طبقات الرسم، وهي الصفحة فيها بلورات وتلاشيات — فكان السكرول يتقطّع.
+     */
+    let docHeight = document.documentElement.scrollHeight;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+
       const currentScrollY = window.scrollY;
-      const isAtBottom =
-        window.innerHeight + currentScrollY >=
-        document.documentElement.scrollHeight - 10;
+      const isAtBottom = window.innerHeight + currentScrollY >= docHeight - 10;
 
       if (currentScrollY < 50 || isAtBottom) {
         setShowNavbar(true);
-      } else if (currentScrollY < lastScrollY.current) {
-        setShowNavbar(false);
       } else {
-        setShowNavbar(true);
+        /* بينخفي وقت النزول لتحت وبيرجع يبان وقت الطلوع لفوق */
+        setShowNavbar(currentScrollY < lastScrollY.current);
       }
 
       setIsScrolled(currentScrollY > 20);
       lastScrollY.current = currentScrollY;
     };
 
+    /* حساب واحد بالفريم بدل واحد بكل حدث سكرول */
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    const resizeObserver = new ResizeObserver(() => {
+      docHeight = document.documentElement.scrollHeight;
+    });
+    resizeObserver.observe(document.documentElement);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      resizeObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -54,8 +76,14 @@ const Navbar = () => {
         className={`fixed top-0 left-0 w-full max-w-full overflow-x-hidden z-50 transition-all duration-500 ease-in-out ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         } ${
+          /*
+           * الـbackdrop-blur محصور بالشاشات الكبيرة عن قصد: على الموبايل الشريط
+           * بيقع فوق سلايدر الهيرو، وكل تلاشية كانت تجبر المتصفّح يعيد حساب
+           * البلور تحته بكل فريم — أثقل سبب للتقطيع. الخلفية المعتمة بتعطي
+           * نفس القراءة بكلفة صفر.
+           */
           isScrolled
-            ? "bg-black/15 backdrop-blur-md py-4 border-b border-white/5 shadow-lg"
+            ? "bg-black/70 lg:bg-black/15 lg:backdrop-blur-md py-4 border-b border-white/5 shadow-lg"
             : "bg-transparent py-6 border-transparent"
         }`}
       >
@@ -144,8 +172,10 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
+        /* الطبقة بتغطي الشاشة كاملة، و backdrop-blur عليها كان يعني إعادة بلور
+           للصفحة كلها مع كل تلاشية بالسلايدر اللي ضل شغّال تحتها */
         <div
-          className="fixed inset-0 bg-black/70 z-50 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 bg-black/80 z-50 transition-opacity"
           onClick={() => setIsOpen(false)}
         ></div>
       )}

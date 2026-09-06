@@ -14,13 +14,15 @@ const WhyChooseUsCard = ({
   return (
     <div
       className={
+        /* بلا backdrop-blur: خلفية البطاقة (bg-surface) معتمة تماماً فالفلتر
+           كان يتحسب على GPU وما بيبيّن منه ولا بكسل */
         featured
-          ? "h-full p-8 md:p-10 rounded-3xl bg-surface border border-white/10 shadow-xl backdrop-blur-md flex flex-col justify-between relative overflow-hidden text-right"
-          : "h-full p-8 rounded-3xl bg-surface border border-white/10 shadow-xl backdrop-blur-md flex flex-col justify-between text-right"
+          ? "h-full p-8 md:p-10 rounded-3xl bg-surface border border-white/10 shadow-xl flex flex-col justify-between relative overflow-hidden text-right"
+          : "h-full p-8 rounded-3xl bg-surface border border-white/10 shadow-xl flex flex-col justify-between text-right"
       }
     >
       {featured && (
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="glow absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 pointer-events-none [--glow-color:rgba(255,107,0,0.06)]" />
       )}
 
       <div className={featured ? "relative z-10" : undefined}>

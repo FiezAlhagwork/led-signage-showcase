@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useLanguage } from "@/context/useLanguage";
 import { contactData } from "@/data/contactData";
 import Button from "@/components/ui/Button";
@@ -5,6 +6,7 @@ import FadeIn from "@/components/animation/FadeIn";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import type { Swiper as SwiperInstance } from "swiper";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -13,9 +15,36 @@ import { heroSlides } from "@/data/heroData";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const swiperRef = useRef<SwiperInstance | null>(null);
+
+  /*
+   * الـautoplay بيوقف لما القسم يطلع برّا الشاشة.
+   * كل تلاشية بتغيّر بكسلات ملء الشاشة، والشريط العلوي فوقها بيعيد حساب
+   * خلفيته معها — فتركها شغّالة على صفحة الزائر نازل فيها كان حمل دائم بلا فايدة.
+   */
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      const autoplay = swiperRef.current?.autoplay;
+      if (!autoplay) return;
+
+      if (entry.isIntersecting) {
+        autoplay.start();
+      } else {
+        autoplay.stop();
+      }
+    });
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
@@ -27,10 +56,15 @@ const Hero = () => {
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect={"fade"}
-          speed={1000}
+          /* دورة أطول وتلاشية أقصر: بتنزّل نسبة الوقت اللي فيه بكسلات ملء
+             الشاشة عم تتغيّر من ~50% لـ~14%، وهي النسبة هي كلفة الرسم الفعلية */
+          speed={800}
           autoplay={{
-            delay: 2000,
+            delay: 5000,
             disableOnInteraction: false,
+          }}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
           loop={true}
           className="w-full h-full"
@@ -56,8 +90,8 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/15 rounded-full blur-[150px] pointer-events-none z-20" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[150px] pointer-events-none z-20" />
+      <div className="glow absolute top-1/4 left-1/4 -translate-x-1/3 -translate-y-1/3 w-160 h-160 pointer-events-none z-20 [--glow-color:rgba(255,107,0,0.16)]" />
+      <div className="glow absolute bottom-1/4 right-1/4 translate-x-1/3 translate-y-1/3 w-160 h-160 pointer-events-none z-20 [--glow-color:rgba(255,107,0,0.11)]" />
 
       <div className="container mx-auto px-6 relative z-30 text-center font-(family-name:--font-main)">
 

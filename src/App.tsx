@@ -29,7 +29,6 @@ const Communication = lazy(() => import("@/pages/Communication"));
 const BoxLettersShowcase = lazy(() => import("@/pages/BoxLetters"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
-/** شاشة انتظار بخلفية الموقع الداكنة — بلا نص حتى ما نحتاج مفاتيح ترجمة لوميض عابر */
 const RouteFallback = () => (
   <div className="min-h-screen w-full bg-dark-bg" aria-hidden="true" />
 );

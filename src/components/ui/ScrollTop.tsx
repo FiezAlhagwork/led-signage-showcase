@@ -7,11 +7,20 @@ export default function ScrollTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    /* تاني مستمع سكرول بالصفحة بعد اللي بالشريط — مقيّد بفريم واحد متل أخوه */
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 400);
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        ticking = false;
+        setIsVisible(window.scrollY > 400);
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

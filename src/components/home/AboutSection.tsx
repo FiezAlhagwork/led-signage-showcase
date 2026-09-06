@@ -15,7 +15,7 @@ const AboutSection = () => {
     <section
       id="about"
       className="relative w-full py-24 bg-[#141414] text-white overflow-hidden border-y border-white/5"    >
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-100 h-100 bg-primary/5 blur-[120px] pointer-events-none rounded-full" />
+      <div className="glow absolute top-1/2 left-1/4 -translate-y-1/2 w-160 h-160 pointer-events-none [--glow-color:rgba(255,107,0,0.06)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -68,7 +68,8 @@ const AboutSection = () => {
             duration={0.8}
             className="lg:col-span-5 relative"
           >
-            <div className="absolute -inset-2 bg-linear-to-r from-primary/40 to-transparent rounded-2xl blur-2xl opacity-40 pointer-events-none" />
+            {/* blur-2xl (40px) كان بينعاد رسمه بكل فريم من أنيميشن الـFadeIn المحيطة */}
+            <div className="absolute -inset-2 bg-linear-to-r from-primary/40 to-transparent rounded-2xl blur-lg opacity-40 pointer-events-none" />
             <div className="relative w-full h-70 lg:h-120 rounded-2xl overflow-hidden bg-surface border border-white/15 shadow-2xl">
               <img
                 src={aboutSectionData.image}

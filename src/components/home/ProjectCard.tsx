@@ -12,9 +12,9 @@ const ProjectCard = ({
   return (
     <Card
       onClick={onClick}
-      className="bg-black/40 rounded-2xl hover:shadow-2xl hover:shadow-primary/15"
+      className="bg-surface/60 rounded-2xl hover:shadow-2xl hover:shadow-primary/15"
     >
-      <div className="relative h-64 w-full overflow-hidden bg-zinc-900">
+      <div className="relative h-64 w-full overflow-hidden bg-surface">
         <img
           src={image}
           alt={title}
@@ -24,7 +24,7 @@ const ProjectCard = ({
         />
 
         <span
-          className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-medium text-primary"
+          className="absolute top-4 left-4 px-3 py-1 rounded-full bg-dark-bg/80 backdrop-blur-md border border-white/10 text-xs font-medium text-primary"
         >
           {category}
         </span>

@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/alnoor_icon.webp";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
@@ -43,14 +43,21 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-[#252525] text-white pt-24 pb-12 overflow-hidden border-t border-white/5 w-full max-w-full">
-      <div className="absolute top-0 left-0 w-full h-16 bg-[#f7f7f7] transform -skew-y-2 origin-top-left pointer-events-none" />
+    <footer className="relative bg-surface-dark text-white pt-24 pb-12 overflow-hidden border-t border-white/5 w-full max-w-full">
+      {/* الشريط المائل كان #f7f7f7 (شبه أبيض) — الشي الفاتح الوحيد بالموقع
+          وكان بيطلع ناشز فوق القاعدة البنفسجية، فصار بلون الهوية */}
+      <div className="absolute top-0 left-0 w-full h-16 bg-accent transform -skew-y-2 origin-top-left pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-full">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/10 pb-12 mb-12 gap-6">
           <div className="flex items-center gap-3.5">
             <div>
-              <img src={logo} alt={t.a11y.logo} className="h-6 w-18" />
+              {/* w-auto مقصود: الشعار مربّع، وعرض ثابت كان بيمطّه */}
+              <img
+                src={logo}
+                alt={t.a11y.logo}
+                className="h-10 w-auto object-contain"
+              />
               <span className="block text-[11px] text-white/50 mt-1">
                 {footerT.brandSubtitle}
               </span>

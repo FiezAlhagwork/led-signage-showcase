@@ -36,7 +36,7 @@ const About = () => {
         </div>
 
         <div
-          className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#1c181d]/50 border border-white/10 p-6 md:p-10 rounded-3xl shadow-2xl`}
+          className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface/50 border border-white/10 p-6 md:p-10 rounded-3xl shadow-2xl`}
         >
           <FadeIn
             direction="right"
@@ -52,7 +52,7 @@ const About = () => {
               decoding="async"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-dark-bg/70 via-transparent to-transparent"></div>
           </FadeIn>
 
           <FadeIn
@@ -92,7 +92,7 @@ const About = () => {
           </h3>
           <button
             onClick={() => navigate(localizedPath("/communication"))}
-            className="bg-surface-dark hover:bg-black text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl shadow-lg border border-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer z-10 whitespace-nowrap"
+            className="bg-dark-bg hover:bg-accent text-white font-bold text-sm md:text-base px-8 py-3.5 rounded-xl shadow-lg border border-white/10 transition-all duration-300 transform hover:scale-105 cursor-pointer z-10 whitespace-nowrap"
           >
             {bannerBtn}
           </button>

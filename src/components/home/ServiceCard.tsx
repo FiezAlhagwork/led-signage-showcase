@@ -20,9 +20,9 @@ const ServiceCard = ({
   return (
     <Card
       to={path ? localizedPath(path) : undefined}
-      className="bg-black/40 rounded-3xl"
+      className="bg-surface/60 rounded-3xl"
     >
-      <div className="relative h-80 w-full overflow-hidden bg-zinc-900">
+      <div className="relative h-80 w-full overflow-hidden bg-surface">
         <img
           src={image}
           alt={title}

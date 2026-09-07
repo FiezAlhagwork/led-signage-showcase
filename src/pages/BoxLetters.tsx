@@ -68,9 +68,9 @@ const BoxLettersShowcase = () => {
     >
       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2">
         {/* LEFT CANVAS: Product Image & Interactive Illumination Toggle */}
-        <div className="relative h-full flex items-center justify-center overflow-hidden bg-slate-950 border-r border-slate-800/60 select-none">
+        <div className="relative h-full flex items-center justify-center overflow-hidden bg-dark-bg border-r border-white/10 select-none">
           <div
-            className={`absolute inset-0 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(251,146,60,0.15)_0%,transparent_70%)] ${
+            className={`absolute inset-0 transition-opacity duration-700 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(241,95,38,0.18)_0%,transparent_70%)] ${
               isIlluminated ? "opacity-100" : "opacity-0"
             }`}
           />
@@ -93,7 +93,7 @@ const BoxLettersShowcase = () => {
                   title={isIlluminated ? t.turnOffLights : t.turnOnLights}
                 >
                   {imageFailed ? (
-                    <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-slate-700 bg-slate-900/60 text-slate-500">
+                    <div className="relative z-10 w-64 h-64 sm:w-80 sm:h-80 flex flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-white/15 bg-surface/60 text-white/40">
                       <ImageOff className="w-10 h-10" />
                       <span className="text-xs text-center px-4">
                         {isIlluminated
@@ -119,7 +119,7 @@ const BoxLettersShowcase = () => {
                         src={currentProduct.images.on}
                         alt=""
                         onError={() => setImageFailed(true)}
-                        className={`absolute inset-0 w-full h-full object-contain drop-shadow-[0_0_35px_rgba(251,146,60,0.4)] brightness-110 transition-opacity duration-500 ease-in-out ${
+                        className={`absolute inset-0 w-full h-full object-contain drop-shadow-[0_0_35px_rgba(241,95,38,0.45)] brightness-110 transition-opacity duration-500 ease-in-out ${
                           isIlluminated ? "opacity-100" : "opacity-0"
                         }`}
                       />
@@ -130,37 +130,38 @@ const BoxLettersShowcase = () => {
                 <button
                   type="button"
                   onClick={() => setIsIlluminated(!isIlluminated)}
-                  className="absolute -bottom-2 -right-2 sm:bottom-0 sm:right-0 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-white text-slate-900 shadow-lg border border-slate-200 hover:scale-105 transition-transform"
+                  /* بيضل أبيض عن قصد: هو زر "الإضاءة"، والأبيض فيه استعارة الضوء */
+                  className="absolute -bottom-2 -right-2 sm:bottom-0 sm:right-0 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-white text-dark-bg shadow-lg border border-white/70 hover:scale-105 transition-transform"
                   aria-label={isIlluminated ? t.turnOffLights : t.turnOnLights}
                   title={isIlluminated ? t.turnOffLights : t.turnOnLights}
                 >
                   {isIlluminated ? (
                     <Moon className="w-5 h-5" />
                   ) : (
-                    <Sun className="w-5 h-5 text-orange-500" />
+                    <Sun className="w-5 h-5 text-primary" />
                   )}
                 </button>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          <div className="absolute bottom-6 left-6 z-20 flex flex-col items-center gap-2 bg-slate-950/80 backdrop-blur-md p-2 rounded-2xl border border-slate-800 shadow-xl">
+          <div className="absolute bottom-6 left-6 z-20 flex flex-col items-center gap-2 bg-dark-bg/80 backdrop-blur-md p-2 rounded-2xl border border-white/10 shadow-xl">
             <button
               onClick={handlePrev}
-              className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors"
+              className="p-2 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-colors"
               aria-label={t.prevSlide}
               title={t.prevSlide}
             >
               <ChevronUp className="w-6 h-6" />
             </button>
 
-            <span className="text-xs font-mono text-orange-400 font-semibold my-0.5 px-1">
+            <span className="text-xs font-mono text-primary-soft font-semibold my-0.5 px-1">
               {`${String(currentIndex + 1).padStart(2, "0")}/${String(total).padStart(2, "0")}`}
             </span>
 
             <button
               onClick={handleNext}
-              className="p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors"
+              className="p-2 rounded-xl text-white/70 hover:text-white hover:bg-white/10 transition-colors"
               aria-label={t.nextSlide}
               title={t.nextSlide}
             >
@@ -169,7 +170,7 @@ const BoxLettersShowcase = () => {
           </div>
         </div>
 
-        <div className="relative h-full flex items-center justify-center p-8 sm:p-12 lg:p-16 bg-[#0F0C1B]">
+        <div className="relative h-full flex items-center justify-center p-8 sm:p-12 lg:p-16 bg-surface-dark">
           <div className="max-w-xl w-full overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
@@ -183,7 +184,7 @@ const BoxLettersShowcase = () => {
                   {productText.title}
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed mb-8">
                   {productText.description}
                 </p>
               </motion.div>

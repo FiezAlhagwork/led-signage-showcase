@@ -40,7 +40,7 @@ const Communication = () => {
             distance={30}
             duration={0.6}
             delay={0.2}
-            className="p-8 md:p-10 rounded-3xl bg-black/40 border border-white/10 shadow-2xl backdrop-blur-md text-center"
+            className="p-8 md:p-10 rounded-3xl bg-surface/60 border border-white/10 shadow-2xl backdrop-blur-md text-center"
           >
             <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
               <MessageCircle className="w-8 h-8" />
@@ -107,7 +107,7 @@ const Communication = () => {
                 href={contactData.mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-2 left-2 bg-black/70 hover:bg-primary text-white text-[10px] px-2.5 py-1 rounded-lg backdrop-blur-md transition-all border border-white/10 flex items-center gap-1"
+                className="absolute top-2 left-2 bg-dark-bg/80 hover:bg-primary text-white text-[10px] px-2.5 py-1 rounded-lg backdrop-blur-md transition-all border border-white/10 flex items-center gap-1"
               >
                 <span>{t.contact.mapBtn}</span>
                 <ArrowUpRight className="w-3 h-3" />

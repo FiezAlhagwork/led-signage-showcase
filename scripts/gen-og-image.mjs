@@ -13,24 +13,28 @@ const WIDTH = 1200;
 const HEIGHT = 630;
 
 const SOURCE_IMAGE = "src/assets/pro5.webp";
-const LOGO_IMAGE = "src/assets/logo.webp";
+const LOGO_IMAGE = "src/assets/alnoor_icon.webp";
 const OUTPUT = "public/og-image.jpg";
 
-/** تدرّج داكن بالنصف السفلي حتى يبان الشعار مهما كانت الصورة فاتحة */
+/**
+ * تدرّج داكن بالنصف السفلي حتى يبان الشعار مهما كانت الصورة فاتحة.
+ * اللون لازم يطابق --color-dark-bg بـsrc/index.css.
+ */
 const gradient = Buffer.from(
   `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
      <defs>
        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-         <stop offset="35%" stop-color="#0a0a0a" stop-opacity="0"/>
-         <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0.92"/>
+         <stop offset="35%" stop-color="#16112E" stop-opacity="0"/>
+         <stop offset="100%" stop-color="#16112E" stop-opacity="0.92"/>
        </linearGradient>
      </defs>
      <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#fade)"/>
    </svg>`,
 );
 
+/* الشعار مربّع، فالمقاس بينضبط بالارتفاع — بالعرض كان بيصير بلوك 300×300 */
 const logo = await sharp(LOGO_IMAGE)
-  .resize({ width: 300, withoutEnlargement: true })
+  .resize({ height: 130, withoutEnlargement: true })
   .png()
   .toBuffer();
 

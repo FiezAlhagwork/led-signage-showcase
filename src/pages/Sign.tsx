@@ -89,8 +89,8 @@ const Sign = () => {
                 key={item.id}
                 className="flex justify-center cursor-grab active:cursor-grabbing"
               >
-                <div className="relative w-full bg-[#1e1b22] border border-white/5 rounded-3xl p-4 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden min-h-125 md:min-h-145">
-                  <div className="w-full lg:w-[46%] bg-[#26222b]/90 backdrop-blur-md p-5 md:p-12 rounded-2xl shadow-xl z-10 text-white space-y-4 md:space-y-5 border border-white/10">
+                <div className="relative w-full bg-surface border border-white/5 rounded-3xl p-4 md:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 overflow-hidden min-h-125 md:min-h-145">
+                  <div className="w-full lg:w-[46%] bg-surface-elevated/90 backdrop-blur-md p-5 md:p-12 rounded-2xl shadow-xl z-10 text-white space-y-4 md:space-y-5 border border-white/10">
                     <h2
                       className="text-xl md:text-4xl font-extrabold tracking-tight leading-snug text-white"
                     >

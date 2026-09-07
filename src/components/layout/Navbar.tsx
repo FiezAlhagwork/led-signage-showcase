@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/alnoor_icon.webp";
 import Button from "@/components/ui/Button";
 import { useLanguage, useLocalizedPath } from "@/context/useLanguage";
 import { navLinks } from "@/data/navbarData";
@@ -83,7 +83,7 @@ const Navbar = () => {
            * نفس القراءة بكلفة صفر.
            */
           isScrolled
-            ? "bg-black/70 lg:bg-black/15 lg:backdrop-blur-md py-4 border-b border-white/5 shadow-lg"
+            ? "bg-dark-bg/85 lg:bg-dark-bg/40 lg:backdrop-blur-md py-4 border-b border-white/5 shadow-lg"
             : "bg-transparent py-6 border-transparent"
         }`}
       >
@@ -93,7 +93,7 @@ const Navbar = () => {
               <img
                 src={logo}
                 alt={t.a11y.logo}
-                className="h-5 md:h-8  w-auto object-contain"
+                className="h-9 md:h-11 w-auto object-contain"
               />
             </NavLink>
           </div>
@@ -175,7 +175,7 @@ const Navbar = () => {
         /* الطبقة بتغطي الشاشة كاملة، و backdrop-blur عليها كان يعني إعادة بلور
            للصفحة كلها مع كل تلاشية بالسلايدر اللي ضل شغّال تحتها */
         <div
-          className="fixed inset-0 bg-black/80 z-50 transition-opacity"
+          className="fixed inset-0 bg-dark-bg/85 z-50 transition-opacity"
           onClick={() => setIsOpen(false)}
         ></div>
       )}

@@ -18,11 +18,8 @@ const Hero = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const swiperRef = useRef<SwiperInstance | null>(null);
 
-  /*
-   * الـautoplay بيوقف لما القسم يطلع برّا الشاشة.
-   * كل تلاشية بتغيّر بكسلات ملء الشاشة، والشريط العلوي فوقها بيعيد حساب
-   * خلفيته معها — فتركها شغّالة على صفحة الزائر نازل فيها كان حمل دائم بلا فايدة.
-   */
+
+  
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -72,7 +69,7 @@ const Hero = () => {
           {heroSlides.map((image, index) => (
             <SwiperSlide
               key={index}
-              className="w-full h-full flex items-center justify-center bg-black"
+              className="w-full h-full flex items-center justify-center bg-dark-bg"
             >
               {/* أول شريحة هي عنصر LCP: تُحمَّل فوراً بأولوية عالية، وباقيهن كسالى */}
               <img
@@ -88,10 +85,11 @@ const Hero = () => {
         </Swiper>
       </FadeIn>
 
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      {/* الطبقة الوحيدة اللي بتخلي نص الهيرو مقروء فوق الصور — بلون قاعدة
+          الموقع بدل الأسود، فالصور بتاخد صبغة الهوية بدل ما تضل معزولة عنها */}
+      <div className="absolute inset-0 bg-dark-bg/50 z-10" />
 
-      <div className="glow absolute top-1/4 left-1/4 -translate-x-1/3 -translate-y-1/3 w-160 h-160 pointer-events-none z-20 [--glow-color:rgba(255,107,0,0.16)]" />
-      <div className="glow absolute bottom-1/4 right-1/4 translate-x-1/3 translate-y-1/3 w-160 h-160 pointer-events-none z-20 [--glow-color:rgba(255,107,0,0.11)]" />
+
 
       <div className="container mx-auto px-6 relative z-30 text-center font-(family-name:--font-main)">
 
@@ -105,7 +103,7 @@ const Hero = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-5xl mx-auto mb-6">
             {t.hero.title}{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-amber-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-primary-soft">
               {t.hero.titleHighlight}
             </span>
           </h1>

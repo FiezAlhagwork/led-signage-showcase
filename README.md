@@ -285,8 +285,55 @@ the same key in `en.json`. Never edit text inside `.tsx` files.
 
 ### Changing theme colours
 
-`src/index.css`, inside the `@theme` block. Change `--color-primary` and the
-whole site follows.
+The palette lives in the `@theme` block of `src/index.css` — nine tokens, and
+almost the whole site follows from them:
+
+| Token | Role |
+| --- | --- |
+| `--color-primary` | brand orange — headings, links, buttons, icons |
+| `--color-primary-hover` | darker orange for hover states |
+| `--color-primary-soft` | lighter orange — gradient ends, counters |
+| `--color-accent` | brand violet — accent bands, glows |
+| `--color-accent-soft` | lighter violet for gradients and hovers |
+| `--color-dark-bg` | page background |
+| `--color-surface-dark` | page roots and section bands |
+| `--color-surface` | cards and sections |
+| `--color-surface-elevated` | cards sitting on a dark surface |
+
+**Contrast rule:** the orange on `--color-accent` measures 3.07:1, which fails
+WCAG AA for body text. Never put small orange text on `bg-accent` — use white
+there, and keep orange for large headings and buttons. The surface tokens are
+all dark enough that orange clears 4.5:1 on them.
+
+Four files outside `src/` hardcode the background colour and must be kept in
+sync by hand whenever `--color-dark-bg` changes:
+
+1. `index.html` — the `theme-color` meta tag.
+2. `public/site.webmanifest` — `background_color` and `theme_color`.
+3. `scripts/gen-og-image.mjs` — the two gradient stops.
+4. `public/og-image.jpg` — regenerate with `npm run seo:og` after step 3
+   (it is **not** part of `npm run build`).
+
+### Brand mark and icons
+
+There is one brand image: `src/assets/alnoor_icon.webp` (256×256, square). It is
+imported directly by the navbar, the footer and the digital-printing badge, and
+`scripts/gen-og-image.mjs` composites it into the share image.
+
+Everything under `public/` is derived from that same mark on a `#16112E`
+background, so re-export all of them together if the mark or the background
+colour changes:
+
+| File | Size | Used for |
+| --- | --- | --- |
+| `favicon.ico` | 16→256, six sizes | what Google's crawler fetches from the site root, and what shows next to the search result |
+| `favicon.png` | 32×32 | browsers that prefer PNG |
+| `apple-touch-icon.png` | 180×180 | iOS home-screen icon |
+| `logo.png` | 512×512 | the `logo` field in the JSON-LD `LocalBusiness` block |
+| `og-image.jpg` | 1200×630 | WhatsApp/Facebook/Twitter share preview — run `npm run seo:og` |
+
+The mark is square, so any `<img>` showing it needs `w-auto object-contain` and
+a height class — never a fixed width, which stretches it.
 
 ---
 

@@ -22,7 +22,7 @@ const WhyChooseUsCard = ({
       }
     >
       {featured && (
-        <div className="glow absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 pointer-events-none [--glow-color:rgba(255,107,0,0.06)]" />
+        <div className="glow absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 pointer-events-none [--glow-color:rgba(241,95,38,0.07)]" />
       )}
 
       <div className={featured ? "relative z-10" : undefined}>

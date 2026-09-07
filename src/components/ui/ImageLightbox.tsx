@@ -42,7 +42,7 @@ const ImageLightbox = ({
   const hasNavigation = Boolean(onNext && onPrev);
 
   const arrowClass =
-    "absolute top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full bg-black/60 hover:bg-primary text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-colors cursor-pointer";
+    "absolute top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full bg-dark-bg/70 hover:bg-primary text-white border border-white/20 backdrop-blur-md flex items-center justify-center transition-colors cursor-pointer";
 
   return (
     <AnimatePresence>
@@ -51,7 +51,7 @@ const ImageLightbox = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
+          className="fixed inset-0 z-50 bg-dark-bg/92 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
           onClick={onClose}
         >
           <div

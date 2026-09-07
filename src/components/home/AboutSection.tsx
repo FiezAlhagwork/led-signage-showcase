@@ -14,8 +14,8 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="relative w-full py-24 bg-[#141414] text-white overflow-hidden border-y border-white/5"    >
-      <div className="glow absolute top-1/2 left-1/4 -translate-y-1/2 w-160 h-160 pointer-events-none [--glow-color:rgba(255,107,0,0.06)]" />
+      className="relative w-full py-24 bg-surface-dark text-white overflow-hidden border-y border-white/5"    >
+      <div className="glow absolute top-1/2 left-1/4 -translate-y-1/2 w-160 h-160 pointer-events-none [--glow-color:rgba(71,47,146,0.32)]" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

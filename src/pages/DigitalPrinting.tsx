@@ -1,6 +1,6 @@
 import { useState, useRef, type WheelEvent, type TouchEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/alnoor_icon.webp";
 import { useLanguage } from "@/context/useLanguage";
 import { digitalPrintingSlides } from "@/data/digitalPrintingData";
 import ImageLightbox from "@/components/ui/ImageLightbox";
@@ -130,7 +130,11 @@ const DigitalPrinting = () => {
                 />
 
                 <div className="absolute bottom-3 right-3 bg-surface-dark/90 backdrop-blur-md border border-primary/40 px-2.5 py-1.5 rounded-xl shadow-xl flex items-center z-10">
-                  <img src={logo} alt={t.a11y.logo} className="h-4 w-auto" />
+                  <img
+                    src={logo}
+                    alt={t.a11y.logo}
+                    className="h-6 w-auto object-contain"
+                  />
                 </div>
               </motion.div>
 

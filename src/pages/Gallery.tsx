@@ -67,7 +67,7 @@ const Gallery = () => {
               <button
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className="group relative block w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-black/40 transition-all duration-300 hover:border-primary hover:-translate-y-1 cursor-pointer"
+                className="group relative block w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-surface/60 transition-all duration-300 hover:border-primary hover:-translate-y-1 cursor-pointer"
               >
                 <img
                   src={item.image}

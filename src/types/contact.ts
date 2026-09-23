@@ -10,6 +10,8 @@ export interface ContactData {
   phoneSecondary: string;
   whatsappNumber: string;
   mapLink: string;
+  /** رابط تضمين الخريطة (iframe) بصفحة التواصل */
+  mapEmbed: string;
   email: string;
 }
 

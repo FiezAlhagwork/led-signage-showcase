@@ -3,14 +3,17 @@ import type { Project } from "@/types";
 import img1 from "@/assets/pro5.webp";
 import img2 from "@/assets/pro2.webp";
 import img3 from "@/assets/pro3.webp";
-import img4 from "@/assets/pro4.webp";
+// import img4 from "@/assets/pro4.webp";
 import img5 from "@/assets/about2.webp";
-import img6 from "@/assets/car2.webp";
-import img7 from "@/assets/alharameen.jpg";
-import img8 from "@/assets/almethaq.jpg";
-import img9 from "@/assets/km1.jpg";
-import img10 from "@/assets/km2.jpg";
-import img11 from "@/assets/km3.jpg";
+// import img6 from "@/assets/car2.webp";
+import img7 from "@/assets/alharameen.webp";
+import img8 from "@/assets/car2.webp";
+import img9 from "@/assets/km1.webp";
+import img10 from "@/assets/km2.webp";
+import img11 from "@/assets/km3.webp";
+import img12 from "@/assets/pro10.webp";
+import img13 from "@/assets/pro11.webp";
+import img14 from "@/assets/pro12.webp";
 export const featuredProjectsData: Project[] = [
   {
     id: "1",
@@ -66,4 +69,22 @@ export const featuredProjectsData: Project[] = [
     categoryKey: "badgeSigns",
     image: img11,
   },
+   {
+    id: "10",
+    titleKey: "card10Title",
+    categoryKey: "badgeSigns",
+    image: img12,
+  },
+   {
+    id: "11",
+    titleKey: "card11Title",
+    categoryKey: "badgeSigns",
+    image: img13,
+  },
+   {
+    id: "12",
+    titleKey: "card12Title",
+    categoryKey: "badgeSigns",
+    image: img14,
+  }
 ];

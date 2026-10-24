@@ -1,16 +1,21 @@
 import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { useLanguage } from "@/context/useLanguage";
 import { featuredProjectsData } from "@/data/featuredProjectsData";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ProjectCard from "./ProjectCard";
 import ImageLightbox from "@/components/ui/ImageLightbox";
 import FadeIn from "@/components/animation/FadeIn";
-import StaggerContainer from "@/components/animation/StaggerContainer";
-import StaggerItem from "@/components/animation/StaggerItem";
+
+const INITIAL_PROJECT_COUNT = 6;
 
 const Projects = () => {
   const { t } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const visibleProjects = isExpanded
+    ? featuredProjectsData
+    : featuredProjectsData.slice(0, INITIAL_PROJECT_COUNT);
 
   return (
     <section
@@ -27,23 +32,47 @@ const Projects = () => {
           />
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {featuredProjectsData.map((project) => {
-            const title = t.projectsGrid[project.titleKey];
-            const category = t.projectsGrid[project.categoryKey];
+        <div
+          id="featured-projects-grid"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {visibleProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              image={project.image}
+              title={t.projectsGrid[project.titleKey]}
+              category={t.projectsGrid[project.categoryKey]}
+              onClick={() => setSelectedImage(project.image)}
+            />
+          ))}
+        </div>
 
-            return (
-              <StaggerItem key={project.id} direction="up" distance={40}>
-                <ProjectCard
-                  image={project.image}
-                  title={title}
-                  category={category}
-                  onClick={() => setSelectedImage(project.image)}
-                />
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
+        {featuredProjectsData.length > INITIAL_PROJECT_COUNT && (
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              aria-expanded={isExpanded}
+              aria-controls="featured-projects-grid"
+              aria-label={
+                isExpanded
+                  ? t.featuredProjects.viewLess
+                  : t.featuredProjects.viewAll
+              }
+              onClick={() => setIsExpanded((expanded) => !expanded)}
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-bold text-white transition-colors hover:border-primary hover:bg-primary"
+            >
+              {isExpanded
+                ? t.featuredProjects.viewLess
+                : t.featuredProjects.viewAll}
+              <ChevronDown
+                aria-hidden="true"
+                className={`h-5 w-5 transition-transform duration-300 ${
+                  isExpanded ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+          </div>
+        )}
       </div>
 
       <ImageLightbox

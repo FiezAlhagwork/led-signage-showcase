@@ -1,15 +1,18 @@
 import type { GalleryItem } from "@/types";
 
-import img1 from "@/assets/pro5.webp";
+import img1 from "@/assets/almethaq.webp";
 import img2 from "@/assets/pro2.webp";
 import img3 from "@/assets/pro3.webp";
-import img4 from "@/assets/km1.jpg";
+import img4 from "@/assets/km1.webp";
 import img5 from "@/assets/about2.webp";
-import img6 from "@/assets/km2.jpg";
-import img7 from "@/assets/pro77.png";
+import img6 from "@/assets/km2.webp";
+import img7 from "@/assets/pro7.webp";
 import img8 from "@/assets/about5.webp";
 import img9 from "@/assets/photo_2026-08-10_12-23-39.webp";
-import img10 from "@/assets/WhatsApp-Image-2025-04-19-at-21.30.50.webp";
+import img10 from "@/assets/km5.webp";
+import img11 from "@/assets/pro10.webp";
+import img12 from "@/assets/pro11.webp";
+import img13 from "@/assets/pro12.webp";
 
 /**
  * صور معرض الأعمال.
@@ -32,4 +35,7 @@ export const galleryItems: GalleryItem[] = [
   { id: "8", image: img8, categoryKey: "badgeSigns" },
   { id: "9", image: img9, categoryKey: "badgeBoxLetters" },
   { id: "10", image: img10, categoryKey: "badgePrinting" },
+  { id: "10", image: img11, categoryKey: "badgePrinting" },
+  { id: "10", image: img12, categoryKey: "badgePrinting" },
+  { id: "10", image: img13, categoryKey: "badgePrinting" }
 ];

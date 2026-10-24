@@ -28,12 +28,19 @@ const Services = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           delayChildren={0.4}
         >
-          {servicesData.map((service) => {
+          {servicesData.map((service, index) => {
             const title = t.servicesGrid[service.titleKey];
             const description = t.servicesGrid[service.descKey];
 
             return (
-              <StaggerItem key={service.id}>
+              <StaggerItem
+                key={service.id}
+                className={
+                  servicesData.length === 4 && index === 3
+                    ? "lg:col-start-2"
+                    : undefined
+                }
+              >
                 <ServiceCard
                   image={service.image}
                   title={title}

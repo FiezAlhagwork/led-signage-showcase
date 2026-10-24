@@ -1,6 +1,6 @@
-import img1 from "@/assets/km2.jpg";
+import img1 from "@/assets/car2.webp";
 import img4 from "@/assets/about2.webp";
-import img3 from "@/assets/pro5.webp";
+import img3 from "@/assets/pro7.webp";
 import type { SignItem } from "@/types";
 
 /**

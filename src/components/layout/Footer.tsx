@@ -6,6 +6,7 @@ import { footerQuickLinks } from "@/data/footerData";
 import { contactData } from "@/data/contactData";
 import type { FooterLinkItem } from "@/types";
 import { MapPin, Phone, Mail, ChevronRight } from "lucide-react";
+import FacebookIcon from "@/components/ui/FacebookIcon";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -106,6 +107,17 @@ const Footer = () => {
                 <span className="break-all" dir="ltr">
                   {contactData.email}
                 </span>
+              </li>
+              <li>
+                <a
+                  href={contactData.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-primary transition-colors"
+                >
+                  <FacebookIcon className="w-4 h-4 text-primary shrink-0" />
+                  <span>{footerT.facebookPage}</span>
+                </a>
               </li>
             </ul>
           </div>

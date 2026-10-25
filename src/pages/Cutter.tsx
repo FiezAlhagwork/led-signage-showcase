@@ -10,10 +10,29 @@ import cut2 from "@/assets/cut2.webp";
 import cut3 from "@/assets/cut3.webp";
 import cut4 from "@/assets/cut4.webp";
 import cut5 from "@/assets/cut5.webp";
-import cut6 from "@/assets/cut6.webp";
+import cut7 from "@/assets/cut7.webp";
+import cut8 from "@/assets/cut8.webp";
+import cut9 from "@/assets/cut9.webp";
+import cut10 from "@/assets/cut10.webp";
+import cut11 from "@/assets/cut11.webp";
+import cut12 from "@/assets/cut12.webp";
+import cut14 from "@/assets/cut14.webp";
 import vinyl from "@/assets/vinyl.webp";
 
-const cutImages = [cut1, cut2, cut3, cut4, cut5, cut6];
+const cutImages = [
+  cut1,
+  cut12,
+  cut3,
+  cut14,
+  cut5,
+  cut10,
+  cut7,
+  cut8,
+  cut9,
+  cut11,
+  cut2,
+  cut4,
+];
 
 const Cutter = () => {
   const { language } = useLanguage();

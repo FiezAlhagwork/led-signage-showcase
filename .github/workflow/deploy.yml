@@ -1,0 +1,22 @@
+name: Deploy Website via FTP
+
+on:
+  push:
+    branches: [master] # Triggers when you push to the main branches
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # The following two lines must be adjusted according to your actual situation:
+          local-dir: ./ # Upload from repository root directory
+          server-dir: ./public_html/ # Target directory on the server, adjust according to hosting provider (e.g., public_html/))

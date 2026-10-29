@@ -3,6 +3,7 @@
     "home": "Home",
     "boxLetters": "Box Letters",
     "sign": "Sign",
+    "cutter": "Cutter",
     "digitalPrinting": "Digital Printing",
     "gallery": "Our Work",
     "aboutUs": "About Us",
@@ -28,7 +29,9 @@
     "signDesc": "Innovative exterior and interior signage solutions suitable for all commercial activities to support your brand identity.",
     "learnMore": "Learn More",
     "digitalPrintingTitle": "Digital Printing",
-    "digitalPrintingDesc": "Advanced digital printing solutions with superior quality and fast turnaround for all your business needs."
+    "digitalPrintingDesc": "Advanced digital printing solutions with superior quality and fast turnaround for all your business needs.",
+    "chromeMetalLettersTitle": "Metal Chrome Letter",
+    "chromeMetalLettersDesc": "Metal shiny letters that give your sign a unique look like no other, and it is all made, assebled professionaly by experienced sepcialisits"
   },
   "about": {
     "tag": "ABOUT US",
@@ -49,15 +52,22 @@
     "tag": "OUR PORTFOLIO",
     "title": "Projects Brought to Life Through Our Creativity",
     "description": "Explore a curated selection of our latest and best completed projects.",
-    "viewAll": "View All Projects"
+    "viewAll": "View All Projects",
+    "viewLess": "Show Fewer Projects"
   },
   "projectsGrid": {
     "card1Title": "Mishwar Restaurant Sign",
     "card2Title": "Desk & Podium Flags Printing",
     "card3Title": "Paper Menu Design",
-    "card4Title": "Compound Board Sign with Illuminated Plexi Letters",
-    "card5Title": "Compound Sign with Illuminated Metal Letters",
+    "card4Title": "Alucobond Board Sign with Illuminated Plexi Letters",
+    "card5Title": "Alucobond Sign with Illuminated Metal Letters",
     "card6Title": "Car Advertising Signage",
+    "card7Title": "Flex Sign",
+    "card8Title": "Alucobond Sign with Illuminated Metal Letters",
+    "card9Title": "Acrylic Illuminatad Sign",
+    "card10Title": "Alucobond Sign with Illuminated Metal Letters",
+    "card11Title": "Realistic Mock-ups",
+    "card12Title": "Professional and elegant execution",
     "badgeBoxLetters": "Box Letters",
     "badgeSigns": "Signs",
     "badgePrinting": "Digital Printing"
@@ -67,10 +77,12 @@
     "title": "We Are Glad to Connect With You",
     "description": "Our team is ready to answer your inquiries and execute your projects with the best quality.",
     "addressLabel": "Company Address",
-    "addressText": "Ma'araba - East Road - Opposite Al-Amani Wedding Hall",
+    "addressText": "Industrial Addra - The fourth section - Opposite to Bin Al-Hasseb coffee factory",
     "phoneLabel": "Phone Number",
     "whatsappLabel": "WhatsApp",
     "whatsappBtn": "Contact us directly via WhatsApp",
+    "facebookLabel": "Facebook",
+    "facebookPageName": "النور للطباعة والدعاية والإعلان",
     "hoursLabel": "Working Hours",
     "hoursText": "Saturday - Thursday: From 8:00 to 9:00",
     "emailLabel": "Email",
@@ -110,6 +122,7 @@
     "whyChooseUs": "Why Choose Us",
     "contact": "Contact Us",
     "contactInfoTitle": "Contact Information",
+    "facebookPage": "النور للطباعة والدعاية والإعلان",
     "address": "Damascus, Syria",
     "rights": "All rights reserved.",
     "developer": "Website Design & Development"

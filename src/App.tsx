@@ -27,6 +27,7 @@ const DigitalPrinting = lazy(() => import("@/pages/DigitalPrinting"));
 const About = lazy(() => import("@/pages/About"));
 const Communication = lazy(() => import("@/pages/Communication"));
 const BoxLettersShowcase = lazy(() => import("@/pages/BoxLetters"));
+const Cutter = lazy(() => import("@/pages/Cutter"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 const RouteFallback = () => (
@@ -101,6 +102,7 @@ function LayoutContent() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="box-letters" element={<BoxLettersShowcase />} />
             <Route path="sign" element={<Sign />} />
+            <Route path="cutter" element={<Cutter />} />
             <Route path="digital-printing" element={<DigitalPrinting />} />
             <Route path="about-us" element={<About />} />
             <Route path="communication" element={<Communication />} />

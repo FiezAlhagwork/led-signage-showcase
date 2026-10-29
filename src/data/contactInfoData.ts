@@ -1,4 +1,5 @@
 import { MapPin, Phone, MessageSquare, Clock } from "lucide-react";
+import FacebookIcon from "@/components/ui/FacebookIcon";
 import type { ContactInfoItem } from "@/types";
 
 /** صفوف معلومات التواصل بصفحة "تواصل معنا" */
@@ -23,6 +24,13 @@ export const contactInfoRows: ContactInfoItem[] = [
     labelKey: "whatsappLabel",
     valueKey: "whatsappBtn",
     href: (data) => `https://wa.me/${data.whatsappNumber}`,
+  },
+  {
+    id: "facebook",
+    icon: FacebookIcon,
+    labelKey: "facebookLabel",
+    valueKey: "facebookPageName",
+    href: (data) => data.facebookUrl,
   },
   {
     id: "hours",

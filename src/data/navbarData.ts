@@ -5,6 +5,7 @@ export const navLinks: NavLinkItem[] = [
   { path: "/gallery", labelKey: "gallery" },
   { path: "/box-letters", labelKey: "boxLetters" },
   { path: "/sign", labelKey: "sign" },
+  { path: "/cutter", labelKey: "cutter" },
   { path: "/digital-printing", labelKey: "digitalPrinting", hidden: true },
   { path: "/about-us", labelKey: "aboutUs" },
   { path: "/communication", labelKey: "communication" },

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType } from "react";
 import type en from "@/locales/en.json";
 
 /** مفاتيح نصوص صفحة التواصل — مقيّدة بملف الترجمة */
@@ -13,12 +13,13 @@ export interface ContactData {
   /** رابط تضمين الخريطة (iframe) بصفحة التواصل */
   mapEmbed: string;
   email: string;
+  facebookUrl: string;
 }
 
 /** صف معلومات تواصل — العنوان من الترجمة، والقيمة إما من الترجمة أو من contactData */
 export interface ContactInfoItem {
   id: string;
-  icon: LucideIcon;
+  icon: ComponentType<{ className?: string }>;
   labelKey: ContactLabelKey;
   /** نص القيمة من ملف الترجمة */
   valueKey?: ContactLabelKey;
@@ -29,7 +30,7 @@ export interface ContactInfoItem {
 }
 
 export interface ContactInfoRowProps {
-  icon: LucideIcon;
+  icon: ComponentType<{ className?: string }>;
   label: string;
   value: ReactNode;
   /** رابط اختياري (tel:, https://...) — بدون href بترندر كصف عادي بدون رابط */

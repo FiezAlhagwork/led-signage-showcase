@@ -130,7 +130,7 @@ const Cutter = () => {
               animate={buttonAnimation}
               disabled={isCutting || completedCuts === cutImages.length}
             >
-              {language === "AR" ? "اقطع" : "Cut"}
+              {language === "AR" ? "قص" : "Cut"}
             </motion.button>
           </div>
         </div>
